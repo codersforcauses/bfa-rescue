@@ -44,5 +44,7 @@ Since we're using yarn workspaces, the packages should not be installed in the r
 ## Learn More
 
 To learn Vue v2, check out the [Vue documentation](https://vuejs.org/v2/guide/).
+
 To learn Express, check out the [Express documentation](https://expressjs.com/)
+
 To learn Mongoose (ORM for MongoDB), check out the [Mongoose Documentation](https://mongoosejs.com/docs/api.html)
