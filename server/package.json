@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js -q"
+    "dev": "nodemon index.js -q",
+    "lint": "eslint --ext .js ."
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
