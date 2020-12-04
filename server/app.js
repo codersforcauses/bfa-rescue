@@ -11,7 +11,7 @@ const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 
 // set env variables to use
-const port = process.env.PORT || 3000
+const port = parseInt(process.env.PORT || '3000')
 const host = process.env.HOST || 'localhost'
 const mongodb = process.env.DB_URL || 'mongodb://localhost:27017/bfa-rescue'
 
