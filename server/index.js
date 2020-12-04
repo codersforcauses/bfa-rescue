@@ -34,6 +34,8 @@ server.on('listening', async () => {
   try {
     await connectDB(app)
     console.log('\x1b[32mDatabase connected\x1b[0m')
+
+    // run seeder on dev and test environments
     process.env.NODE_ENV !== 'production' && require('./seeder')
   } catch (error) {
     console.error('Connection to database failed.', error)
