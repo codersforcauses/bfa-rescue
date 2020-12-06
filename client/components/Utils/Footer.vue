@@ -1,41 +1,70 @@
 <template>
-  <v-footer>
-    <v-row justify="space-around">
-      <v-spacer></v-spacer>
-      <v-col col="4">
-        <h3 class="mb-3">Best Friends Animal Rescue</h3>
-        <div class="mb-2">
-          <v-icon>mdi-phone</v-icon><span>0415 779 610</span>
-        </div>
-        <div class="mb-2">
-          <v-icon>mdi-email</v-icon><span>bfarescue@gmail.com</span>
-        </div>
-        <div class="mb-2">
-          <span><b>ABN:</b> 69377461145</span>
-        </div>
-        <div class="mb-2">
-          <span><b>Postal Address:</b><br />PO Box 3246 Midland WA 6056</span>
-        </div>
-        <div class="mb-2">
-          <span>Copyright © 2020</span>
-        </div>
-      </v-col>
-      <v-col v-for="(page, i) in pages" :key="i" col="2">
-        <h3 class="pl-3">{{ page.header }}</h3>
-        <v-list flat>
-          <v-list-item-group color="primary">
-            <v-list-item
-              v-for="(item, j) in page.subpages"
-              :key="j"
-              :to="item.to"
-            >
-              <v-list-item-title v-text="item.title"></v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-col>
-      <v-spacer></v-spacer>
-    </v-row>
+  <v-footer color="#a2d0dd">
+    <v-container class="py-6">
+      <v-row justify="space-between">
+        <v-col cols="12" md="5">
+          <v-img
+            :src="require('@/assets/logo.png')"
+            alt="Best Friend Animal Rescue's logo"
+            width="12rem"
+            class="mb-5"
+          />
+          <p class="px-1 d-flex align-center">
+            <v-icon color="accent" class="mr-3"> mdi-phone </v-icon>
+            <b> 0415 779 610 </b>
+          </p>
+          <p class="px-1 d-flex align-center">
+            <v-icon color="accent" class="mr-3"> mdi-email </v-icon>
+            <b> bfarescue@gmail.com </b>
+          </p>
+          <p class="px-1">
+            <b>Postal Address:</b>
+            <br />
+            PO Box 3246
+            <br />
+            Midland WA 6056
+          </p>
+          <p class="ma-0 px-1"><b>ABN:</b> 69377461145</p>
+        </v-col>
+        <v-col
+          v-for="page in pages"
+          :key="page.header"
+          cols="12"
+          sm="4"
+          md="auto"
+        >
+          <v-list dense flat color="transparent" class="py-0">
+            <v-subheader class="px-1">
+              {{ page.header }}
+            </v-subheader>
+            <v-list-item-group color="accent">
+              <v-list-item
+                v-for="item in page.subpages"
+                :key="item.title"
+                :to="item.to"
+                class="px-1"
+              >
+                <v-list-item-title class="text-subtitle-2">
+                  {{ item.title }}
+                </v-list-item-title>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-col>
+      </v-row>
+      <v-divider light class="my-2" />
+      <div class="px-1 d-flex align-center justify-space-between">
+        <p class="ma-0">Copyright &copy; {{ new Date().getFullYear() }}</p>
+        <v-btn
+          icon
+          large
+          href="https://www.facebook.com/bfarescueperth"
+          target="_blank"
+        >
+          <v-icon>mdi-facebook</v-icon>
+        </v-btn>
+      </div>
+    </v-container>
   </v-footer>
 </template>
 
