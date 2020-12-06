@@ -2,7 +2,7 @@
   <v-app-bar app flat color="#fff" style="border-bottom: 1px solid #0000001e">
     <nuxt-link to="/">
       <v-img
-        src="https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2016/09/BFA-logo-350px.png"
+        :src="require('@/assets/logo.png')"
         alt="Best Friend Animal Rescue's logo"
         max-height="3.6rem"
         width="8rem"
@@ -22,7 +22,6 @@
           text
           exact
           color="accent"
-          :aria-label="page.title"
         >
           {{ page.title }}
         </v-btn>
