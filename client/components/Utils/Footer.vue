@@ -54,7 +54,9 @@
       </v-row>
       <v-divider light class="my-2" />
       <div class="px-1 d-flex align-center justify-space-between">
-        <p class="ma-0">Copyright &copy; {{ new Date().getFullYear() }}</p>
+        <p class="ma-0">
+          &copy; Best Friends Animal Rescue {{ new Date().getFullYear() }}
+        </p>
         <v-btn
           icon
           large
