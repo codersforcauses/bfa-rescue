@@ -2,6 +2,9 @@ export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en-AU',
+    },
     titleTemplate: '%s - client',
     title: 'BFA Rescue',
     meta: [
