@@ -13,3 +13,9 @@
 <script>
 export default {}
 </script>
+
+<style>
+::selection {
+  background: #4ab1c55b;
+}
+</style>
