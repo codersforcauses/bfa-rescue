@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <div>
+      <Header></Header>
+    </div>
     <v-row>
       <v-col v-for="card in cards" :key="card.cardtitle" cols="12" sm="4">
         <Card
@@ -14,9 +17,11 @@
 
 <script>
 import Card from '~/components/health-nav/Card.vue'
+import Header from '~/components/health-nav/Header.vue'
 
 export default {
   components: {
+    Header,
     Card,
   },
   data() {
