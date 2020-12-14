@@ -1,5 +1,6 @@
 <template>
   <div class="supporter-cards">
+    <hero />
     <v-row justify="center" align="center">
       <v-col cols="12" sm="6" md="4">
         <v-card>
@@ -208,3 +209,13 @@
     </v-row>
   </div>
 </template>
+
+<script>
+import Hero from '~/components/Hero.vue'
+
+export default {
+  components: {
+    Hero,
+  },
+}
+</script>
