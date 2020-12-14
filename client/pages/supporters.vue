@@ -2,7 +2,7 @@
   <div class="container">
     <hero />
     <div class="full-width">
-      <v-row justify="center" align="center" id="regular" class="top">
+      <v-row id="regular" justify="center" align="center" class="top">
         <v-col cols="12" sm="6" md="4">
           <v-card>
             <v-img
@@ -70,7 +70,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row justify="center" align="center" id="regular">
+      <v-row id="regular" justify="center" align="center">
         <v-col cols="12" sm="6" md="4">
           <v-card>
             <v-img
@@ -147,7 +147,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row justify="center" align="center" id="regular" class="bottom">
+      <v-row id="regular" justify="center" align="center" class="bottom">
         <v-col cols="12" sm="6" md="4">
           <v-card>
             <v-img
