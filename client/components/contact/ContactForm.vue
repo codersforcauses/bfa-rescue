@@ -19,30 +19,59 @@
     <h4>Mobile Number</h4>
     <v-text-field
       v-model="phoneNumber"
-      :counter="7"
-      :error-messages="errors"
+      :counter="10"
+      :rules="mobileRules"
       required
     ></v-text-field>
     <h4>Message</h4>
     <v-text-field
       v-model="message"
       :counter="500"
-      :error-messages="errors"
+      :rules="messageRules"
       required
     ></v-text-field>
 
     <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
       Send
     </v-btn>
-
-    <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>
-
-    <v-btn color="warning" @click="resetValidation">Reset Validation</v-btn>
   </v-form>
 </template>
 
 <script>
 export default {
   name: 'ContactForm',
+  data: () => ({
+    valid: true,
+    name: '',
+    nameRules: [
+      (v) => !!v || 'Name is required',
+      (v) => (v && v.length <= 20) || 'Name must be less than 20 characters',
+    ],
+    email: '',
+    emailRules: [
+      (v) => !!v || 'E-mail is required',
+      (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+    ],
+    mobileRules: [
+      (v) => !!v || 'Mobile number is required',
+      (v) => (v && v.length === 10) || 'Mobile number must be valid',
+      (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
+    ],
+    messageRules: [
+      (v) => !!v || 'Message is required',
+      (v) => (v && v.length <= 500) || '500 characters only',
+    ],
+  }),
+  methods: {
+    validate() {
+      this.$refs.form.validate()
+    },
+    reset() {
+      this.$refs.form.reset()
+    },
+    resetValidation() {
+      this.$refs.form.resetValidation()
+    },
+  },
 }
 </script>

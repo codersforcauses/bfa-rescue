@@ -1,8 +1,6 @@
 <template>
   <v-container style="background-color: light-blue" color="black">
-    <v-container style="background-color: light-blue" color="black">
-      <ContactForm />
-    </v-container>
+    <ContactForm />
   </v-container>
 </template>
 
