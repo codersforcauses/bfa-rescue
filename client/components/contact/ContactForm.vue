@@ -1,5 +1,5 @@
 <template>
-  <v-container style="background-color: light-blue" color="black">
+  <v-container class="black white--text">
     <v-form ref="form" v-model="valid" lazy-validation>
       <h4>First Name</h4>
       <v-text-field
