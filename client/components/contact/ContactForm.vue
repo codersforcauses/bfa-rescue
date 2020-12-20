@@ -1,40 +1,42 @@
 <template>
-  <v-form ref="form" v-model="valid" lazy-validation>
-    <h4>First Name</h4>
-    <v-text-field
-      v-model="firstname"
-      :counter="20"
-      :rules="nameRules"
-      required
-    ></v-text-field>
-    <h4>Last Name</h4>
-    <v-text-field
-      v-model="lastname"
-      :counter="20"
-      :rules="nameRules"
-      required
-    ></v-text-field>
-    <h4>Email</h4>
-    <v-text-field v-model="email" :rules="emailRules" required></v-text-field>
-    <h4>Mobile Number</h4>
-    <v-text-field
-      v-model="phoneNumber"
-      :counter="10"
-      :rules="mobileRules"
-      required
-    ></v-text-field>
-    <h4>Message</h4>
-    <v-text-field
-      v-model="message"
-      :counter="500"
-      :rules="messageRules"
-      required
-    ></v-text-field>
+  <v-container style="background-color: light-blue" color="black">
+    <v-form ref="form" v-model="valid" lazy-validation>
+      <h4>First Name</h4>
+      <v-text-field
+        v-model="firstname"
+        :counter="20"
+        :rules="nameRules"
+        required
+      ></v-text-field>
+      <h4>Last Name</h4>
+      <v-text-field
+        v-model="lastname"
+        :counter="20"
+        :rules="nameRules"
+        required
+      ></v-text-field>
+      <h4>Email</h4>
+      <v-text-field v-model="email" :rules="emailRules" required></v-text-field>
+      <h4>Mobile Number</h4>
+      <v-text-field
+        v-model="phoneNumber"
+        :counter="10"
+        :rules="mobileRules"
+        required
+      ></v-text-field>
+      <h4>Message</h4>
+      <v-text-field
+        v-model="message"
+        :counter="500"
+        :rules="messageRules"
+        required
+      ></v-text-field>
 
-    <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-      Send
-    </v-btn>
-  </v-form>
+      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+        Send
+      </v-btn>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
