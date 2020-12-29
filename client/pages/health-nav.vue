@@ -1,8 +1,6 @@
 <template>
   <v-container>
-    <div>
-      <Header></Header>
-    </div>
+    <Header></Header>
     <v-row>
       <v-col v-for="card in cards" :key="card.cardtitle" cols="12" sm="4">
         <Card
