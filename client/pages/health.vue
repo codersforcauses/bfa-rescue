@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Card from '~/components/health-nav/Card.vue'
-import Header from '~/components/health-nav/Header.vue'
+import Card from '~/components/health/Card.vue'
+import Header from '~/components/health/Header.vue'
 
 export default {
   components: {
