@@ -1,90 +1,139 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+  <v-container>
+    <Header></Header>
+    <div id="availabledogs">
+      <h2 class="text-center">Our Dogs</h2>
+      <p class="text-center">
+        Adopt a dog to be your best friend today! Here are all our available
+        dogs for adoption
+      </p>
+      <v-row>
+        <v-col v-for="dog in dogs" :key="dog.dogname" cols="12" sm="4">
+          <DogCard
+            :dogimage="dog.dogimage"
+            :dogname="dog.dogname"
+            :dogage="dog.dogage"
+            :doggender="dog.doggender"
+            :dogdescription="dog.dogdescription"
+          />
+        </v-col>
+      </v-row>
+    </div>
+    <div id="adopt" class="text-center">
+      <h2>Adopt a dog</h2>
+      <p>
+        If you're interested in adopting any of our rescue dogs, please fill in
+        our Expression of Interest Questionnaire.
+        <br /><br />
+        *********NOTE: Contains brief description about dog adoption, link to
+        the adoption page/form for more details. Need svg icons********
+      </p>
+      <v-btn class="ma-2" outlined color="#fff"> Online Application </v-btn>
+      <v-btn class="ma-2" outlined color="#fff">Download &AMP; print</v-btn>
+    </div>
+    <div id="volunteer" class="text-center">
+      <h2>Volunteer</h2>
+      <p>
+        Help us by volunteering your services. Tell us how you would like to
+        help and we'll work something out.
+        <br /><br />
+        *********NOTE: Contains brief description about getting involved as a
+        volunteer. link to the volunteer section for more details*******
+      </p>
+      <v-btn class="ma-2" outlined color="#1badbe"> Online Application </v-btn>
+      <v-btn class="ma-2" outlined color="#1badbe">Download &AMP; print</v-btn>
+    </div>
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Header from '~/components/home/Header.vue'
+import DogCard from '~/components/home/DogCard.vue'
 
 export default {
   components: {
-    Logo,
+    Header,
+    DogCard,
+  },
+  data() {
+    return {
+      dogs: [
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogage: '8 yrs',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogage: '7 yrs',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogage: '6 month',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
+          dogname: 'Bella',
+          dogage: '10 yrs',
+          doggender: 'Female',
+          dogdescription:
+            'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
+          dogname: 'Woodie',
+          dogage: '7 yrs',
+          doggender: 'Male',
+          dogdescription:
+            'People and dog friendly! Woodie really needs a home with a small playmate!',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
+          dogname: 'Chevy',
+          dogage: '12 yrs',
+          doggender: 'Female',
+          dogdescription:
+            'Dog/people friendly 12 yr old female Staffie. She is deaf, but very sweet!',
+        },
+      ],
+    }
   },
 }
 </script>
+
+<style>
+#availabledogs {
+  padding: 50px 50px;
+  margin: 50px 0;
+  background-color: #f7f7f7;
+}
+
+#adopt {
+  padding: 70px 70px;
+  background-color: #3295b2;
+  color: #fff;
+}
+
+#volunteer {
+  padding: 70px 70px;
+  margin: 50px 0;
+  background-color: #f7f7f7;
+}
+</style>
