@@ -6,13 +6,10 @@
         <v-col cols="12" sm="6" md="4">
           <v-card class="smallcard">
             <v-img
-              :src="
-                require('@/assets/sponsors/energy-efficient-communities-program.png')
-              "
-              alt="energy-efficient-communities-program"
-              height="100%"
-              width="auto"
-            ></v-img>
+              :src="require('@/assets/sponsors/energy-gov.jpg')"
+              alt="energy-efficient-communities"
+            >
+            </v-img>
             <v-card-title class="nobreak">
               Energy Efficient Communities
             </v-card-title>
@@ -35,8 +32,6 @@
           <v-card class="smallcard">
             <v-img
               :src="require('@/assets/sponsors/syds-building.jpg')"
-              height="100%"
-              width="auto"
               alt="syds-building"
             >
             </v-img>
@@ -59,9 +54,8 @@
         <v-col cols="12" sm="6" md="4">
           <v-card class="smallcard">
             <v-img
-              :src="require('@/assets/sponsors/southern-raw-pet.jpg')"
-              height="250px"
-              alt="southern-raw-pet-meats"
+              :src="require('@/assets/sponsors/southern-raw-petfood.jpg')"
+              alt="Southern-raw-pet-meats"
             >
             </v-img>
             <v-card-title class="nobreak">
@@ -86,8 +80,6 @@
           <v-card class="fullcard">
             <v-img
               :src="require('@/assets/sponsors/lotterywest.jpg')"
-              height="100%"
-              width="auto"
               alt="lotterywest"
             >
             </v-img>
@@ -113,8 +105,6 @@
           <v-card class="fullcard">
             <v-img
               :src="require('@/assets/sponsors/dog-centric.jpg')"
-              height="100%"
-              width="auto"
               alt="DogCentric"
             >
             </v-img>
@@ -140,8 +130,6 @@
           <v-card class="fullcard">
             <v-img
               :src="require('@/assets/sponsors/shutter-paws.jpg')"
-              height="100%"
-              width="auto"
               alt="shutterpaws"
             >
             </v-img>
@@ -169,8 +157,6 @@
           <v-card class="fullcard">
             <v-img
               :src="require('@/assets/sponsors/michelles-dog-grooming.jpg')"
-              height="100%"
-              width="auto"
               alt="michelles-dog-grooming"
             >
             </v-img>
@@ -186,7 +172,6 @@
           <v-card class="fullcard">
             <v-img
               :src="require('@/assets/sponsors/nola-criddle-foundation.jpg')"
-              height="100%"
               alt="nola-criddle-foundation"
             >
             </v-img>
@@ -274,7 +259,7 @@ export default {
   word-break: keep-all;
 }
 .fullcard {
-  min-height: 57vh;
+  min-height: 60vh;
 }
 .smallcard {
   min-height: 42vh;
