@@ -66,15 +66,6 @@ export default {
   },
   data() {
     return {
-      headers: [
-        {
-          imagelink:
-            'https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/08/puppy-in-garden.jpg',
-          cardtitle: ' ',
-          carddescription:
-            'Cats and dogs have a penchant of putting things in their mouth to chew or eat. Cats tend to gravitate towards plastic, wool or anything that moves, and dogs – typically whatever it can get its chops around. As our pets’ guardians, we need to be vigilant in ensuring that they don’t ingest items that could be harmful to their health.<br><br>So what about plants? We all love a beautiful garden, lovely houseplants or fresh cut flowers in the house, but did you know some of these flora are toxic to our canine and feline friends?<br><br>In order to prevent poisoning your beloved pet, avoid placing toxic plants in your home where they may have access to, or simply avoid buying them at all. Not allowing them chow down on unknown vegetation is key. Outdoors could be more difficult, especially if your cat or dog has a wide vicinity to roam.<br><br>Here is a list of common plants we’ve compiled from various sources as a guide for you to keep an eye out for. When you see your cat or dog suffering with symptoms such as vomiting, diarrhoea, breathing difficulties, salivation, weakness, abnormal urine and any other abnormal behaviour, rush it to the vet immediately!',
-        },
-      ],
       cards: [
         {
           imagelink:
