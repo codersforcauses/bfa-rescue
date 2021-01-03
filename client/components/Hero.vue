@@ -14,7 +14,7 @@
               can get with our rescue operations.
             </p>
             <div class="hero-btn mt-5">
-              <v-btn class="btn">Contact Us</v-btn>
+              <v-btn class="btn" outlined color="primary">Contact Us</v-btn>
             </div>
           </div>
         </div>
