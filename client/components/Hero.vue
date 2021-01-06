@@ -1,51 +1,49 @@
 <template>
   <div class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="row justify-content-center align-items-">
-          <div class="col-md-10">
-            <h1 class="hero-title">
-              Provide a service that helps us with our rescue work
-            </h1>
-            <p>
-              Best Friends Animal Rescue is run by a group of volunteers, so if
-              you can provide services such as training, grooming, photography,
-              construction, etc. Please reach out to us. We need all the help we
-              can get with our rescue operations.
-            </p>
-            <div class="hero-btn mt-5">
-              <v-btn class="btn" outlined color="primary">Contact Us</v-btn>
-            </div>
-          </div>
+    <v-row>
+      <v-col id="content" md="8">
+        <h1>{{ title }}</h1>
+        <p>{{ text }}</p>
+        <div class="hero-btn mt-5">
+          <v-btn class="btn" outlined color="primary" to="contact-us">
+            {{ button }}
+          </v-btn>
         </div>
-      </div>
-    </div>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Hero',
+  props: {
+    text: { type: String, default: '' },
+    title: { type: String, default: '' },
+    button: { type: String, default: '' },
+  },
 }
 </script>
 
 <style scoped lang="scss">
 .hero {
   background-image: url('https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/10/white-dog-tongue.png');
-  background-position: right;
-  background-size: 90%;
-  background-color: rgb(255, 255, 255);
+  background-position: center bottom;
+  background-size: contain;
   text-align: center;
-  width: 100vw;
-  position: relative;
-  margin-left: -50vw;
-  height: 400px;
-  margin-bottom: 50px;
-  margin-top: -15px;
-  left: 50%;
-  padding-top: 70px;
+  min-height: 400px;
+  width: auto;
 }
-.hero-title {
-  padding-bottom: 30px;
+p {
+  font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .hero {
+    background-image: none !important;
+    padding-bottom: 50px;
+  }
+}
+#content {
+  margin-top: 50px;
 }
 </style>
