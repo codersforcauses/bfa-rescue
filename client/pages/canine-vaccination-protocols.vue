@@ -1,12 +1,12 @@
 <template>
   <v-container>
     <v-row justify="center" align="center">
-      <v-col cols="12" sm="10" md="8" lg="8" xl="8">
+      <v-col cols="12" sm="10" md="8" lg="7" xl="6">
         <v-card elevation="0">
           <div style="text-align: center">
-            <h1>Canine Vaccination Protocols</h1>
-            <h2>Don’t over vaccinate your dog!</h2>
-            <h3>
+            <h1 class="font-weight-medium">Canine Vaccination Protocols</h1>
+            <h2 class="font-weight-medium">Don’t over vaccinate your dog!</h2>
+            <h3 class="font-weight-light">
               Read or
               <a
                 href="https://veteducation.wistia.com/medias/eenuknz91n?inf_contact_key=ef4fd88423412625a8b3d1755039f9d31cdc4c6ba9b8e1ed1a6ed5ee73307bba"
@@ -21,15 +21,21 @@
             max-height="500"
             max-width="1920"
           />
-          <p style="font-size: 12px; text-align: center">
+          <p
+            class="font-weight-light"
+            ;
+            style="font-size: 12px; text-align: center"
+          >
             School of Veterinary Sciences, University of Bristol, United Kingdom
             (BSc BVMS (Hons) PhD DSc Dipl ECVP FASM FRCPath FRCVS)
           </p>
           <br />
 
-          <h2>Global Canine Vaccination Guidelines</h2>
+          <h2 class="font-weight-medium">
+            Global Canine Vaccination Guidelines
+          </h2>
           <br class="small" />
-          <p>
+          <p class="font-weight-light">
             There are two sets of canine vaccination guidelines available: those
             produced by the American Animal Hospital Association [1] and those
             from the WSAVA VGG [2]. The fundamental principle of both sets of
@@ -38,7 +44,7 @@
             individual less frequently by only giving non-core vaccines that are
             necessary for that animal’.
           </p>
-          <p>
+          <p class="font-weight-light">
             The WSAVA guidelines suggest that we should aim to vaccinate MORE
             animals. This relates to the phenomenon of ‘herd immunity’. Herd
             immunity suggests that where at least 75% of a herd of animals is
@@ -52,7 +58,7 @@
             receiving vaccine, there is marked impact on the prevalence of
             canine and human rabies.
           </p>
-          <p>
+          <p class="font-weight-light">
             In order to apply the principles of vaccination guidelines, it is
             firstly necessary to understand the definitions of ‘core’ and
             ‘non-core’ vaccines. CORE vaccines are those that all animals should
@@ -62,7 +68,7 @@
             and exposure risk. Some vaccines are NOT RECOMMENDED because there
             is little scientific justification for their use.
           </p>
-          <p>
+          <p class="font-weight-light">
             For dogs, the core vaccines are those that protect against canine
             distemper virus (CDV), canine adenovirus (CAV) and canine
             parvovirus-2 (CPV). In any country in which rabies is an endemic
@@ -74,7 +80,7 @@
             enteric pathogen or that the vaccine can protect against such
             infection.
           </p>
-          <p>
+          <p class="font-weight-light">
             WSAVA guidelines provide generic advice to practitioners, but it is
             impossible to ensure that the guidelines are tailored to best fit
             the local situation in each of the 78 WSAVA member countries. The
@@ -87,9 +93,9 @@
           </p>
           <br />
 
-          <h2>Core Vaccination of Puppies</h2>
+          <h2 class="font-weight-medium">Core Vaccination of Puppies</h2>
           <br class="small" />
-          <p>
+          <p class="font-weight-light">
             The vaccination of puppies is determined by the transfer of
             maternally-derived antibody (MDA) from the bitch in colostrum. This
             antibody is crucial for protection of the pup during early life, but
@@ -120,9 +126,9 @@
           </p>
           <br />
 
-          <h2>Core Vaccination of Adult Dogs</h2>
+          <h2 class="font-weight-medium">Core Vaccination of Adult Dogs</h2>
           <br class="small" />
-          <p>
+          <p class="font-weight-light">
             For adult dogs, MLV core vaccines should be given no more frequently
             than every 3 years. For CDV, CAV, CPV there is excellent correlation
             between the presence of serum antibody (virus neutralization test or
@@ -140,7 +146,7 @@
             produced canine MLV core vaccines used in the USA, Europe and
             elsewhere now have a licensed minimum DOI of either 3 or 4 years.
           </p>
-          <p>
+          <p class="font-weight-light">
             This is also true for most of the internationally produced
             adjuvanted killed rabies vaccines that may legally be given every 3
             years rather than annually. Where such products are available with a
@@ -151,7 +157,7 @@
             changed gradually, such that now every US state stipulates triennial
             revaccination of dogs against rabies.
           </p>
-          <p>
+          <p class="font-weight-light">
             The ideal core revaccination schedule for adult dogs would therefore
             be revaccination every third year with CDV, CAV, CPV and rabies.
             Where rabies revaccination is still required annually, the schedule
@@ -161,9 +167,9 @@
           </p>
           <br />
 
-          <h2>Non-core Vaccination</h2>
+          <h2 class="font-weight-medium">Non-core Vaccination</h2>
           <br class="small" />
-          <p>
+          <p class="font-weight-light">
             Non-core vaccines should be selected for the individual dog based on
             assessment of that particular animal’s risk of exposure to the
             disease and assessment of the benefits of vaccination to that pet
@@ -177,7 +183,7 @@
             diseases into a database that presents the information as disease
             distribution maps.
           </p>
-          <p>
+          <p class="font-weight-light">
             Monitoring the distribution and evolution of infectious diseases is
             an important part of vaccinology. An excellent example is canine
             leptospirosis, which has recently attracted much research interest
@@ -193,7 +199,7 @@
             but the CIV vaccine would not be recommended for general use among
             pet dogs.
           </p>
-          <p>
+          <p class="font-weight-light">
             Non-core vaccines may be included into the puppy vaccination
             schedule if dictated by risk assessment. Intranasal vaccines
             protecting against some elements of the canine infectious
@@ -204,7 +210,7 @@
             adjuvanted bacterins) that these be given after the MLV core
             vaccines (e.g. at 18 and 22 weeks of age).
           </p>
-          <p>
+          <p class="font-weight-light">
             A major difference between MLV core vaccines and all of the non-core
             vaccines is that noncore vaccines (where used) require annual
             boosters as their DOI is no greater than 12–18 months. Adult dogs
@@ -215,9 +221,9 @@
           </p>
           <br />
 
-          <h2>The Annual Health Check</h2>
+          <h2 class="font-weight-medium">The Annual Health Check</h2>
           <br class="small" />
-          <p>
+          <p class="font-weight-light">
             All aspects of vaccination should fall under an annual health check
             programme that reduces the emphasis on vaccination as a reason for
             visiting the practice and considers holistically the overall health
@@ -230,8 +236,8 @@
           </p>
           <br />
 
-          <p><strong>References</strong></p>
-          <ol>
+          <p class="font-weight-medium"><strong>References</strong></p>
+          <ol class="font-weight-light">
             <li>
               Welborn LV, DeVries JG, Ford R et al. 2011 AAHA canine vaccination
               guidelines. J Am Anim Hosp Assoc. 2011. 47: 5.

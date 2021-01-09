@@ -8,6 +8,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue .",
+    "lint:fix": "yarn lint:js --fix",
     "lint:style": "stylelint **/*.{vue,css}",
     "lint": "yarn lint:js && yarn lint:style"
   },
