@@ -1,8 +1,11 @@
 <template>
-  <v-card class="mx-auto">
+  <v-card class="mx-auto flex flex-column healthcard">
     <v-img :src="imagelink" height="250px"></v-img>
     <v-card-title>{{ cardtitle }}</v-card-title>
-    <v-card-text>{{ carddescription }}</v-card-text>
+    <v-card-text class="flex">{{ carddescription }}</v-card-text>
+    <v-card-actions class="cardactions">
+      <v-btn text color="#1badbe" :href="cardlink">Learn More</v-btn>
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -22,6 +25,10 @@ export default {
       type: String,
       default: '',
     },
+    cardlink: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
@@ -30,5 +37,15 @@ export default {
 .v-card__text,
 .v-card__title {
   word-break: normal; /* maybe !important  */
+}
+
+.healthcard {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.cardactions {
+  position: absolute;
+  bottom: 0;
 }
 </style>
