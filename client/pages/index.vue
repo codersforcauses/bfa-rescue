@@ -1,6 +1,10 @@
 <template>
   <v-container>
-    <Header></Header>
+    <Header
+      title="About Us"
+      subtitle="********Information such as what their mission is, where they are located
+      and what they do/what impact do they bring etc.*******"
+    ></Header>
     <div id="availabledogs">
       <h2 class="text-center">Our Dogs</h2>
       <p class="text-center">
@@ -8,11 +12,17 @@
         dogs for adoption
       </p>
       <v-row>
-        <v-col v-for="dog in dogs" :key="dog.dogname" cols="12" sm="4">
+        <v-col
+          v-for="dog in dogs"
+          :key="dog.dogname"
+          class="d-flex flex-column"
+          cols="12"
+          sm="4"
+        >
           <DogCard
             :dogimage="dog.dogimage"
             :dogname="dog.dogname"
-            :dogage="dog.dogage"
+            :dogbreed="dog.dogbreed"
             :doggender="dog.doggender"
             :dogdescription="dog.dogdescription"
           />
@@ -29,7 +39,13 @@
         the adoption page/form for more details. Need svg icons********
       </p>
       <v-btn class="ma-2" outlined color="#fff"> Online Application </v-btn>
-      <v-btn class="ma-2" outlined color="#fff">Download &AMP; print</v-btn>
+      <v-btn class="ma-2" outlined color="#fff"
+        ><a
+          href="./expression-of-interest-adoption-questionnaire.pdf"
+          target="_blank"
+          >Download &AMP; print</a
+        ></v-btn
+      >
     </div>
     <div id="volunteer" class="text-center">
       <h2>Volunteer</h2>
@@ -41,13 +57,17 @@
         volunteer. link to the volunteer section for more details*******
       </p>
       <v-btn class="ma-2" outlined color="#1badbe"> Online Application </v-btn>
-      <v-btn class="ma-2" outlined color="#1badbe">Download &AMP; print</v-btn>
+      <v-btn class="ma-2" outlined color="#1badbe"
+        ><a href="./volunteer-application-form.pdf" target="_blank"
+          >Download &AMP; print</a
+        ></v-btn
+      >
     </div>
   </v-container>
 </template>
 
 <script>
-import Header from '~/components/home/Header.vue'
+import Header from '~/components/Utils/Header.vue'
 import DogCard from '~/components/home/DogCard.vue'
 
 export default {
@@ -62,7 +82,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
           dogname: 'Harley',
-          dogage: '8 yrs',
+          dogbreed: 'Border Collie',
           doggender: 'Male',
           dogdescription:
             'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
@@ -71,7 +91,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
           dogname: 'Mischief',
-          dogage: '7 yrs',
+          dogbreed: 'German Shepherd',
           doggender: 'Female',
           dogdescription:
             'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
@@ -80,7 +100,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
           dogname: 'Ruby',
-          dogage: '6 month',
+          dogbreed: 'Kelpie x Terrier',
           doggender: 'Female',
           dogdescription:
             'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
@@ -89,7 +109,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
           dogname: 'Bella',
-          dogage: '10 yrs',
+          dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
           doggender: 'Female',
           dogdescription:
             'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
@@ -98,7 +118,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
           dogname: 'Woodie',
-          dogage: '7 yrs',
+          dogbreed: 'Chihuahua X Maltese',
           doggender: 'Male',
           dogdescription:
             'People and dog friendly! Woodie really needs a home with a small playmate!',
@@ -107,7 +127,7 @@ export default {
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
           dogname: 'Chevy',
-          dogage: '12 yrs',
+          dogbreed: 'English Staffordshire Terrier',
           doggender: 'Female',
           dogdescription:
             'Dog/people friendly 12 yr old female Staffie. She is deaf, but very sweet!',
@@ -119,6 +139,11 @@ export default {
 </script>
 
 <style>
+.v-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #availabledogs {
   padding: 50px 50px;
   margin: 50px 0;

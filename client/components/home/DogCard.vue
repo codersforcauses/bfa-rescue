@@ -1,9 +1,9 @@
 <template>
-  <v-card class="mx-auto">
+  <v-card class="mx-auto flex flex-column">
     <v-img :src="dogimage" height="250px"></v-img>
     <v-card-title>{{ dogname }}</v-card-title>
-    <v-card-subtitle>{{ dogage }} | {{ doggender }}</v-card-subtitle>
-    <v-card-text>{{ dogdescription }}</v-card-text>
+    <v-card-subtitle>{{ dogbreed }} | {{ doggender }}</v-card-subtitle>
+    <v-card-text class="flex">{{ dogdescription }}</v-card-text>
   </v-card>
 </template>
 
@@ -19,7 +19,7 @@ export default {
       type: String,
       default: '',
     },
-    dogage: {
+    dogbreed: {
       type: String,
       default: '',
     },
