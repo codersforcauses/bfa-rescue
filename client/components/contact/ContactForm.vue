@@ -1,5 +1,5 @@
 <template>
-  <v-container class="black white--text">
+  <v-container style="background-color: #293148" class="ma-0 white--text">
     <v-form ref="form" v-model="valid" lazy-validation>
       <h4>First Name</h4>
       <v-text-field
@@ -32,7 +32,7 @@
         required
       ></v-text-field>
 
-      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
+      <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">
         Send
       </v-btn>
     </v-form>
