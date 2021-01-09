@@ -5,7 +5,9 @@
     <v-card-text align="center">
       {{ carddescription }}
     </v-card-text>
-    <v-card-title class="justify-center"> Symptoms if ingested: </v-card-title>
+    <v-card-title class="justify-center font-weight-medium">
+      Symptoms if ingested:
+    </v-card-title>
     <v-card-text align="center">
       {{ symptoms }}
     </v-card-text>
