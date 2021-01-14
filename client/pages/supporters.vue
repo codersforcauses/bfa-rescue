@@ -17,7 +17,8 @@
             :key="card.cardtitle"
             class="d-flex flex-column"
             cols="12"
-            sm="4"
+            sm="6"
+            md="4"
           >
             <Card
               :imagelink="card.imagelink"

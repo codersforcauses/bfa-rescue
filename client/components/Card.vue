@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'HealthNavCard',
+  name: 'Card',
   props: {
     imagelink: {
       type: String,
@@ -41,7 +41,7 @@ export default {
 <style>
 .v-card__text,
 .v-card__title {
-  word-break: normal; /* maybe !important  */
+  word-break: normal;
 }
 .cardactions {
   position: absolute;
