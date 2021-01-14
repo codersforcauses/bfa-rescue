@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import Hero from '~/components/Hero.vue'
-import Card from '~/components/Card.vue'
+import Hero from '~/components/Supporters/Hero.vue'
+import Card from '~/components/Supporters/Card.vue'
 
 export default {
   components: {
