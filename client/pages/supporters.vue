@@ -9,222 +9,22 @@
       button="Contact Us"
       image="url(https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/10/white-dog-tongue.png)"
     />
-    <v-container fluid="true">
+    <v-container>
       <div class="full-width">
-        <v-row id="regular" justify="center" align="center" class="top">
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="smallcard">
-              <v-img
-                :src="require('@/assets/sponsors/energy-gov.jpg')"
-                alt="energy-efficient-communities"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Energy Efficient Communities
-              </v-card-title>
-              <v-card-text>
-                The new sanctuary is Solar Powered! Thanks, EECP!
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.energy.gov.au/government-priorities/energy-programs/energy-efficient-communities-program"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="smallcard">
-              <v-img
-                :src="require('@/assets/sponsors/syds-building.jpg')"
-                alt="syds-building"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Syd's Building Maintainance
-              </v-card-title>
-              <v-card-text>Paul Barker, you are our HERO!</v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.facebook.com/SydsBuildingMaintenance/"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="smallcard">
-              <v-img
-                :src="require('@/assets/sponsors/southern-raw-petfood.jpg')"
-                alt="Southern-raw-pet-meats"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Southern Raw Pet Meats
-              </v-card-title>
-              <v-card-text> Thanks to SRPM for donations of food!</v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.southernrawpetmeats.com.au/"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row id="regular" justify="center" align="center">
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="require('@/assets/sponsors/lotterywest.jpg')"
-                alt="lotterywest"
-              >
-              </v-img>
-              <v-card-title class="nobreak">LotteryWest</v-card-title>
-              <v-card-text class="keeptogether">
-                Thank you to LotteryWest for a grant to furnish the new
-                sanctuary building with flooring and whitegoods! You can visit
-                their website at the link below!
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.lotterywest.wa.gov.au/"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="require('@/assets/sponsors/dog-centric.jpg')"
-                alt="DogCentric"
-              >
-              </v-img>
-              <v-card-title class="nobreak">DogCentric</v-card-title>
-              <v-card-text class="keeptogether">
-                DogCentric's goal is to improve the relationship between people
-                and their dogs. If you are a BFA Rescue foster carer you get a
-                discount.
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.facebook.com/DogCentricPerth"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="require('@/assets/sponsors/shutter-paws.jpg')"
-                alt="shutterpaws"
-              >
-              </v-img>
-              <v-card-title class="nobreak">Shutter Paws</v-card-title>
-              <v-card-text class="keeptogether">
-                Photographers donating their time helping foster carers, rescue
-                groups and shelters to get the best possible photos to help with
-                adoption.
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.facebook.com/shutterpawsPerth"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row id="regular" justify="center" align="center" class="bottom">
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="require('@/assets/sponsors/michelles-dog-grooming.jpg')"
-                alt="michelles-dog-grooming"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Michelle's Dog Grooming
-              </v-card-title>
-              <v-card-text class="keeptogether">
-                My service is like no other as I always consider your dogs
-                wellbeing and safety first and I treat them as if they own.<br /><br />
-                Michelle Kefalinos - 0439 781 305
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="require('@/assets/sponsors/nola-criddle-foundation.jpg')"
-                alt="nola-criddle-foundation"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Nola Criddle Foundations
-              </v-card-title>
-              <v-card-text class="keeptogether">
-                A big thanks to the Nola Criddle Foundation for your continued
-                sponsorship. If we didn’t have your sponsorship for the last 4
-                years we wouldn’t have been able to start building our special
-                retirement home for dogs.
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-card class="fullcard">
-              <v-img
-                :src="
-                  require('@/assets/sponsors/kevin-mcnulty-dog-behaviourist.jpg')
-                "
-                height="100%"
-                alt="kevin-mcnulty-dog-behaviourist"
-              >
-              </v-img>
-              <v-card-title class="nobreak">
-                Kevin McNulty Dog Behaviourist
-              </v-card-title>
-              <v-card-text class="keeptogether">
-                Kevin provides gentle, professional training to dogs in the
-                Metropolitan area. Call at 0416 791 195
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  href="https://www.facebook.com/k9trainingandcommunication/"
-                  rel="noreferrer"
-                  outlined
-                  color="primary"
-                >
-                  Visit
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+        <v-row id="regular" justify="center" align="center" class="padded">
+          <v-col
+            v-for="card in cards"
+            :key="card.cardtitle"
+            class="d-flex flex-column"
+            cols="12"
+            sm="4"
+          >
+            <Card
+              :imagelink="card.imagelink"
+              :cardtitle="card.cardtitle"
+              :carddescription="card.carddescription"
+              :cardlink="card.cardlink"
+            />
           </v-col>
         </v-row>
       </div>
@@ -234,15 +34,86 @@
 
 <script>
 import Hero from '~/components/Hero.vue'
+import Card from '~/components/Card.vue'
 
 export default {
   components: {
     Hero,
+    Card,
+  },
+  data() {
+    return {
+      cards: [
+        {
+          imagelink: 'sponsors/energy-gov.jpg',
+          cardtitle: 'Energy Efficient Communities',
+          carddescription: 'The new sanctuary is Solar Powered! Thanks, EECP!',
+          cardlink:
+            'https://www.energy.gov.au/government-priorities/energy-programs/energy-efficient-communities-program',
+        },
+        {
+          imagelink: 'sponsors/syds-building.jpg',
+          cardtitle: "Syd's Building Maintainance",
+          carddescription: 'Paul Barker, you are our HERO!',
+          cardlink: 'https://www.facebook.com/SydsBuildingMaintenance/',
+        },
+        {
+          imagelink: 'sponsors/southern-raw-petfood.jpg',
+          cardtitle: 'Southern Raw Pet Meats',
+          carddescription: 'Thanks to SRPM for donations of food!',
+          cardlink: 'https://www.southernrawpetmeats.com.au/',
+        },
+        {
+          imagelink: 'sponsors/lotterywest.jpg',
+          cardtitle: 'Lotterywest',
+          carddescription:
+            'Thank you to LotteryWest for a grant to furnish the new sanctuary building with flooring and whitegoods! You can visit their website at the link below!',
+          cardlink: 'https://www.lotterywest.wa.gov.au/',
+        },
+        {
+          imagelink: 'sponsors/dog-centric.jpg',
+          cardtitle: 'DogCentric',
+          carddescription:
+            "DogCentric's goal is to improve the relationship between people and their dogs. If you are a BFA Rescue foster carer you get a discount.",
+          cardlink: 'https://www.facebook.com/DogCentricPerth',
+        },
+        {
+          imagelink: 'sponsors/shutter-paws.jpg',
+          cardtitle: 'Shutter Paws',
+          carddescription:
+            'Photographers donating their time helping foster carers, rescue groups and shelters to get the best possible photos to help with adoption.',
+          cardlink: 'https://www.facebook.com/shutterpawsPerth',
+        },
+        {
+          imagelink: 'sponsors/michelles-dog-grooming.jpg',
+          cardtitle: "Michelle's Dog Grooming",
+          carddescription:
+            'My service is like no other as I always consider your dogs wellbeing and safety first and I treat them as if they own. Michelle Kefalinos - 0439 781 305',
+          cardlink:
+            'https://www.truelocal.com.au/business/michelles-clip-n-snip-dog-grooming/greenwood',
+        },
+        {
+          imagelink: 'sponsors/nola-criddle-foundation.jpg',
+          cardtitle: 'Nola Criddle Foundation',
+          carddescription:
+            'A big thanks to the Nola Criddle Foundation for your continued sponsorship. Without it we wouldn’t have been able to start building our special retirement home for dogs.',
+          cardlink:
+            'https://www.infobel.com/en/australia/nola_criddle_foundation/south_perth/AU101122220/businessdetails.aspx',
+        },
+        {
+          imagelink: 'sponsors/kevin-mcnulty-dog-behaviourist.jpg',
+          cardtitle: 'Kevin McNulty Dog Behaviourist',
+          carddescription:
+            'Kevin provides gentle, professional training to dogs in the Metropolitan area. Call at 0416 791 195',
+          cardlink: 'https://www.facebook.com/k9trainingandcommunication/',
+        },
+      ],
+    }
   },
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .full-width {
   background-color: rgb(247, 247, 247);
   width: 100vw;
@@ -256,18 +127,8 @@ export default {
   width: 80%;
   margin-left: 10%;
 }
-.top {
+.padded {
   padding-top: 50px;
-}
-.bottom {
   padding-bottom: 50px;
-}
-.keeptogether {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-}
-.nobreak {
-  word-break: keep-all;
 }
 </style>
