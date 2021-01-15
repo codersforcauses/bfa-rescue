@@ -12,8 +12,8 @@
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
-    "@nuxtjs/axios": "5.12.3",
     "core-js": "3.8.2",
+    "@nuxtjs/axios": "5.12.5",
     "nuxt": "2.14.7"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "@nuxtjs/stylelint-module": "4.0.0",
     "@nuxtjs/vuetify": "1.11.2",
     "babel-eslint": "10.1.0",
-    "eslint": "7.14.0",
+    "eslint": "7.17.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-nuxt": "1.0.0",
     "eslint-plugin-prettier": "3.1.4",
