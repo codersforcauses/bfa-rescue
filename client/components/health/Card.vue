@@ -1,14 +1,14 @@
 <template>
-  <NuxtLink :to="cardlink" class="text-decoration-none">
-    <v-card class="flex flex-column pb-10 healthcard">
+  <v-card class="d-flex flex-column pb-10 healthcard" height="100%">
+    <NuxtLink :to="cardlink" class="text-decoration-none" style="height: 100%">
       <v-img :src="imagelink" height="250px"></v-img>
-      <v-card-title>{{ cardtitle }}</v-card-title>
-      <v-card-text class="flex">{{ carddescription }}</v-card-text>
+      <v-card-title class="black--text">{{ cardtitle }}</v-card-title>
+      <v-card-text class="flex black--text">{{ carddescription }}</v-card-text>
       <v-card-actions class="cardactions">
         <v-btn text color="#1badbe" :href="cardlink">Learn More</v-btn>
       </v-card-actions>
-    </v-card>
-  </NuxtLink>
+    </NuxtLink>
+  </v-card>
 </template>
 
 <script>
