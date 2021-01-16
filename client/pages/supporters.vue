@@ -11,7 +11,7 @@
     />
     <v-container>
       <div class="full-width">
-        <v-row id="regular" justify="center" align="center" class="padded">
+        <v-row class="padded">
           <v-col
             v-for="card in cards"
             :key="card.cardtitle"
@@ -132,5 +132,7 @@ export default {
 .padded {
   padding-top: 50px;
   padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 </style>
