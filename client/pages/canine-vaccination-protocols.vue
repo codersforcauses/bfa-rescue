@@ -15,12 +15,16 @@
               on Canine Vaccination by Professor Michael Day
             </h3>
           </div>
-          <v-img
-            :src="require('@/assets/dog-vaccination-terrier-110687510-011.jpg')"
-            alt="Dog Vaccination"
-            max-height="500"
-            max-width="1920"
-          />
+          <v-card elevation="3" outlined>
+            <v-img
+              :src="
+                require('@/assets/dog-vaccination-terrier-110687510-011.jpg')
+              "
+              alt="Dog Vaccination"
+              max-height="500"
+              max-width="1920"
+            />
+          </v-card>
           <p
             class="font-weight-light"
             ;
