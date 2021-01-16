@@ -25,6 +25,7 @@
             :dogbreed="dog.dogbreed"
             :doggender="dog.doggender"
             :dogdescription="dog.dogdescription"
+            :status="dog.status"
           />
         </v-col>
       </v-row>
@@ -38,14 +39,17 @@
         *********NOTE: Contains brief description about dog adoption, link to
         the adoption page/form for more details. Need svg icons********
       </p>
-      <v-btn class="ma-2" outlined color="#fff"> Online Application </v-btn>
-      <v-btn class="ma-2" outlined color="#fff"
-        ><a
-          href="./expression-of-interest-adoption-questionnaire.pdf"
-          target="_blank"
-          >Download &AMP; print</a
-        ></v-btn
+      <v-btn class="ma-2" outlined color="#fff" href="#"
+        >Online Application</v-btn
       >
+      <v-btn
+        class="ma-2"
+        outlined
+        color="#fff"
+        href="./expression-of-interest-adoption-questionnaire.pdf"
+        target="_blank"
+        >Download &AMP; print
+      </v-btn>
     </div>
     <div id="volunteer" class="text-center">
       <h2>Volunteer</h2>
@@ -56,12 +60,17 @@
         *********NOTE: Contains brief description about getting involved as a
         volunteer. link to the volunteer section for more details*******
       </p>
-      <v-btn class="ma-2" outlined color="#1badbe"> Online Application </v-btn>
-      <v-btn class="ma-2" outlined color="#1badbe"
-        ><a href="./volunteer-application-form.pdf" target="_blank"
-          >Download &AMP; print</a
-        ></v-btn
-      >
+      <v-btn class="ma-2" outlined color="#1badbe" href="#"
+        >Online Application
+      </v-btn>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="#1badbe"
+        href="./volunteer-application-form.pdf"
+        target="_blank"
+        >Download &AMP; print
+      </v-btn>
     </div>
   </v-container>
 </template>
@@ -86,6 +95,7 @@ export default {
           doggender: 'Male',
           dogdescription:
             'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
         },
         {
           dogimage:
@@ -139,11 +149,6 @@ export default {
 </script>
 
 <style>
-.v-btn a {
-  text-decoration: none;
-  color: inherit;
-}
-
 #availabledogs {
   padding: 50px 50px;
   margin: 50px 0;
