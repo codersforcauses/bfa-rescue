@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto flex flex-column healthcard">
+  <v-card class="flex flex-column healthcard">
     <v-img :src="imagelink" height="250px"></v-img>
     <v-card-title>{{ cardtitle }}</v-card-title>
     <v-card-text class="flex">{{ carddescription }}</v-card-text>
