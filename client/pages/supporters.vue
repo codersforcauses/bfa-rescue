@@ -57,40 +57,42 @@ export default {
           imagelink: 'sponsors/syds-building.jpg',
           cardtitle: "Syd's Building Maintainance",
           carddescription:
-            "Syd's Building Maintenance provides trustworthy Building and Bricklaying services.",
+            'Brickie extraordianaire, who volunteered all of his time to build the Retirement Home for Senior and Special Needs Dogs!',
           cardlink: 'https://www.facebook.com/SydsBuildingMaintenance/',
         },
         {
           imagelink: 'sponsors/southern-raw-petfood.jpg',
           cardtitle: 'Southern Raw Pet Meats',
           carddescription:
-            'Fresh foods rich in nutrients fed RAW is an essential for your loved pet companions.',
+            ' BFAR is thankful for our friends at SRPM for donating some of their spectacularly good products in times when we are struggling to feed the hordes! ',
           cardlink: 'https://www.southernrawpetmeats.com.au/',
         },
         {
           imagelink: 'sponsors/lotterywest.jpg',
           cardtitle: 'Lotterywest',
           carddescription:
-            'Thank you to LotteryWest for a grant to furnish the new sanctuary building',
+            'Thank you to LotteryWest for a grant to furnish the new sanctuary building with flooring and whitegoods!',
           cardlink: 'https://www.lotterywest.wa.gov.au/',
         },
         {
           imagelink: 'sponsors/dog-centric.jpg',
           cardtitle: 'DogCentric',
-          carddescription: 'Dog behaviour and training experts.',
+          carddescription:
+            'DogCentric is located in Bayswater. Their goal is to improve the relationship between people and their dogs.',
           cardlink: 'https://www.facebook.com/DogCentricPerth',
         },
         {
           imagelink: 'sponsors/shutter-paws.jpg',
           cardtitle: 'Shutter Paws',
-          carddescription: 'Photographers donating their to rescue groups.',
+          carddescription:
+            'Shutter Paws is for photography enthusiasts who want to donate their time to helping rescue groups and shelters.',
           cardlink: 'https://www.facebook.com/shutterpawsPerth',
         },
         {
           imagelink: 'sponsors/michelles-dog.jpg',
           cardtitle: "Michelle's Dog Grooming",
           carddescription:
-            'My service is like no other as I always consider your dogs wellbeing and safety first.',
+            'My service is like no other as I always consider your dogs wellbeing and safety first and I treat them as if they own. Michelle Kefalinos - 0439 781 305',
           cardlink:
             'https://www.truelocal.com.au/business/michelles-clip-n-snip-dog-grooming/greenwood',
         },
@@ -98,7 +100,7 @@ export default {
           imagelink: 'sponsors/nola-criddle.jpg',
           cardtitle: 'Nola Criddle Foundation',
           carddescription:
-            'Thanks to the Nola Criddle Foundation for your continued sponsorship.',
+            'Thanks to the Nola Criddle Foundation for your continued sponsorship. Without it we wouldn’t have been able to start build our retirement home for dogs.',
           cardlink:
             'https://www.infobel.com/en/australia/nola_criddle_foundation/south_perth/AU101122220/businessdetails.aspx',
         },
@@ -106,7 +108,7 @@ export default {
           imagelink: 'sponsors/kevin-mcnulty.jpg',
           cardtitle: 'Kevin McNulty Dog Behaviourist',
           carddescription:
-            'Kevin provides gentle, professional training to dogs in the Metropolitan area.',
+            'Kevin provides gentle, professional training to dogs in the Metropolitan area. Call at 0416 791 195',
           cardlink: 'https://www.facebook.com/k9trainingandcommunication/',
         },
       ],
@@ -132,7 +134,7 @@ export default {
 .padded {
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 </style>
