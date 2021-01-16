@@ -48,48 +48,49 @@ export default {
         {
           imagelink: 'sponsors/energy-gov.jpg',
           cardtitle: 'Energy Efficient Communities',
-          carddescription: 'The new sanctuary is Solar Powered! Thanks, EECP!',
+          carddescription:
+            'The new sanctuary is Solar Powered! Thanks you, the EECP WA Government initiative!',
           cardlink:
             'https://www.energy.gov.au/government-priorities/energy-programs/energy-efficient-communities-program',
         },
         {
           imagelink: 'sponsors/syds-building.jpg',
           cardtitle: "Syd's Building Maintainance",
-          carddescription: 'Paul Barker, you are our HERO!',
+          carddescription:
+            "Syd's Building Maintenance provides trustworthy Building and Bricklaying services.",
           cardlink: 'https://www.facebook.com/SydsBuildingMaintenance/',
         },
         {
           imagelink: 'sponsors/southern-raw-petfood.jpg',
           cardtitle: 'Southern Raw Pet Meats',
-          carddescription: 'Thanks to SRPM for donations of food!',
+          carddescription:
+            'Fresh foods rich in nutrients fed RAW is an essential for your loved pet companions.',
           cardlink: 'https://www.southernrawpetmeats.com.au/',
         },
         {
           imagelink: 'sponsors/lotterywest.jpg',
           cardtitle: 'Lotterywest',
           carddescription:
-            'Thank you to LotteryWest for a grant to furnish the new sanctuary building with flooring and whitegoods! You can visit their website at the link below!',
+            'Thank you to LotteryWest for a grant to furnish the new sanctuary building',
           cardlink: 'https://www.lotterywest.wa.gov.au/',
         },
         {
           imagelink: 'sponsors/dog-centric.jpg',
           cardtitle: 'DogCentric',
-          carddescription:
-            "DogCentric's goal is to improve the relationship between people and their dogs. If you are a BFA Rescue foster carer you get a discount.",
+          carddescription: 'Dog behaviour and training experts.',
           cardlink: 'https://www.facebook.com/DogCentricPerth',
         },
         {
           imagelink: 'sponsors/shutter-paws.jpg',
           cardtitle: 'Shutter Paws',
-          carddescription:
-            'Photographers donating their time helping foster carers, rescue groups and shelters to get the best possible photos to help with adoption.',
+          carddescription: 'Photographers donating their to rescue groups.',
           cardlink: 'https://www.facebook.com/shutterpawsPerth',
         },
         {
           imagelink: 'sponsors/michelles-dog.jpg',
           cardtitle: "Michelle's Dog Grooming",
           carddescription:
-            'My service is like no other as I always consider your dogs wellbeing and safety first and I treat them as if they own. Michelle Kefalinos - 0439 781 305',
+            'My service is like no other as I always consider your dogs wellbeing and safety first.',
           cardlink:
             'https://www.truelocal.com.au/business/michelles-clip-n-snip-dog-grooming/greenwood',
         },
@@ -97,7 +98,7 @@ export default {
           imagelink: 'sponsors/nola-criddle.jpg',
           cardtitle: 'Nola Criddle Foundation',
           carddescription:
-            'A big thanks to the Nola Criddle Foundation for your continued sponsorship. Without it we wouldn’t have been able to start building our special retirement home for dogs.',
+            'Thanks to the Nola Criddle Foundation for your continued sponsorship.',
           cardlink:
             'https://www.infobel.com/en/australia/nola_criddle_foundation/south_perth/AU101122220/businessdetails.aspx',
         },
@@ -105,7 +106,7 @@ export default {
           imagelink: 'sponsors/kevin-mcnulty.jpg',
           cardtitle: 'Kevin McNulty Dog Behaviourist',
           carddescription:
-            'Kevin provides gentle, professional training to dogs in the Metropolitan area. Call at 0416 791 195',
+            'Kevin provides gentle, professional training to dogs in the Metropolitan area.',
           cardlink: 'https://www.facebook.com/k9trainingandcommunication/',
         },
       ],
