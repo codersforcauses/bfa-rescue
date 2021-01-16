@@ -1,23 +1,25 @@
 <template>
-  <v-container>
+  <div>
     <Header></Header>
-    <v-row>
-      <v-col
-        v-for="card in cards"
-        :key="card.cardtitle"
-        class="d-flex flex-column"
-        cols="12"
-        sm="4"
-      >
-        <Card
-          :imagelink="card.imagelink"
-          :cardtitle="card.cardtitle"
-          :carddescription="card.carddescription"
-          :cardlink="card.cardlink"
-        />
-      </v-col>
-    </v-row>
-  </v-container>
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="card in cards"
+          :key="card.cardtitle"
+          class="d-flex flex-column"
+          cols="12"
+          sm="4"
+        >
+          <Card
+            :imagelink="card.imagelink"
+            :cardtitle="card.cardtitle"
+            :carddescription="card.carddescription"
+            :cardlink="card.cardlink"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
