@@ -1,5 +1,5 @@
 <template>
-  <v-card class="flex flex-column healthcard">
+  <v-card class="flex flex-column pb-10 healthcard">
     <v-img :src="imagelink" height="250px"></v-img>
     <v-card-title>{{ cardtitle }}</v-card-title>
     <v-card-text class="flex">{{ carddescription }}</v-card-text>
@@ -33,15 +33,9 @@ export default {
 }
 </script>
 
-<style>
-.v-card__text,
-.v-card__title {
-  word-break: normal; /* maybe !important  */
-}
-
+<style scoped>
 .healthcard {
   position: relative;
-  padding-bottom: 40px;
 }
 
 .cardactions {
