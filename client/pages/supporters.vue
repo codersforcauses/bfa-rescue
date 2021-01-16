@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .full-width {
   background-color: rgb(247, 247, 247);
   width: 100vw;

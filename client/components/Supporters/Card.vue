@@ -1,9 +1,6 @@
 <template>
-  <v-card class="mx-auto flex flex-column">
-    <v-img
-      :src="require('@/assets/' + imagelink + '')"
-      alt="sponsor-img"
-    ></v-img>
+  <v-card class="flex">
+    <v-img :src="require('@/assets/' + imagelink)" alt="sponsor-img"></v-img>
     <v-card-title class="nobreak"> {{ cardtitle }} </v-card-title>
     <v-card-text> {{ carddescription }} </v-card-text>
     <v-card-actions>
