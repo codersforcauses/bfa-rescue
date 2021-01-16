@@ -2,9 +2,7 @@
   <v-app>
     <Toolbar />
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
     <Footer />
   </v-app>
