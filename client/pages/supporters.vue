@@ -86,7 +86,7 @@ export default {
           cardlink: 'https://www.facebook.com/shutterpawsPerth',
         },
         {
-          imagelink: 'sponsors/michelles-dog-grooming.jpg',
+          imagelink: 'sponsors/michelles-dog.jpg',
           cardtitle: "Michelle's Dog Grooming",
           carddescription:
             'My service is like no other as I always consider your dogs wellbeing and safety first and I treat them as if they own. Michelle Kefalinos - 0439 781 305',
@@ -94,7 +94,7 @@ export default {
             'https://www.truelocal.com.au/business/michelles-clip-n-snip-dog-grooming/greenwood',
         },
         {
-          imagelink: 'sponsors/nola-criddle-foundation.jpg',
+          imagelink: 'sponsors/nola-criddle.jpg',
           cardtitle: 'Nola Criddle Foundation',
           carddescription:
             'A big thanks to the Nola Criddle Foundation for your continued sponsorship. Without it we wouldn’t have been able to start building our special retirement home for dogs.',
@@ -102,7 +102,7 @@ export default {
             'https://www.infobel.com/en/australia/nola_criddle_foundation/south_perth/AU101122220/businessdetails.aspx',
         },
         {
-          imagelink: 'sponsors/kevin-mcnulty-dog-behaviourist.jpg',
+          imagelink: 'sponsors/kevin-mcnulty.jpg',
           cardtitle: 'Kevin McNulty Dog Behaviourist',
           carddescription:
             'Kevin provides gentle, professional training to dogs in the Metropolitan area. Call at 0416 791 195',
