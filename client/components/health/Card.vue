@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="cardlink">
+  <NuxtLink :to="cardlink" class="text-decoration-none">
     <v-card class="flex flex-column pb-10 healthcard">
       <v-img :src="imagelink" height="250px"></v-img>
       <v-card-title>{{ cardtitle }}</v-card-title>
