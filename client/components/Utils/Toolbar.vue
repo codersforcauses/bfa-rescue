@@ -130,3 +130,15 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.v-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.v-btn:hover,
+.v-list-item:hover {
+  background-color: #a2d0dd;
+}
+</style>
