@@ -1,8 +1,8 @@
 <template>
-  <v-container class="banner">
+  <div class="banner">
     <h1 class="text-center mb-2">{{ title }}</h1>
     <p class="text-center">{{ subtitle }}</p>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -26,5 +26,6 @@ export default {
   background-color: #1badbe;
   color: #fff;
   padding: 60px 20px;
+  width: 100vw;
 }
 </style>

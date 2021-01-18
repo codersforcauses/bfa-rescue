@@ -1,78 +1,80 @@
 <template>
-  <v-container>
+  <div>
     <Header
       title="About Us"
       subtitle="********Information such as what their mission is, where they are located
       and what they do/what impact do they bring etc.*******"
     ></Header>
-    <div id="availabledogs">
-      <h2 class="text-center">Our Dogs</h2>
-      <p class="text-center">
-        Adopt a dog to be your best friend today! Here are all our available
-        dogs for adoption
-      </p>
-      <v-row>
-        <v-col
-          v-for="dog in dogs"
-          :key="dog.dogname"
-          class="d-flex flex-column"
-          cols="12"
-          sm="4"
+    <v-container>
+      <div id="availabledogs">
+        <h2 class="text-center">Our Dogs</h2>
+        <p class="text-center">
+          Adopt a dog to be your best friend today! Here are all our available
+          dogs for adoption
+        </p>
+        <v-row>
+          <v-col
+            v-for="dog in dogs"
+            :key="dog.dogname"
+            class="d-flex flex-column"
+            cols="12"
+            sm="4"
+          >
+            <DogCard
+              :dogimage="dog.dogimage"
+              :dogname="dog.dogname"
+              :dogbreed="dog.dogbreed"
+              :doggender="dog.doggender"
+              :dogdescription="dog.dogdescription"
+              :status="dog.status"
+            />
+          </v-col>
+        </v-row>
+      </div>
+      <div id="adopt" class="text-center">
+        <h2>Adopt a dog</h2>
+        <p>
+          If you're interested in adopting any of our rescue dogs, please fill
+          in our Expression of Interest Questionnaire.
+          <br /><br />
+          *********NOTE: Contains brief description about dog adoption, link to
+          the adoption page/form for more details. Need svg icons********
+        </p>
+        <v-btn class="ma-2" outlined color="#fff" href="#"
+          >Online Application</v-btn
         >
-          <DogCard
-            :dogimage="dog.dogimage"
-            :dogname="dog.dogname"
-            :dogbreed="dog.dogbreed"
-            :doggender="dog.doggender"
-            :dogdescription="dog.dogdescription"
-            :status="dog.status"
-          />
-        </v-col>
-      </v-row>
-    </div>
-    <div id="adopt" class="text-center">
-      <h2>Adopt a dog</h2>
-      <p>
-        If you're interested in adopting any of our rescue dogs, please fill in
-        our Expression of Interest Questionnaire.
-        <br /><br />
-        *********NOTE: Contains brief description about dog adoption, link to
-        the adoption page/form for more details. Need svg icons********
-      </p>
-      <v-btn class="ma-2" outlined color="#fff" href="#"
-        >Online Application</v-btn
-      >
-      <v-btn
-        class="ma-2"
-        outlined
-        color="#fff"
-        href="./expression-of-interest-adoption-questionnaire.pdf"
-        target="_blank"
-        >Download &AMP; print
-      </v-btn>
-    </div>
-    <div id="volunteer" class="text-center">
-      <h2>Volunteer</h2>
-      <p>
-        Help us by volunteering your services. Tell us how you would like to
-        help and we'll work something out.
-        <br /><br />
-        *********NOTE: Contains brief description about getting involved as a
-        volunteer. link to the volunteer section for more details*******
-      </p>
-      <v-btn class="ma-2" outlined color="#1badbe" href="#"
-        >Online Application
-      </v-btn>
-      <v-btn
-        class="ma-2"
-        outlined
-        color="#1badbe"
-        href="./volunteer-application-form.pdf"
-        target="_blank"
-        >Download &AMP; print
-      </v-btn>
-    </div>
-  </v-container>
+        <v-btn
+          class="ma-2"
+          outlined
+          color="#fff"
+          href="./expression-of-interest-adoption-questionnaire.pdf"
+          target="_blank"
+          >Download &AMP; print
+        </v-btn>
+      </div>
+      <div id="volunteer" class="text-center">
+        <h2>Volunteer</h2>
+        <p>
+          Help us by volunteering your services. Tell us how you would like to
+          help and we'll work something out.
+          <br /><br />
+          *********NOTE: Contains brief description about getting involved as a
+          volunteer. link to the volunteer section for more details*******
+        </p>
+        <v-btn class="ma-2" outlined color="#1badbe" href="#"
+          >Online Application
+        </v-btn>
+        <v-btn
+          class="ma-2"
+          outlined
+          color="#1badbe"
+          href="./volunteer-application-form.pdf"
+          target="_blank"
+          >Download &AMP; print
+        </v-btn>
+      </div>
+    </v-container>
+  </div>
 </template>
 
 <script>
