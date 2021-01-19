@@ -150,6 +150,14 @@ export default {
   background-color: #fff;
 }
 
+.v-btn--active {
+  border-bottom: 5px solid #a2d0dd;
+}
+
+.v-btn--active::before {
+  background-color: #fff;
+}
+
 .v-menu__content {
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
 }
