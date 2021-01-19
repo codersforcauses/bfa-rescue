@@ -141,4 +141,16 @@ export default {
 .v-list-item:hover {
   background-color: #a2d0dd;
 }
+
+.v-list-item--active {
+  border-left: 5px solid #a2d0dd;
+}
+
+.v-list-item--active::before {
+  background-color: #fff;
+}
+
+.v-menu__content {
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.08);
+}
 </style>
