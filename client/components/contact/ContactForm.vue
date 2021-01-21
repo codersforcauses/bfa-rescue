@@ -1,5 +1,5 @@
 <template>
-  <v-sheet tile elevation="0" color="info">
+  <v-sheet tile elevation="0" color="white">
     <v-container class="py-16">
       <h2>Send a Message</h2>
       <v-form ref="form" v-model="valid" lazy-validation>
@@ -38,7 +38,7 @@
           </template>
         </v-text-field>
         <v-text-field
-          v-model="phoneNumber"
+          v-model="mobileNumber"
           outlined
           solo
           :rules="mobileRules"
@@ -78,18 +78,21 @@ export default {
   name: 'ContactForm',
   data: () => ({
     valid: true,
-    name: '',
+    firstname: '',
+    lastname: '',
     nameRules: [(v) => !!v || 'Name is required'],
     email: '',
     emailRules: [
       (v) => !!v || 'E-mail is required',
       (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
+    mobileNumber: '',
     mobileRules: [
       (v) => !!v || 'Mobile number is required',
       (v) => (v && v.length === 10) || 'Mobile number must be valid',
       (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
     ],
+    message: '',
   }),
   methods: {
     validate() {
