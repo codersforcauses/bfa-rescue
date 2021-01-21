@@ -1,6 +1,7 @@
 <template>
   <v-sheet tile elevation="0" color="info">
     <v-container class="py-16">
+      <h2>Send a Message</h2>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
           v-model="firstname"
