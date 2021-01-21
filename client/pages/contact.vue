@@ -1,10 +1,8 @@
 <template>
-  <v-container>
-    <div>
-      <Header />
-    </div>
+  <div>
+    <Header />
     <ContactForm />
-  </v-container>
+  </div>
 </template>
 
 <script>

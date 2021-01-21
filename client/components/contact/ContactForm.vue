@@ -1,42 +1,75 @@
 <template>
-  <v-container style="background-color: #293148" class="ma-0 white--text">
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <h4>First Name</h4>
-      <v-text-field
-        v-model="firstname"
-        :counter="20"
-        :rules="nameRules"
-        required
-      ></v-text-field>
-      <h4>Last Name</h4>
-      <v-text-field
-        v-model="lastname"
-        :counter="20"
-        :rules="nameRules"
-        required
-      ></v-text-field>
-      <h4>Email</h4>
-      <v-text-field v-model="email" :rules="emailRules" required></v-text-field>
-      <h4>Mobile Number</h4>
-      <v-text-field
-        v-model="phoneNumber"
-        :counter="10"
-        :rules="mobileRules"
-        required
-      ></v-text-field>
-      <h4>Message</h4>
-      <v-text-field
-        v-model="message"
-        :counter="500"
-        :rules="messageRules"
-        required
-      ></v-text-field>
+  <v-sheet tile elevation="0" color="info">
+    <v-container class="py-16">
+      <v-form ref="form" v-model="valid" lazy-validation>
+        <v-text-field
+          v-model="firstname"
+          clearable
+          outlined
+          solo
+          :rules="nameRules"
+          required
+        >
+          <template #label>
+            <label class="font-weight-bold">First Name</label>
+          </template>
+        </v-text-field>
+        <v-text-field
+          v-model="lastname"
+          outlined
+          :rules="nameRules"
+          solo
+          required
+        >
+          <template #label>
+            <label class="font-weight-bold">Last Name</label>
+          </template>
+        </v-text-field>
+        <v-text-field
+          v-model="email"
+          outlined
+          :rules="emailRules"
+          solo
+          required
+        >
+          <template #label>
+            <label class="font-weight-bold">Email</label>
+          </template>
+        </v-text-field>
+        <v-text-field
+          v-model="phoneNumber"
+          outlined
+          solo
+          :rules="mobileRules"
+          required
+        >
+          <template #label>
+            <label class="font-weight-bold">Mobile Number</label>
+          </template>
+        </v-text-field>
+        <v-textarea
+          v-model="message"
+          solo
+          outlined
+          :counter="500"
+          maxlength="500"
+        >
+          <template #label>
+            <label class="font-weight-bold">Message</label>
+          </template>
+        </v-textarea>
 
-      <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">
-        Send
-      </v-btn>
-    </v-form>
-  </v-container>
+        <v-btn
+          :disabled="!valid"
+          color="primary"
+          class="mr-4"
+          @click="validate"
+        >
+          Send
+        </v-btn>
+      </v-form>
+    </v-container>
+  </v-sheet>
 </template>
 
 <script>
@@ -45,10 +78,7 @@ export default {
   data: () => ({
     valid: true,
     name: '',
-    nameRules: [
-      (v) => !!v || 'Name is required',
-      (v) => (v && v.length <= 20) || 'Name must be less than 20 characters',
-    ],
+    nameRules: [(v) => !!v || 'Name is required'],
     email: '',
     emailRules: [
       (v) => !!v || 'E-mail is required',
@@ -58,10 +88,6 @@ export default {
       (v) => !!v || 'Mobile number is required',
       (v) => (v && v.length === 10) || 'Mobile number must be valid',
       (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
-    ],
-    messageRules: [
-      (v) => !!v || 'Message is required',
-      (v) => (v && v.length <= 500) || '500 characters only',
     ],
   }),
   methods: {
