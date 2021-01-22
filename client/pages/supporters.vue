@@ -49,7 +49,7 @@ export default {
           imagelink: 'sponsors/energy-gov.jpg',
           cardtitle: 'Energy Efficient Communities',
           carddescription:
-            'The new sanctuary is Solar Powered! Thanks you, the EECP WA Government initiative!',
+            'The new sanctuary is Solar Powered! Thank you to the EECP WA Government initiative!',
           cardlink:
             'https://www.energy.gov.au/government-priorities/energy-programs/energy-efficient-communities-program',
         },
@@ -85,7 +85,7 @@ export default {
           imagelink: 'sponsors/shutter-paws.jpg',
           cardtitle: 'Shutter Paws',
           carddescription:
-            'Shutter Paws is for photography enthusiasts who want to donate their time to helping rescue groups and shelters.',
+            'Shutter Paws is for photography enthusiasts who want to donate their time to helping rescue groups.',
           cardlink: 'https://www.facebook.com/shutterpawsPerth',
         },
         {

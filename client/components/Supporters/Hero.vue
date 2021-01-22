@@ -4,7 +4,7 @@
       <v-col id="content" md="8">
         <h1>{{ title }}</h1>
         <p>{{ text }}</p>
-        <div class="hero-btn mt-5">
+        <div class="mt-5">
           <v-btn class="btn" outlined color="primary" to="contact-us">
             {{ button }}
           </v-btn>
@@ -18,14 +18,23 @@
 export default {
   name: 'Hero',
   props: {
-    text: { type: String, default: '' },
-    title: { type: String, default: '' },
-    button: { type: String, default: '' },
+    text: {
+      type: String,
+      default: '',
+    },
+    title: {
+      type: String,
+      default: '',
+    },
+    button: {
+      type: String,
+      default: '',
+    },
   },
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 .hero {
   background-image: url('https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/10/white-dog-tongue.png');
   background-position: center bottom;
