@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <hero
       title="Provide a service that helps us with our rescue work"
       text="Best Friends Animal Rescue is run by a group of volunteers, so if you
@@ -9,9 +9,9 @@
       button="Contact Us"
       image="url(https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/10/white-dog-tongue.png)"
     />
-    <v-container>
-      <div class="full-width">
-        <v-row class="padded">
+    <v-sheet color="#f7f7f7" width="100%">
+      <v-container>
+        <v-row class="px-12 py-24">
           <v-col
             v-for="card in cards"
             :key="card.cardtitle"
@@ -28,8 +28,8 @@
             />
           </v-col>
         </v-row>
-      </div>
-    </v-container>
+      </v-container>
+    </v-sheet>
   </div>
 </template>
 
@@ -116,21 +116,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.full-width {
-  background-color: rgb(247, 247, 247);
-  width: 100vw;
-  position: relative;
-  margin-left: -50vw;
-  left: 50%;
-  margin-bottom: -50px;
-  margin-top: -50px;
-}
-.padded {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 100px;
-  padding-right: 100px;
-}
-</style>

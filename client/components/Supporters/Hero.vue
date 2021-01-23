@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="hero px-12">
     <v-row>
       <v-col class="mt-12" md="8">
         <h1>{{ title }}</h1>
