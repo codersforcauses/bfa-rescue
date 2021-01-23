@@ -3,7 +3,7 @@
     <v-img :src="require('@/assets/' + imagelink)" alt="sponsor-img"></v-img>
     <v-card-title> {{ cardtitle }} </v-card-title>
     <v-card-text> {{ carddescription }} </v-card-text>
-    <v-card-actions class="cardactions">
+    <v-card-actions class="cardactions pa-4">
       <v-btn :href="cardlink" rel="noreferrer" outlined color="primary">
         Visit
       </v-btn>
