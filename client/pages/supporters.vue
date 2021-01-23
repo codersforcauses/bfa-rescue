@@ -127,10 +127,6 @@ export default {
   margin-bottom: -50px;
   margin-top: -50px;
 }
-#regular {
-  width: 80%;
-  margin-left: 10%;
-}
 .padded {
   padding-top: 50px;
   padding-bottom: 50px;
