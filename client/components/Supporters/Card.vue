@@ -4,7 +4,13 @@
     <v-card-title> {{ cardtitle }} </v-card-title>
     <v-card-text> {{ carddescription }} </v-card-text>
     <v-card-actions class="cardactions pa-4">
-      <v-btn :href="cardlink" rel="noreferrer" outlined color="primary">
+      <v-btn
+        :href="cardlink"
+        rel="noreferrer"
+        target="_blank"
+        outlined
+        color="primary"
+      >
         Visit
       </v-btn>
     </v-card-actions>
