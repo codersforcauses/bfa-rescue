@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <v-row>
-      <v-col id="content" md="8">
+      <v-col class="mt-12" md="8">
         <h1>{{ title }}</h1>
         <p>{{ text }}</p>
         <div class="mt-5">
@@ -51,8 +51,5 @@ p {
     background-image: none !important;
     padding-bottom: 50px;
   }
-}
-#content {
-  margin-top: 50px;
 }
 </style>
