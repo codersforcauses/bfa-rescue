@@ -30,9 +30,9 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
 /*
-* set global variables for express to use in any file;
-* using app.get('<variable-name>', <variable-name>)
-*/
+ * set global variables for express to use in any file;
+ * using app.get('<variable-name>', <variable-name>)
+ */
 app.set('host', host)
 app.set('port', port)
 app.set('mongodb', mongodb)

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="form">
+  <div class="form">
     <h2 class="header">Send a Message</h2>
     <v-form ref="form" v-model="valid" lazy-validation>
       <div style="padding-bottom: 16px">
@@ -23,17 +23,18 @@
         <v-textarea class="input" height="160" outlined></v-textarea>
       </div>
     </v-form>
-  </v-container>
+  </div>
 </template>
 
 <style>
 .form {
   color: white;
   background-color: #ffcd05;
+  background-size: contain;
   padding-top: 9px;
   padding-bottom: 9px;
-  margin-left: 96.325px;
-  margin-right: 96.325px;
+  padding-left: 96.325px;
+  padding-right: 96.325px;
 }
 .header {
   padding-bottom: 22.4px;
