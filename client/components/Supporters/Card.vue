@@ -49,8 +49,4 @@ export default {
   position: absolute;
   bottom: 0;
 }
-.v-card__text,
-.v-card__title {
-  word-break: normal;
-}
 </style>
