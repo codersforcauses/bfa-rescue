@@ -21,6 +21,7 @@
             sm="4"
           >
             <DogCard
+              :id="dog.id"
               :dogimage="dog.dogimage"
               :dogname="dog.dogname"
               :dogbreed="dog.dogbreed"
@@ -90,6 +91,7 @@ export default {
     return {
       dogs: [
         {
+          id: '1',
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
           dogname: 'Harley',
@@ -100,6 +102,7 @@ export default {
           status: 'adopted',
         },
         {
+          id: '2',
           dogimage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
           dogname: 'Mischief',

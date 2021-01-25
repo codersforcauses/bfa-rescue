@@ -1,6 +1,6 @@
 <template>
   <v-card class="d-flex flex-column dogcard" height="100%">
-    <NuxtLink :to="cardlink" class="text-decoration-none" style="height: 100%">
+    <NuxtLink :to="route" class="text-decoration-none" style="height: 100%">
       <v-img :src="dogimage" height="250px"></v-img>
       <v-card-title class="black--text">{{ dogname }}</v-card-title>
       <v-card-subtitle>{{ dogbreed }} | {{ doggender }}</v-card-subtitle>
@@ -51,9 +51,14 @@ export default {
       type: String,
       default: 'available',
     },
-    cardlink: {
+    id: {
       type: String,
-      default: '#',
+      default: '0',
+    },
+  },
+  computed: {
+    route() {
+      return '/dog/' + this.id
     },
   },
 }
