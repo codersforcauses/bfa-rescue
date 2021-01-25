@@ -2,8 +2,7 @@
   <div>
     <Header
       title="About Us"
-      subtitle="********Information such as what their mission is, where they are located
-      and what they do/what impact do they bring etc.*******"
+      subtitle="Best Friends Animal Rescue Inc. is a small group with no funding, completely run by volunteers dedicated to rescuing and re-homing dogs in need in Perth."
     ></Header>
     <v-container>
       <div id="availabledogs">
