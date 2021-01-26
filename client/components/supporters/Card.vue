@@ -1,5 +1,5 @@
 <template>
-  <v-card class="flex flex-column pb-10 healthcard">
+  <v-card class="flex flex-column pb-14 healthcard">
     <v-img :src="require('@/assets/' + imagelink)" alt="sponsor-img"></v-img>
     <v-card-title> {{ cardtitle }} </v-card-title>
     <v-card-text> {{ carddescription }} </v-card-text>
