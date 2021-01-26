@@ -7,8 +7,8 @@ const cors = require('cors')
 require('dotenv').config()
 
 // import routes
-const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
+const usersRouter = require('./routes/user.routes')
+const dogsRouter = require('./routes/dog.routes')
 
 // set env variables to use
 const port = parseInt(process.env.PORT || '3000')
@@ -26,8 +26,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // set routes to use
-app.use('/', indexRouter)
+app.get('/', (req, res) => {
+  res.json({ message: 'Express Backend Works' })
+})
+
 app.use('/users', usersRouter)
+app.use('/dogs', dogsRouter)
 
 /*
 * set global variables for express to use in any file;
