@@ -13,7 +13,7 @@
           <v-img
             src="https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/08/puppy-in-garden.jpg"
             width="80%"
-            class="mx-auto"
+            class="mx-auto rounded"
           ></v-img>
           <v-card-text>
             <div>
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import Card from '~/components/poison/PoisonCard.vue'
+import Card from '~/components/health/poison/Card.vue'
 
 export default {
   components: {
