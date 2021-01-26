@@ -26,6 +26,18 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 Runs the app's backend only in development mode.
 Backend server runs on port 3000
 
+### `yarn seed`
+
+When running the backend application for the first time. Run this command to create database, collections and documents and load initial data.
+
+### `yarn migrate:up`
+
+Run the pending migrations. Refer to: [migration-mongo documentation](https://github.com/seppevs/migrate-mongo)
+
+### `yarn migrate:down`
+
+Revert previous migration. Refer to: [migration-mongo documentation](https://github.com/seppevs/migrate-mongo)
+
 <!-- ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
