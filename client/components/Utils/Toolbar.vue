@@ -119,7 +119,7 @@ export default {
         },
         {
           title: 'Supporters',
-          to: '/volunteer/support',
+          to: '/supporters',
         },
         {
           title: 'Donate',
