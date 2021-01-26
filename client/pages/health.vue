@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import Card from '~/components/health/Card.vue'
-import Header from '~/components/health/Header.vue'
+import Card from '~/components/health/navpage/Card.vue'
+import Header from '~/components/health/navpage/Header.vue'
 
 export default {
   components: {
@@ -42,7 +42,7 @@ export default {
           cardtitle: 'Common plants harmful to cats & dogs',
           carddescription:
             'Here is a list of common plants we’ve compiled from various sources as a guide for you to keep an eye out for. When you see your cat or dog suffering with symptoms such as vomiting, diarrhoea, breathing difficulties, salivation, weakness, abnormal urine and any other abnormal behaviour, rush it to the vet immediately!',
-          cardlink: '#',
+          cardlink: '/harmful-plants',
         },
         {
           imagelink:
