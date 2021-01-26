@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js -q",
-    "lint": "eslint --ext .js ."
+    "lint": "eslint --ext .js .",
+    "seed": "node seeder/seeder.js",
+    "migrate:up": "migrate-mongo up",
+    "migrate:down": "migrate-mongo down"
   },
   "dependencies": {
     "compression": "1.7.4",
@@ -14,6 +17,7 @@
     "dotenv": "8.2.0",
     "express": "4.17.1",
     "helmet": "4.3.1",
+    "migrate-mongo": "^8.1.4",
     "mongoose": "5.11.12",
     "morgan": "1.9.1"
   },
@@ -21,6 +25,7 @@
     "eslint": "7.17.0",
     "eslint-config-prettier": "6.15.0",
     "eslint-config-standard": "16.0.2",
+    "mongoose-seed": "^0.6.0",
     "nodemon": "2.0.6"
   }
 }
