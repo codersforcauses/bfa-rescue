@@ -139,7 +139,7 @@ export default {
 <style scoped>
 #whysponsor {
   margin: 50px 0;
-  padding: 50px 50px;
+  padding: 50px 50px 25px 50px;
   background-color: #f7f7f7;
 }
 
