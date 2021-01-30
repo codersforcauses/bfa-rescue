@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
   res.json({ message: 'Express Backend Works' })
 })
 
-app.use('/users', usersRouter)
-app.use('/dogs', dogsRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/dogs', dogsRouter)
 
 /*
 * set global variables for express to use in any file;
