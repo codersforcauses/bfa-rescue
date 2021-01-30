@@ -2,14 +2,13 @@ const mongoose = require('mongoose')
 
 const dogSchema = new mongoose.Schema(
   {
-    name: {
+    imagelink: {
       type: String,
       required: true
     },
-    sex: {
+    name: {
       type: String,
-      enum: ['male', 'female'],
-      require: true
+      required: true
     },
     age: {
       type: Number,
@@ -19,6 +18,11 @@ const dogSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    sex: {
+      type: String,
+      enum: ['male', 'female'],
+      require: true
+    },
     size: {
       type: String,
       enum: ['small', 'medium', 'large'],
@@ -27,6 +31,9 @@ const dogSchema = new mongoose.Schema(
     adoption_fee: {
       type: Number,
       required: true
+    },
+    description: {
+      type: String
     },
     adoption_available: {
       type: Boolean
@@ -39,9 +46,6 @@ const dogSchema = new mongoose.Schema(
     },
     rehomed: {
       type: Boolean
-    },
-    description: {
-      type: String
     }
   },
   { timestamps: true }
