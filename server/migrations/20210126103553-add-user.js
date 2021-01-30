@@ -1,16 +1,18 @@
+const User = require('../models/user.model')
+
 module.exports = {
   async up (db, client) {
     // TODO write your migration here.
     // See https://github.com/seppevs/migrate-mongo/#creating-a-new-migration-script
     // Example:
-    await db.collection('users').insertOne({
+    await db.collection('users').insertOne(new User({
       firstname: 'Test',
       lastname: 'User',
       email: 'test@bfa.com.au',
       password: 'admin456',
       createdAt: new Date(),
       updatedAt: new Date()
-    })
+    }))
   },
 
   async down (db, client) {

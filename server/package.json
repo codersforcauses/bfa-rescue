@@ -8,7 +8,8 @@
     "lint": "eslint --ext .js .",
     "seed": "node seeder/seeder.js",
     "migrate:up": "migrate-mongo up",
-    "migrate:down": "migrate-mongo down"
+    "migrate:down": "migrate-mongo down",
+    "migrate:create": "migrate-mongo create"
   },
   "dependencies": {
     "compression": "1.7.4",

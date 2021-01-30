@@ -15,7 +15,8 @@
     "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\"",
     "seed": "yarn workspace server seed",
     "migrate:up": "yarn workspace server migrate:up",
-    "migrate:down": "yarn workspace server migrate:down"
+    "migrate:down": "yarn workspace server migrate:down",
+    "migrate:create": "yarn workspace server migrate:create"
   },
   "dependencies": {
     "concurrently": "5.3.0"
