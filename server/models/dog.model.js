@@ -1,3 +1,9 @@
+/**
+ * Model
+ * models are constructors compiled from Schema definitions
+ * an instance of a model is called a document
+ */
+
 const mongoose = require('mongoose')
 
 const dogSchema = new mongoose.Schema(
