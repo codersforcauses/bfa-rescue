@@ -48,18 +48,20 @@
             <label class="font-weight-bold">Mobile Number</label>
           </template>
         </v-text-field>
-        <v-textarea
-          v-model="message"
-          solo
+        <v-text-field
+          v-model="password"
+          clearable
           outlined
-          :counter="500"
-          maxlength="500"
+          solo
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          :rules="PWRules"
+          :type="show1 ? 'text' : 'password'"
+          @click:append="show1 = !show1"
         >
           <template #label>
-            <label class="font-weight-bold">Message</label>
-          </template>
-        </v-textarea>
-
+            <label class="font-weight-bold">Password</label>
+          </template></v-text-field
+        >
         <v-btn
           :disabled="!valid"
           color="primary"
@@ -93,6 +95,8 @@ export default {
       (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
     ],
     message: '',
+    PWRules: [(v) => !!v || 'Password required'],
+    password: '',
   }),
   methods: {
     validate() {
