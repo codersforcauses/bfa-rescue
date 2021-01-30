@@ -1,15 +1,15 @@
 <template>
   <div>
-    <ContactForm />
+    <SignUpForm />
   </div>
 </template>
 
 <script>
-import ContactForm from '~/components/SignUp/ContactForm.vue'
+import SignUpForm from '~/components/SignUp/signup-form.vue'
 
 export default {
   components: {
-    ContactForm,
+    SignUpForm,
   },
 }
 </script>

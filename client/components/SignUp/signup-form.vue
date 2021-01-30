@@ -10,10 +10,8 @@
           solo
           :rules="nameRules"
           required
+          label="First Name"
         >
-          <template #label>
-            <label class="font-weight-bold">First Name</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="lastname"
@@ -21,10 +19,8 @@
           :rules="nameRules"
           solo
           required
+          label="Last Name"
         >
-          <template #label>
-            <label class="font-weight-bold">Last Name</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="email"
@@ -32,10 +28,8 @@
           :rules="emailRules"
           solo
           required
+          label="Email"
         >
-          <template #label>
-            <label class="font-weight-bold">Email</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="mobileNumber"
@@ -43,25 +37,33 @@
           solo
           :rules="mobileRules"
           required
+          label="Mobile Number"
         >
-          <template #label>
-            <label class="font-weight-bold">Mobile Number</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="password"
           clearable
           outlined
           solo
+          label="Password"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
           :rules="PWRules"
           :type="show1 ? 'text' : 'password'"
           @click:append="show1 = !show1"
         >
-          <template #label>
-            <label class="font-weight-bold">Password</label>
-          </template></v-text-field
+        </v-text-field>
+        <v-text-field
+          v-model="password2"
+          clearable
+          outlined
+          solo
+          label="Confirm Password"
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          :rules="PWRules2"
+          :type="show1 ? 'text' : 'password'"
+          @click:append="show1 = !show1"
         >
+        </v-text-field>
         <v-btn
           :disabled="!valid"
           color="primary"
@@ -79,6 +81,7 @@
 export default {
   name: 'ContactForm',
   data: () => ({
+    show1: false,
     valid: true,
     firstname: '',
     lastname: '',
@@ -97,6 +100,8 @@ export default {
     message: '',
     PWRules: [(v) => !!v || 'Password required'],
     password: '',
+    password2: '',
+    PWRules2: [(v) => !!v || 'Password required'],
   }),
   methods: {
     validate() {
@@ -111,3 +116,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-label {
+  font-weight: bold;
+}
+</style>
