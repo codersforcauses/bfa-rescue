@@ -1,39 +1,43 @@
 <template>
   <v-sheet tile elevation="0" color="white">
     <v-container class="py-16">
-      <h2 style="text-align: center">Login</h2>
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field
-          v-model="loginID"
-          clearable
-          outlined
-          solo
-          :rules="IDRules"
-          required
-          label="Login ID"
-        >
-        </v-text-field>
-        <v-text-field
-          v-model="password"
-          clearable
-          outlined
-          solo
-          label="Password"
-          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-          :rules="PWRules"
-          :type="show1 ? 'text' : 'password'"
-          @click:append="show1 = !show1"
-        >
-        </v-text-field>
-        <v-btn
-          :disabled="!valid"
-          color="primary"
-          class="mr-4"
-          @click="validate"
-        >
-          Login
-        </v-btn>
-      </v-form>
+      <v-row>
+        <v-col cols="6">
+          <h2 style="text-align: center">Login</h2>
+          <v-form ref="form" v-model="valid" lazy-validation>
+            <v-text-field
+              v-model="loginID"
+              clearable
+              outlined
+              solo
+              :rules="IDRules"
+              required
+              label="Login ID"
+            >
+            </v-text-field>
+            <v-text-field
+              v-model="password"
+              clearable
+              outlined
+              solo
+              label="Password"
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="PWRules"
+              :type="show1 ? 'text' : 'password'"
+              @click:append="show1 = !show1"
+            >
+            </v-text-field>
+            <v-btn
+              :disabled="!valid"
+              color="primary"
+              class="mr-4"
+              @click="validate"
+            >
+              Login
+            </v-btn>
+          </v-form>
+        </v-col>
+      </v-row>
     </v-container>
   </v-sheet>
 </template>
