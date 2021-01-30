@@ -10,16 +10,15 @@
           solo
           :rules="IDRules"
           required
+          label="Login ID"
         >
-          <template #label>
-            <label class="font-weight-bold">Login ID</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="password"
           clearable
           outlined
           solo
+          label="Password"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
           :rules="PWRules"
           :type="show1 ? 'text' : 'password'"
