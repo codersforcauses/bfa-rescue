@@ -4,46 +4,34 @@
       <h2>Send a Message</h2>
       <v-form ref="form" v-model="valid" class="mt-8" lazy-validation>
         <v-text-field
-          v-model="firstname"
+          v-model="name"
           outlined
-          :rules="nameRules"
+          :rules="[rules.required]"
           required
-          label="First Name"
-        >
-        </v-text-field>
-        <v-text-field
-          v-model="lastname"
-          outlined
-          :rules="nameRules"
-          required
-          label="Last Name"
-        >
-        </v-text-field>
+          label="Name"
+        />
         <v-text-field
           v-model="email"
           outlined
-          :rules="emailRules"
+          :rules="[rules.required, rules.email]"
           required
           label="Email"
-        >
-        </v-text-field>
+        />
         <v-text-field
           v-model="mobileNumber"
           outlined
-          :rules="mobileRules"
+          :rules="[rules.required, ...rules.mobile]"
           required
           label="Mobile Number"
-        >
-        </v-text-field>
+        />
         <v-textarea
           v-model="message"
           outlined
+          :rules="[rules.required]"
           :counter="500"
           maxlength="500"
           label="Message"
-        >
-        </v-textarea>
-
+        />
         <v-btn
           :disabled="!valid"
           color="primary"
@@ -62,20 +50,17 @@ export default {
   name: 'ContactForm',
   data: () => ({
     valid: true,
-    firstname: '',
-    lastname: '',
-    nameRules: [(v) => !!v || 'Name is required'],
+    name: '',
+    rules: {
+      required: (v) => !!v || 'Name is required',
+      email: (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      mobile: [
+        (v) => /[+-0-9]+/.test(v) || 'Must only include numbers',
+        (v) => (v && v.length > 3) || 'Mobile number must be valid',
+      ],
+    },
     email: '',
-    emailRules: [
-      (v) => !!v || 'E-mail is required',
-      (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-    ],
     mobileNumber: '',
-    mobileRules: [
-      (v) => !!v || 'Mobile number is required',
-      (v) => (v && v.length === 10) || 'Mobile number must be valid',
-      (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
-    ],
     message: '',
   }),
   methods: {
