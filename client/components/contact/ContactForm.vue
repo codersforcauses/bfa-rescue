@@ -2,12 +2,10 @@
   <v-sheet tile elevation="0" color="white">
     <v-container class="py-16">
       <h2>Send a Message</h2>
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-form ref="form" v-model="valid" class="mt-8" lazy-validation>
         <v-text-field
           v-model="firstname"
-          clearable
           outlined
-          solo
           :rules="nameRules"
           required
           label="First Name"
@@ -17,7 +15,6 @@
           v-model="lastname"
           outlined
           :rules="nameRules"
-          solo
           required
           label="Last Name"
         >
@@ -26,7 +23,6 @@
           v-model="email"
           outlined
           :rules="emailRules"
-          solo
           required
           label="Email"
         >
@@ -34,7 +30,6 @@
         <v-text-field
           v-model="mobileNumber"
           outlined
-          solo
           :rules="mobileRules"
           required
           label="Mobile Number"
@@ -42,7 +37,6 @@
         </v-text-field>
         <v-textarea
           v-model="message"
-          solo
           outlined
           :counter="500"
           maxlength="500"
