@@ -10,10 +10,8 @@
           solo
           :rules="nameRules"
           required
+          label="First Name"
         >
-          <template #label>
-            <label class="font-weight-bold">First Name</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="lastname"
@@ -21,10 +19,8 @@
           :rules="nameRules"
           solo
           required
+          label="Last Name"
         >
-          <template #label>
-            <label class="font-weight-bold">Last Name</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="email"
@@ -32,10 +28,8 @@
           :rules="emailRules"
           solo
           required
+          label="Email"
         >
-          <template #label>
-            <label class="font-weight-bold">Email</label>
-          </template>
         </v-text-field>
         <v-text-field
           v-model="mobileNumber"
@@ -43,10 +37,8 @@
           solo
           :rules="mobileRules"
           required
+          label="Mobile Number"
         >
-          <template #label>
-            <label class="font-weight-bold">Mobile Number</label>
-          </template>
         </v-text-field>
         <v-textarea
           v-model="message"
@@ -54,10 +46,8 @@
           outlined
           :counter="500"
           maxlength="500"
+          label="Message"
         >
-          <template #label>
-            <label class="font-weight-bold">Message</label>
-          </template>
         </v-textarea>
 
         <v-btn
@@ -107,3 +97,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-label {
+  font-weight: bold;
+}
+</style>
