@@ -24,10 +24,7 @@
           :type="show1 ? 'text' : 'password'"
           @click:append="show1 = !show1"
         >
-          <template #label>
-            <label class="font-weight-bold">Password</label>
-          </template></v-text-field
-        >
+        </v-text-field>
         <v-btn
           :disabled="!valid"
           color="primary"
@@ -65,3 +62,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.v-label {
+  font-weight: bold;
+}
+</style>
