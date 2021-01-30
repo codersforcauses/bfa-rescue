@@ -2,7 +2,7 @@
   <v-sheet tile elevation="0" color="white">
     <v-container class="py-16">
       <v-row>
-        <v-col cols="6">
+        <v-col cols="6" class="mx-auto">
           <h2 style="text-align: center">Login</h2>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
