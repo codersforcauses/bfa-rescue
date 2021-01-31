@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import Card from '~/components/health/poison/Card.vue'
+import Card from '~/components/health/PoisonCard.vue'
 
 export default {
   components: {

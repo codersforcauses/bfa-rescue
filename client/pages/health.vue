@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import Card from '~/components/health/navpage/Card.vue'
-import Header from '~/components/health/navpage/Header.vue'
+import Card from '~/components/health/NavCard.vue'
+import Header from '~/components/health/NavHeader.vue'
 
 export default {
   components: {
