@@ -22,7 +22,7 @@
       <a class="next" @click="plusSlides(1)">&#10095;</a>
     </div>
 
-    <div class="py-2 text-center">
+    <div class="py-2 pb-10 text-center">
       <span
         v-for="item in stories"
         :key="item.id"
