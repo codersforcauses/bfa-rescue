@@ -92,7 +92,7 @@ export default {
             },
             {
               title: 'Success Stories',
-              to: '/donate/success-stories',
+              to: '/success-stories',
             },
           ],
         },
