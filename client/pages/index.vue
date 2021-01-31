@@ -1,12 +1,40 @@
 <template>
   <div>
+    <v-row class="landing center mb-3">
+      <v-img
+        id="paw"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Emoji_u1f43e.svg/1200px-Emoji_u1f43e.svg.png"
+      ></v-img>
+      <v-col
+        class="landing-text text-center"
+        offset-lg="1"
+        cols="12"
+        sm="4"
+        align-self="center"
+      >
+        <h1>ADOPT A DOG!</h1>
+        <p>
+          We are building a retirement home for senior and special needs dogs.
+        </p>
+        <v-btn class="ma-2" color="#a2d0dd" @click="scroll">
+          Explore &nbsp;&#8594;
+        </v-btn>
+      </v-col>
+      <v-col cols="12" sm="6" offset-lg="1">
+        <v-img
+          id="dogimg"
+          src="https://stablerandhowlett.com.au/wp-content/uploads/2020/07/mackay-puppy-preschool-151039766.png"
+        ></v-img>
+      </v-col>
+    </v-row>
     <Header
+      id="explore"
       title="About Us"
       subtitle="Best Friends Animal Rescue Inc. is a small group with no funding, completely run by volunteers dedicated to rescuing and re-homing dogs in need in Perth."
     ></Header>
     <v-container>
       <div id="availabledogs">
-        <h2 class="text-center">Our Dogs</h2>
+        <h2 class="text-center mb-2">Our Dogs</h2>
         <p class="text-center">
           Adopt a dog to be your best friend today! Here are all our available
           dogs for adoption
@@ -32,45 +60,46 @@
         </v-row>
       </div>
       <div id="adopt" class="text-center">
-        <h2>Adopt a dog</h2>
+        <h2 class="mb-2">Adopt a dog</h2>
+        <p>Here's what the standard adoption fee would cover</p>
+        <v-row>
+          <v-col
+            v-for="service in services"
+            :key="service.servicename"
+            cols="12"
+            sm="3"
+            class="px-5"
+          >
+            <Services
+              :serviceimg="service.serviceimg"
+              :servicename="service.servicename"
+            ></Services>
+          </v-col>
+        </v-row>
         <p>
           If you're interested in adopting any of our rescue dogs, please fill
           in our Expression of Interest Questionnaire.
-          <br /><br />
-          *********NOTE: Contains brief description about dog adoption, link to
-          the adoption page/form for more details. Need svg icons********
         </p>
-        <v-btn class="ma-2" outlined color="#fff" href="#"
+        <v-btn class="ma-2" outlined color="#1badbe" href="/adoption-form"
           >Online Application</v-btn
         >
         <v-btn
           class="ma-2"
           outlined
-          color="#fff"
+          color="#1badbe"
           href="./expression-of-interest-adoption-questionnaire.pdf"
           target="_blank"
           >Download &AMP; print
         </v-btn>
       </div>
       <div id="volunteer" class="text-center">
-        <h2>Volunteer</h2>
+        <h2 class="mb-2">Volunteer</h2>
         <p>
           Help us by volunteering your services. Tell us how you would like to
           help and we'll work something out.
-          <br /><br />
-          *********NOTE: Contains brief description about getting involved as a
-          volunteer. link to the volunteer section for more details*******
         </p>
-        <v-btn class="ma-2" outlined color="#1badbe" href="#"
-          >Online Application
-        </v-btn>
-        <v-btn
-          class="ma-2"
-          outlined
-          color="#1badbe"
-          href="./volunteer-application-form.pdf"
-          target="_blank"
-          >Download &AMP; print
+        <v-btn class="ma-2" outlined color="#1badbe" href="/volunteer"
+          >Learn more
         </v-btn>
       </div>
     </v-container>
@@ -80,11 +109,13 @@
 <script>
 import Header from '~/components/Utils/Header.vue'
 import DogCard from '~/components/home/DogCard.vue'
+import Services from '~/components/home/Services.vue'
 
 export default {
   components: {
     Header,
     DogCard,
+    Services,
   },
   data() {
     return {
@@ -147,12 +178,80 @@ export default {
             'Dog/people friendly 12 yr old female Staffie. She is deaf, but very sweet!',
         },
       ],
+      services: [
+        {
+          serviceimg:
+            'https://bfarescue.com.au/wp-content/uploads/2015/07/icon-sterilisation.png',
+          servicename: 'Sterilisation',
+        },
+        {
+          serviceimg:
+            'https://bfarescue.com.au/wp-content/uploads/2015/07/icon-microchip.png',
+          servicename: 'Microchipping',
+        },
+        {
+          serviceimg:
+            'https://bfarescue.com.au/wp-content/uploads/2015/07/icon-vaccination.png',
+          servicename: 'Titre test',
+        },
+        {
+          serviceimg:
+            'https://bfarescue.com.au/wp-content/uploads/2015/07/icon-vet.png',
+          servicename: 'Medical Treatments',
+        },
+      ],
     }
+  },
+  methods: {
+    scroll() {
+      const el = document.getElementById('explore')
+      window.scroll({ top: el.offsetTop, behavior: 'smooth' })
+    },
   },
 }
 </script>
 
 <style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#paw {
+  z-index: 0;
+  position: absolute;
+  right: 90px;
+  width: 900px;
+  transform: rotate(20deg) scaleX(-1);
+  opacity: 0.8;
+}
+
+.landing {
+  height: 100vh;
+  position: relative;
+}
+
+.landing-text {
+  z-index: 1;
+}
+
+.landing h1 {
+  font-size: 45px;
+  letter-spacing: 5px;
+  font-weight: 450;
+}
+
+.landing p {
+  font-size: 28px;
+  font-weight: 300;
+}
+
+#dogimg {
+  width: 650px;
+}
+
 #availabledogs {
   padding: 50px 50px;
   margin: 50px 0;
@@ -160,14 +259,41 @@ export default {
 }
 
 #adopt {
-  padding: 70px 70px;
-  background-color: #3295b2;
-  color: #fff;
+  padding: 50px 70px;
+  background-color: #f7f7f7;
 }
 
 #volunteer {
-  padding: 70px 70px;
+  padding: 50px 70px;
   margin: 50px 0;
   background-color: #f7f7f7;
+}
+
+@media only screen and (max-width: 600px) {
+  .landing {
+    height: 60vh;
+  }
+
+  .landing-text {
+    padding: 50px 35px 0 35px;
+  }
+
+  .landing h1 {
+    font-size: 40px;
+  }
+
+  .landing p {
+    font-size: 22px;
+  }
+
+  #paw {
+    display: none;
+  }
+
+  #dogimg {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

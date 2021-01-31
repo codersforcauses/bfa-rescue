@@ -21,9 +21,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .banner {
-  background-color: #1badbe;
+  background-color: #3295b2;
   color: #fff;
   padding: 60px 20px;
   width: 100vw;
