@@ -3,12 +3,12 @@
     <div class="slideshow-container">
       <v-container v-for="story in stories" :key="story.id" class="slides">
         <div class="numbertext">{{ story.id }} / {{ stories.length }}</div>
-        <v-row style="height: 350px">
-          <v-col cols="6" class="py-0">
-            <v-img :src="story.img1" height="350"></v-img>
+        <v-row class="slide-images">
+          <v-col cols="12" sm="6" class="py-0">
+            <v-img :src="story.img1" class="image1"></v-img>
           </v-col>
-          <v-col cols="6" class="py-0">
-            <v-img :src="story.img2" height="350"></v-img>
+          <v-col cols="12" sm="6" class="py-0">
+            <v-img :src="story.img2" class="image2"></v-img>
           </v-col>
         </v-row>
         <div class="slider-text" cols="12">
@@ -141,6 +141,15 @@ export default {
   font-weight: 450;
 }
 
+.slide-images {
+  height: 350px;
+}
+
+.image1,
+.image2 {
+  height: 350px;
+}
+
 .numbertext {
   font-size: 12px;
   padding: 8px 12px;
@@ -192,5 +201,21 @@ export default {
 .prev:hover,
 .next:hover {
   background-color: rgba(162, 208, 221, 0.8);
+}
+
+@media only screen and (max-width: 599px) {
+  .slide-images {
+    height: 420px;
+  }
+
+  .image1,
+  .image2 {
+    height: 200px;
+  }
+
+  .prev,
+  .next {
+    top: 445px;
+  }
 }
 </style>

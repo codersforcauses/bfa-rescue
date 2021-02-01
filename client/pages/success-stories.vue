@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header></Header>
-    <v-row class="pb-5" style="padding: 0 80px">
-      <v-col cols="9" style="padding-right: 80px">
+    <v-row class="pb-5 main-story">
+      <v-col cols="12" sm="9" class="story-text">
         <h1 class="my-4">Beauie’s Story</h1>
         <p>
           My name is Beauie and I’m a very handsome Corgi x Jack Russell. This
@@ -48,7 +48,7 @@
           kissing me all the time – not that you can blame her, she’s only human
         </p>
       </v-col>
-      <v-col cols="3">
+      <v-col cols="12" sm="3">
         <v-img
           src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0015.jpg"
           class="mb-2"
@@ -86,7 +86,15 @@ export default {
 </script>
 
 <style scoped>
-h1 {
+.main-story {
+  padding: 0 80px;
+}
+
+.story-text {
+  padding-right: 80px;
+}
+
+.story-text h1 {
   text-transform: uppercase;
   font-size: 25px;
   letter-spacing: 5px;
@@ -99,5 +107,15 @@ h1 {
   padding: 60px 20px;
   width: 100vw;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-story {
+    padding: 0 30px;
+  }
+
+  .story-text {
+    padding-right: 0;
+  }
 }
 </style>
