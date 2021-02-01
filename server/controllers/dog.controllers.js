@@ -24,7 +24,7 @@ exports.getAllDogs = async (res) => {
 }
 
 /**
- * Request mongodb asynchronously by dog id and send data back in http response body
+ * Request mongodb asynchronously with dog id as param and send data back in http response body
  * Execute when http GET request hit /api/dogs/:id url route
  * @param {*} req http request
  * @param {*} res http response
@@ -34,15 +34,35 @@ exports.getDogById = async (req, res) => {
     try {
       const data = await Dog.findById(req.params.id)
       return data ? res.json(data) : res.status(404).json('Dog not found')
-    } catch (error) {
-      return res.status(500).json(error)
+    } catch (err) {
+      return res.status(500).json(err)
     }
   }
   return res.status(400).json('Invalid objectId')
 }
 
-// POST /api/dogs
-exports.addDog = async (req, res) => { }
+/**
+ * Request mongodb asynchronously with dog data transferred obj as param in req.body
+ * Create new Dog document, save to database and send document back in http response body
+ * Execute when http POST request hit /api/dogs url route
+ * @param {*} dogDto dog json object to save
+ * @param {*} res http response
+ */
+exports.addDog = async ({ body: dogDto }, res) => {
+  // create new dog model and map the transferred objects data to the Dog model
+  const newDog = new Dog({ ...dogDto, createdAt: Date.now(), updatedAt: Date.now() })
+
+  // save the document to mongodb via mongoose
+  newDog.save()
+    .then(doc => {
+      console.log(doc)
+      return res.json(doc)
+    })
+    .catch(err => {
+      console.error(err)
+      return res.status(500).json(err)
+    })
+}
 
 // PUT /api/dogs/:id
 exports.updateDogById = async (req, res) => { }
