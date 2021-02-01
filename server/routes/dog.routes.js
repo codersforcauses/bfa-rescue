@@ -7,11 +7,12 @@
 const express = require('express')
 const router = express.Router()
 const dogController = require('../controllers/dog.controllers')
+const validateObjectId = require('../middleware/validateObjectId')
 
 router.get('/', dogController.getAllDogs)
-router.get('/:id', dogController.getDogById)
+router.get('/:id', validateObjectId, dogController.getDogById)
 router.post('/', dogController.addDog)
-router.put('/:id', dogController.updateDogById)
-router.delete(':id', dogController.deleteDogById)
+router.put('/:id', validateObjectId, dogController.updateDogById)
+router.delete('/:id', validateObjectId, dogController.deleteDogById)
 
 module.exports = router
