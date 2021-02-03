@@ -1,110 +1,323 @@
 <template>
   <div>
     <imageBanner></imageBanner>
-    <v-sheet color="#f7f7f7" width="100%">
-      <v-container>
-        <v-row class="px-12 py-24">
-          <v-col
-            v-for="card in cards"
-            :key="card.cardtitle"
-            class="d-flex flex-column"
-            cols="12"
-            sm="6"
-            md="4"
-          >
-            <Card
-              :imagelink="card.imagelink"
-              :cardtitle="card.cardtitle"
-              :carddescription="card.carddescription"
-              :cardlink="card.cardlink"
-            />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
+    <v-container id="rehomedBlock">
+      <v-row class="px-12 py-24">
+        <v-col
+          v-for="dog in dogs"
+          :key="dog.id"
+          class="d-flex flex-column"
+          cols="12"
+          sm="4"
+        >
+          <DogCard
+            v-if="dog.id <= displayDogs"
+            :id="dog.id"
+            :dogimage="dog.dogimage"
+            :dogname="dog.dogname"
+            :dogbreed="dog.dogbreed"
+            :doggender="dog.doggender"
+            :dogdescription="dog.dogdescription"
+            :status="dog.status"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-btn block class="btn" color="primary" large @click="displayDogs += 9">
+      See more dogs
+    </v-btn>
   </div>
 </template>
 
 <script>
 import imageBanner from '~/components/rehomed/imageBanner.vue'
-import Card from '~/components/supporters/Card.vue'
+import DogCard from '~/components/rehomed/DogCard.vue'
 
 export default {
   components: {
     imageBanner,
-    Card,
+    DogCard,
   },
   data() {
     return {
-      cards: [
+      displayDogs: 9,
+      dogs: [
         {
-          imagelink: 'sponsors/energy-gov.jpg',
-          cardtitle: 'Energy Efficient Communities',
-          carddescription:
-            'The new sanctuary is Solar Powered! Thank you to the EECP WA Government initiative!',
-          cardlink:
-            'https://www.energy.gov.au/government-priorities/energy-programs/energy-efficient-communities-program',
+          id: '1',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogbreed: 'Border Collie',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/syds-building.jpg',
-          cardtitle: "Syd's Building Maintainance",
-          carddescription:
-            'Brickie extraordianaire, who volunteered all of his time to build the Retirement Home for Senior and Special Needs Dogs!',
-          cardlink: 'https://www.facebook.com/SydsBuildingMaintenance/',
+          id: '2',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogbreed: 'German Shepherd',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/southern-raw-petfood.jpg',
-          cardtitle: 'Southern Raw Pet Meats',
-          carddescription:
-            ' BFAR is thankful for our friends at SRPM for donating some of their spectacularly good products in times when we are struggling to feed the hordes! ',
-          cardlink: 'https://www.southernrawpetmeats.com.au/',
+          id: '3',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogbreed: 'Kelpie x Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/lotterywest.jpg',
-          cardtitle: 'Lotterywest',
-          carddescription:
-            'Thank you to LotteryWest for a grant to furnish the new sanctuary building with flooring and whitegoods!',
-          cardlink: 'https://www.lotterywest.wa.gov.au/',
+          id: '4',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
+          dogname: 'Bella',
+          dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/dog-centric.jpg',
-          cardtitle: 'DogCentric',
-          carddescription:
-            'DogCentric is located in Bayswater. Their goal is to improve the relationship between people and their dogs.',
-          cardlink: 'https://www.facebook.com/DogCentricPerth',
+          id: '5',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
+          dogname: 'Richie',
+          dogbreed: 'Pomeranian',
+          doggender: 'Male',
+          dogdescription:
+            'Give this lively young male Pomeranian the new home he deserves.',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/shutter-paws.jpg',
-          cardtitle: 'Shutter Paws',
-          carddescription:
-            'Shutter Paws is for photography enthusiasts who want to donate their time to helping rescue groups.',
-          cardlink: 'https://www.facebook.com/shutterpawsPerth',
+          id: '6',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
+          dogname: 'Fudge',
+          dogbreed: 'Beagle X Labrador',
+          doggender: 'Female',
+          dogdescription:
+            'Dog & people friendly and used to kids over 8 yrs old.',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/michelles-dog.jpg',
-          cardtitle: "Michelle's Dog Grooming",
-          carddescription:
-            'My service is like no other as I always consider your dogs wellbeing and safety first and I treat them as if they own. Michelle Kefalinos - 0439 781 305',
-          cardlink:
-            'https://www.truelocal.com.au/business/michelles-clip-n-snip-dog-grooming/greenwood',
+          id: '7',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogbreed: 'Border Collie',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/nola-criddle.jpg',
-          cardtitle: 'Nola Criddle Foundation',
-          carddescription:
-            'Thanks to the Nola Criddle Foundation for your continued sponsorship. Without it we wouldn’t have been able to start build our retirement home for dogs.',
-          cardlink:
-            'https://www.infobel.com/en/australia/nola_criddle_foundation/south_perth/AU101122220/businessdetails.aspx',
+          id: '8',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogbreed: 'German Shepherd',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+          status: 'adopted',
         },
         {
-          imagelink: 'sponsors/kevin-mcnulty.jpg',
-          cardtitle: 'Kevin McNulty Dog Behaviourist',
-          carddescription:
-            'Kevin provides gentle, professional training to dogs in the Metropolitan area. Call at 0416 791 195',
-          cardlink: 'https://www.facebook.com/k9trainingandcommunication/',
+          id: '9',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogbreed: 'Kelpie x Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
+          status: 'adopted',
+        },
+        {
+          id: '10',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
+          dogname: 'Bella',
+          dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
+          status: 'adopted',
+        },
+        {
+          id: '11',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
+          dogname: 'Richie',
+          dogbreed: 'Pomeranian',
+          doggender: 'Male',
+          dogdescription:
+            'Give this lively young male Pomeranian the new home he deserves.',
+          status: 'adopted',
+        },
+        {
+          id: '12',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
+          dogname: 'Fudge',
+          dogbreed: 'Beagle X Labrador',
+          doggender: 'Female',
+          dogdescription:
+            'Dog & people friendly and used to kids over 8 yrs old.',
+          status: 'adopted',
+        },
+        {
+          id: '13',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogbreed: 'Border Collie',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
+        },
+        {
+          id: '14',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogbreed: 'German Shepherd',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+          status: 'adopted',
+        },
+        {
+          id: '15',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogbreed: 'Kelpie x Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
+          status: 'adopted',
+        },
+        {
+          id: '16',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
+          dogname: 'Bella',
+          dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
+          status: 'adopted',
+        },
+        {
+          id: '17',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
+          dogname: 'Richie',
+          dogbreed: 'Pomeranian',
+          doggender: 'Male',
+          dogdescription:
+            'Give this lively young male Pomeranian the new home he deserves.',
+          status: 'adopted',
+        },
+        {
+          id: '18',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
+          dogname: 'Fudge',
+          dogbreed: 'Beagle X Labrador',
+          doggender: 'Female',
+          dogdescription:
+            'Dog & people friendly and used to kids over 8 yrs old.',
+          status: 'adopted',
+        },
+        {
+          id: '19',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogbreed: 'Border Collie',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
+        },
+        {
+          id: '20',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogbreed: 'German Shepherd',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+          status: 'adopted',
+        },
+        {
+          id: '21',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogbreed: 'Kelpie x Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
+          status: 'adopted',
+        },
+        {
+          id: '22',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
+          dogname: 'Bella',
+          dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'So soulful! A real lover too! A strong hand on the lead and I am yours forever!',
+          status: 'adopted',
+        },
+        {
+          id: '23',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
+          dogname: 'Richie',
+          dogbreed: 'Pomeranian',
+          doggender: 'Male',
+          dogdescription:
+            'Give this lively young male Pomeranian the new home he deserves.',
+          status: 'adopted',
+        },
+        {
+          id: '24',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
+          dogname: 'Fudge',
+          dogbreed: 'Beagle X Labrador',
+          doggender: 'Female',
+          dogdescription:
+            'Dog & people friendly and used to kids over 8 yrs old.',
+          status: 'adopted',
         },
       ],
     }
   },
 }
 </script>
+
+<style scoped>
+div {
+  background-color: #f7f7f7;
+}
+#rehomedBlock {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+</style>
