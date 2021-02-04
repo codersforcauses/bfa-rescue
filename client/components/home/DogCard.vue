@@ -8,14 +8,14 @@
       <v-card-text class="text-center pb-2 dogstatus">
         <v-chip
           v-if="status == 'available'"
-          class="ma-2 justify-content-center"
+          class="ma-2 justify-content-center chip-overflow"
           color="#a2d0dd"
         >
-          <v-icon medium class="mr-2"> mdi-dog </v-icon>
+          <v-icon medium class="mr-1"> mdi-dog </v-icon>
           I'm available for adoption
         </v-chip>
         <v-chip v-else class="ma-2 justify-content-center" color="#f2d77d">
-          <v-icon medium class="mr-2"> mdi-dog-side </v-icon>
+          <v-icon medium class="mr-1"> mdi-dog-side </v-icon>
           I'm adopted
         </v-chip>
       </v-card-text>
@@ -78,5 +78,24 @@ export default {
 .dogstatus {
   position: absolute;
   bottom: 0;
+}
+
+@media only screen and (max-width: 450px) {
+  .chip-overflow {
+    width: 145px;
+    display: inline-block !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+  }
+
+  .v-chip__content {
+    display: inline-block !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+  }
 }
 </style>

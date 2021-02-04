@@ -1,6 +1,6 @@
 <template>
-  <div class="text-center">
-    <v-img :src="serviceimg" height="160" width="160" class="center"></v-img>
+  <div class="text-center d-flex flex-column justify-center align-center">
+    <v-img :src="serviceimg" height="160" width="160" contain></v-img>
     <p class="servicename">{{ servicename }}</p>
   </div>
 </template>
@@ -22,12 +22,6 @@ export default {
 </script>
 
 <style scoped>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 .servicename {
   text-transform: uppercase;
   font-size: 14px;

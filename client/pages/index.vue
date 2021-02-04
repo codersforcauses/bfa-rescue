@@ -45,7 +45,8 @@
             :key="dog.dogname"
             class="d-flex flex-column"
             cols="12"
-            sm="4"
+            md="4"
+            sm="6"
           >
             <DogCard
               :id="dog.id"
@@ -271,7 +272,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .landing {
-    height: 60vh;
+    height: 500px;
   }
 
   .landing-text {
