@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12" sm="6">
-      <v-img :src="imagelink" max-height="550"></v-img>
+      <v-img :src="imagelink" max-height="550" rounded></v-img>
     </v-col>
     <v-col cols="12" sm="6">
       <h3 class="text-center" style="font-size: 20px">Meet {{ name }}!</h3>
