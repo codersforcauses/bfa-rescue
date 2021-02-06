@@ -3,17 +3,16 @@ const logger = require('morgan')
 const compress = require('compression')
 const helmet = require('helmet')
 const cors = require('cors')
+const passport = require('passport')
 
 require('dotenv').config()
+
+// import secrets
+const config = require('./config')
 
 // import routes
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
-
-// set env variables to use
-const port = parseInt(process.env.PORT || '3000')
-const host = process.env.HOST || 'localhost'
-const mongodb = process.env.DB_URL || 'mongodb://localhost:27017/bfa-rescue'
 
 const app = express()
 
@@ -25,16 +24,21 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Passport middleware
+app.use(passport.initialize())
+require('./config/passport')(passport)
+
 // set routes to use
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
 /*
-* set global variables for express to use in any file;
-* using app.get('<variable-name>', <variable-name>)
-*/
-app.set('host', host)
-app.set('port', port)
-app.set('mongodb', mongodb)
+ * set global variables for express to use in any file;
+ * using app.get('<variable-name>', <variable-name>)
+ */
+app.set('host', config.HOST)
+app.set('port', config.PORT)
+app.set('mongodb', config.MONGODB_URI)
+app.set('secret_key', config.SECRET_KEY)
 
 module.exports = app

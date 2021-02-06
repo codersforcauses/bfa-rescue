@@ -4,7 +4,10 @@
   "repository": "git@github.com:codersforcauses/bfa-rescue.git",
   "license": "MIT",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "client": "yarn workspace client dev",
     "server": "yarn workspace server dev",
