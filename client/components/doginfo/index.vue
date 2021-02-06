@@ -8,36 +8,45 @@
       <v-list>
         <v-list-item>
           <v-list-item-action>
-            <v-icon>mdi-calendar-range</v-icon>
+            <v-icon color="#1badbe">mdi-calendar-range</v-icon>
           </v-list-item-action>
-          <v-list-item-content><b>Age:</b>&nbsp;{{ age }}</v-list-item-content>
-        </v-list-item>
-        <v-divider inset></v-divider>
-
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-dna</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <b>Breed:</b>&nbsp;{{ breed }}
+          <v-list-item-content class="d-inline">
+            <b>Age:</b>
+            &nbsp;{{ age }}
           </v-list-item-content>
         </v-list-item>
         <v-divider inset></v-divider>
 
         <v-list-item>
           <v-list-item-action>
-            <v-icon v-if="sex == 'Male'">mdi-gender-male</v-icon>
-            <v-icon v-else>mdi-gender-female</v-icon>
+            <v-icon color="#1badbe">mdi-dna</v-icon>
           </v-list-item-action>
-          <v-list-item-content><b>Sex:</b>&nbsp;{{ sex }}</v-list-item-content>
+          <v-list-item-content class="d-inline">
+            <b>Breed:</b>
+            &nbsp;{{ breed }}
+          </v-list-item-content>
         </v-list-item>
         <v-divider inset></v-divider>
 
         <v-list-item>
           <v-list-item-action>
-            <v-icon>mdi-dog</v-icon>
+            <v-icon v-if="sex == 'Male'" color="#1badbe">
+              mdi-gender-male
+            </v-icon>
+            <v-icon v-else color="#1badbe"> mdi-gender-female </v-icon>
           </v-list-item-action>
-          <v-list-item-content>
+          <v-list-item-content class="d-inline">
+            <b>Sex:</b>
+            &nbsp;{{ sex }}
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider inset></v-divider>
+
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon color="#1badbe">mdi-dog</v-icon>
+          </v-list-item-action>
+          <v-list-item-content class="d-inline">
             <b>Size:</b>&nbsp;{{ size }}
           </v-list-item-content>
         </v-list-item>
@@ -45,9 +54,12 @@
 
         <v-list-item>
           <v-list-item-action>
-            <v-icon>mdi-cash-usd-outline</v-icon>
+            <v-icon color="#1badbe">mdi-cash-usd-outline</v-icon>
           </v-list-item-action>
-          <v-list-item-content><b>Fee:</b>&nbsp;${{ fee }}</v-list-item-content>
+          <v-list-item-content class="d-inline">
+            <b>Fee:</b>
+            &nbsp;${{ fee }}
+          </v-list-item-content>
         </v-list-item>
         <v-divider inset></v-divider>
 
@@ -103,14 +115,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.v-icon {
-  color: #1badbe;
-}
-
-b {
-  display: inline !important;
-  flex: none;
-}
-</style>
