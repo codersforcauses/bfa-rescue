@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12" sm="6">
-      <v-img :src="imagelink" max-height="550" rounded></v-img>
+      <v-img :src="imagelink" max-height="550" class="rounded"></v-img>
     </v-col>
     <v-col cols="12" sm="6">
       <h3 class="text-center" style="font-size: 20px">Meet {{ name }}!</h3>
@@ -51,7 +51,7 @@
         </v-list-item>
         <v-divider inset></v-divider>
 
-        <v-list-item>
+        <v-list-item class="pt-5">
           <v-list-item-content>{{ description }}</v-list-item-content>
         </v-list-item>
       </v-list>
