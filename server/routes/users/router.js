@@ -2,15 +2,16 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const SECRET_KEY = require('../config').SECRET_KEY
+const validator = require('validator').default
 
-const User = require('../models/User')
+const SECRET_KEY = require('../../config').SECRET_KEY
+
+const User = require('../../models/User')
 
 const router = express.Router()
 
-// @route POST api/users/register
-// @desc Register user
-// @access Public
+// @route POST /users/register
+// @desc Registers a new user using a username and password.
 router.post('/register', async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email })
@@ -18,12 +19,14 @@ router.post('/register', async (req, res) => {
       return res.status(400).json({ email: 'Email already exists' })
     }
     const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(req.body.password, salt)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
     const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
-      password: hash
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: validator.normalizeEmail(req.body.email),
+      mobileNumber: req.body.mobileNumber,
+      password: hashedPassword
     })
 
     const savedUser = await newUser.save()
@@ -53,7 +56,7 @@ router.post('/login', async (req, res) => {
     }
     const payload = {
       id: user.id,
-      name: user.name
+      email: user.email
     }
 
     const token = jwt.sign(payload, SECRET_KEY, { expiresIn: '1yr' })
