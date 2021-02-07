@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator').default
+const bcrypt = require('bcryptjs')
 
 const userSchema = new mongoose.Schema(
   {
@@ -16,7 +17,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       validate: {
         validator: function (value) {
-          return validator.isEmail(validator.normalizeEmail(value))
+          return validator.isEmail(value)
         },
         message: (props) => `${props.value} is not a valid email address.`
       }
@@ -44,6 +45,23 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+
+userSchema.pre('save', async function (next) {
+  if (this.password && this.isModified('password')) {
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password, salt)
+  }
+
+  next()
+})
+
+userSchema.pre('save', async function (next) {
+  if (this.email && this.isModified('email')) {
+    this.email = validator.normalizeEmail(this.email)
+  }
+
+  next()
+})
 
 const User = mongoose.model('User', userSchema)
 

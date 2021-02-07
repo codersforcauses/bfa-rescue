@@ -2,11 +2,9 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const validator = require('validator').default
+const SECRET_KEY = require('../config').SECRET_KEY
 
-const SECRET_KEY = require('../../config').SECRET_KEY
-
-const User = require('../../models/User')
+const User = require('../models/User')
 
 const router = express.Router()
 
@@ -18,15 +16,13 @@ router.post('/register', async (req, res) => {
     if (user) {
       return res.status(400).json({ email: 'Email already exists' })
     }
-    const salt = await bcrypt.genSalt(10)
-    const hashedPassword = await bcrypt.hash(req.body.password, salt)
 
     const newUser = new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      email: validator.normalizeEmail(req.body.email),
+      email: req.body.email,
       mobileNumber: req.body.mobileNumber,
-      password: hashedPassword
+      password: req.body.password
     })
 
     const savedUser = await newUser.save()
