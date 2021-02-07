@@ -12,7 +12,8 @@
     "client": "yarn workspace client dev",
     "server": "yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
-    "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\""
+    "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\"",
+    "test": "yarn workspace client test && yarn workspace server test"
   },
   "dependencies": {
     "concurrently": "5.3.0"

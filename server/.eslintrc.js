@@ -2,12 +2,11 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    jest: true
   },
-  extends: [
-    'standard'
-  ],
-  plugins: ['prettier'],
+  extends: ['standard'],
+  plugins: ['prettier', 'jest'],
   // add your custom rules here
   rules: {}
 }
