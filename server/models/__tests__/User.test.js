@@ -43,9 +43,17 @@ describe('User.js', () => {
 
   test('should throw when adding of users with an invalid email address', async () => {
     expect(async () => {
-      const dataWithInvalidEmail = { ...userData, email: '1234' }
-      const unsavedUser = new User(dataWithInvalidEmail)
+      const invalidData = { ...userData, email: '1234' }
+      const unsavedUser = new User(invalidData)
       await unsavedUser.save()
     }).rejects.toThrow('not a valid email address')
+  })
+
+  test('should throw when adding of users with an invalid mobile number', async () => {
+    expect(async () => {
+      const invalidData = { ...userData, mobileNumber: '1234' }
+      const unsavedUser = new User(invalidData)
+      await unsavedUser.save()
+    }).rejects.toThrow('not a valid Australian mobile number')
   })
 })
