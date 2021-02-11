@@ -4,7 +4,8 @@ const jwt = require('jsonwebtoken')
 const SECRET_KEY = require('../config').SECRET_KEY
 
 const StatusCodeError = require('../helpers/StatusCodeError')
-const User = require('../models/User')
+
+const { User } = require('../models')
 
 const NOT_MATCH_ERROR = 'Email or password does not match.'
 const EMAIL_EXISTS = 'A user with that email already exists.'
