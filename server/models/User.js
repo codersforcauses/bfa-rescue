@@ -32,7 +32,8 @@ const userSchema = new mongoose.Schema(
       required: true,
       validate: {
         validator: function (value) {
-          return validator.isMobilePhone(value, 'en-AU')
+          const phoneNumber = phoneUtil.parse(value, 'AU')
+          return phoneUtil.isValidNumberForRegion(phoneNumber, 'AU')
         },
         message: (props) =>
           `${props.value} is not a valid Australian mobile number.`

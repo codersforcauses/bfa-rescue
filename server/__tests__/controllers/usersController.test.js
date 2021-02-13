@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const { usersController } = require('../controllers')
+const { usersController } = require('../../controllers')
 
 describe('Users Controller', () => {
   let connection
