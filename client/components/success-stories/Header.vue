@@ -13,6 +13,5 @@
   color: #fff;
   padding: 60px 20px;
   width: 100vw;
-  margin-bottom: 20px;
 }
 </style>

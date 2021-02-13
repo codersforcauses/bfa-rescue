@@ -1,36 +1,46 @@
 <template>
-  <div>
-    <div class="slideshow-container">
-      <v-container v-for="story in stories" :key="story.id" class="slides">
-        <div class="numbertext">{{ story.id }} / {{ stories.length }}</div>
-        <v-row class="slide-images">
-          <v-col cols="12" sm="6" class="py-0">
-            <v-img :src="story.img1" class="image1"></v-img>
-          </v-col>
-          <v-col cols="12" sm="6" class="py-0">
-            <v-img :src="story.img2" class="image2"></v-img>
-          </v-col>
-        </v-row>
-        <div class="slider-text" cols="12">
-          <h1>{{ story.dogname }}</h1>
-          <p>
-            {{ story.description }}
-          </p>
-        </div>
-      </v-container>
-      <a class="prev" @click="plusSlides(-1)">&#10094;</a>
-      <a class="next" @click="plusSlides(1)">&#10095;</a>
-    </div>
+  <v-container>
+    <v-card flat tile>
+      <v-window v-model="slideIndex">
+        <v-window-item v-for="story in stories" :key="story.name">
+          <v-row>
+            <v-col cols="12" sm="6">
+              <v-img :src="story.img1" height="350px"></v-img>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-img :src="story.img2" height="350px"></v-img>
+            </v-col>
+          </v-row>
+          <v-row class="px-5">
+            <h1 color="black">{{ story.dogname }}</h1>
+            <p color="black">
+              {{ story.description }}
+            </p>
+          </v-row>
+        </v-window-item>
+      </v-window>
 
-    <div class="py-2 pb-10 text-center">
-      <span
-        v-for="item in stories"
-        :key="item.id"
-        class="dot"
-        @click="currentSlide(item.id)"
-      ></span>
-    </div>
-  </div>
+      <v-card-actions class="justify-space-between">
+        <v-btn text @click="prev">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+        <v-item-group v-model="slideIndex" class="text-center" mandatory>
+          <v-item
+            v-for="(story, i) in stories"
+            :key="`btn-${i}`"
+            v-slot="{ active, toggle }"
+          >
+            <v-btn :input-value="active" icon @click="toggle">
+              <v-icon>mdi-record</v-icon>
+            </v-btn>
+          </v-item>
+        </v-item-group>
+        <v-btn text @click="next">
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
@@ -38,7 +48,7 @@ export default {
   name: 'Slideshow',
   data() {
     return {
-      slideIndex: 1,
+      slideIndex: 0,
       stories: [
         {
           id: '1',
@@ -83,139 +93,21 @@ export default {
       ],
     }
   },
-  mounted() {
-    this.showSlides(this.slideIndex)
-  },
   methods: {
-    showSlides(n) {
-      let i
-      const slides = document.getElementsByClassName('slides')
-      const dots = document.getElementsByClassName('dot')
-      if (n > slides.length) {
-        this.slideIndex = 1
-      }
-      if (n < 1) {
-        this.slideIndex = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none'
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' active', '')
-      }
-      slides[this.slideIndex - 1].style.display = 'block'
-      dots[this.slideIndex - 1].className += ' active'
+    next() {
+      this.slideIndex =
+        this.slideIndex + 1 === this.stories.length ? 0 : this.slideIndex + 1
     },
-    plusSlides(n) {
-      const _this = this
-      _this.showSlides((this.slideIndex += n))
-    },
-    currentSlide(n) {
-      const _this = this
-      _this.showSlides((this.slideIndex = n))
+    prev() {
+      this.slideIndex =
+        this.slideIndex - 1 < 0 ? this.stories.length - 1 : this.slideIndex - 1
     },
   },
 }
 </script>
 
-<style scoped>
-.slideshow-container {
-  position: relative;
-  margin: 0 8%;
-  background-color: #f7f7f7;
-}
-
-.slides {
-  display: none;
-}
-
-.slider-text {
-  padding: 20px 20px;
-  text-align: center;
-}
-
-.slider-text h1 {
-  text-transform: uppercase;
-  font-size: 25px;
-  letter-spacing: 5px;
-  font-weight: 450;
-}
-
-.slide-images {
-  height: 350px;
-}
-
-.image1,
-.image2 {
-  height: 350px;
-}
-
-.numbertext {
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-}
-
-.dot {
-  cursor: pointer;
-  height: 12px;
-  width: 12px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-  background-color: #717171;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 385px;
-  width: auto;
-  padding: 10px 15px;
-  margin-top: -22px; /* color: white; */
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(162, 208, 221, 0.8);
-}
-
-@media only screen and (max-width: 599px) {
-  .slide-images {
-    height: 420px;
-  }
-
-  .image1,
-  .image2 {
-    height: 200px;
-  }
-
-  .prev,
-  .next {
-    top: 445px;
-  }
+<style>
+.v-carousel__controls {
+  bottom: -25px;
 }
 </style>

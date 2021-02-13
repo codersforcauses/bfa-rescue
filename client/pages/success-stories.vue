@@ -1,8 +1,22 @@
 <template>
   <div>
     <Header></Header>
-    <v-row class="pb-5 main-story">
-      <v-col cols="12" sm="9" class="story-text">
+    <v-carousel v-if="$vuetify.breakpoint.smAndDown" hide-delimiters>
+      <v-carousel-item
+        src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0015.jpg"
+      />
+      <v-carousel-item
+        src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0034.jpg"
+      />
+      <v-carousel-item
+        src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0028-e1473988981273.jpg"
+      />
+      <v-carousel-item
+        src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0726.jpg"
+      />
+    </v-carousel>
+    <v-row class="mt-10 pb-5 main-story">
+      <div class="story-text">
         <h1 class="my-4">Beauie’s Story</h1>
         <p>
           My name is Beauie and I’m a very handsome Corgi x Jack Russell. This
@@ -47,8 +61,8 @@
           fact I’d have to say my life would be perfect, if only mum would stop
           kissing me all the time – not that you can blame her, she’s only human
         </p>
-      </v-col>
-      <v-col cols="12" sm="3">
+      </div>
+      <div v-if="$vuetify.breakpoint.mdAndUp" class="side-dog">
         <v-img
           src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0015.jpg"
           class="mb-2"
@@ -64,7 +78,7 @@
         <v-img
           src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0726.jpg"
         ></v-img>
-      </v-col>
+      </div>
     </v-row>
     <div class="banner2">
       <h2 class="text-center">Other dogs we have saved</h2>
@@ -87,11 +101,19 @@ export default {
 
 <style scoped>
 .main-story {
-  padding: 0 80px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 .story-text {
   padding-right: 80px;
+  max-width: 800px;
+}
+
+.side-dog {
+  width: 300px;
 }
 
 .story-text h1 {
@@ -116,6 +138,10 @@ export default {
 
   .story-text {
     padding-right: 0;
+  }
+
+  .side-dog {
+    width: 100%;
   }
 }
 </style>
