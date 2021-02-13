@@ -16,15 +16,35 @@ describe('Users Controller', () => {
     await connection.close()
   })
 
-  const firstName = 'Avi'
-  const lastName = 'Santoso'
-  const email = 'testemail@gmail.com',
-
   const userData = {
-    firstName: 'Avi',
+    firstName: 'Aviciena',
     lastName: 'Santoso',
-    email: 'testemail@gmail.com',
+    email: 'avi.santoso@gmail.com',
     mobileNumber: '0412341234',
     password: 'SuperSecretPassword321'
   }
+
+  const cleanUserData = {
+    firstName: 'Aviciena',
+    lastName: 'Santoso',
+    email: 'avisantoso@gmail.com',
+    mobileNumber: '+61 412 341 234',
+    password: 'SuperSecretPassword321'
+  }
+
+  test('should be able to create a user', async () => {
+    const newUser = usersController.register(
+      userData.firstName,
+      userData.lastName,
+      userData.email,
+      userData.mobileNumber,
+      userData.password
+    )
+    expect(newUser).toBeDefined()
+    expect(newUser.firstName).toBe(cleanUserData.firstName)
+    expect(newUser.lastName).toBe(cleanUserData.lastName)
+    expect(newUser.email).toBe(cleanUserData.firstName)
+    expect(newUser.mobileNumber).toBe(cleanUserData.mobileNumber)
+    expect(newUser.password).toBe(cleanUserData.password)
+  })
 })
