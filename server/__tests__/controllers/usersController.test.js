@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+const { User } = require('../../models')
 const { usersController } = require('../../controllers')
 
 describe('Users Controller', () => {
@@ -8,11 +9,17 @@ describe('Users Controller', () => {
   beforeAll(async () => {
     connection = await mongoose.connect(global.__MONGO_URI__, {
       useNewUrlParser: true,
-      useCreateIndex: true
+      useCreateIndex: true,
+      useUnifiedTopology: true
     })
   })
 
   afterAll(async () => {
+    const users = await User.find({})
+    for (let i = 0; i < users.length; i++) {
+      const user = users[i]
+      await user.delete()
+    }
     await connection.close()
   })
 
@@ -33,18 +40,23 @@ describe('Users Controller', () => {
   }
 
   test('should be able to create a user', async () => {
-    const newUser = usersController.register(
+    const newUser = await usersController.register(
       userData.firstName,
       userData.lastName,
       userData.email,
       userData.mobileNumber,
       userData.password
     )
+
     expect(newUser).toBeDefined()
     expect(newUser.firstName).toBe(cleanUserData.firstName)
     expect(newUser.lastName).toBe(cleanUserData.lastName)
-    expect(newUser.email).toBe(cleanUserData.firstName)
+    expect(newUser.email).toBe(cleanUserData.email)
     expect(newUser.mobileNumber).toBe(cleanUserData.mobileNumber)
-    expect(newUser.password).toBe(cleanUserData.password)
+
+    // After hashing passwords should be different.
+    expect(newUser.password).not.toBe(cleanUserData.password)
+
+    newUser.delete()
   })
 })

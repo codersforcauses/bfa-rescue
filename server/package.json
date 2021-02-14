@@ -6,7 +6,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js -q",
     "lint": "eslint --ext .js .",
-    "test": "jest --forceExit"
+    "test": "jest --runInBand --forceExit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

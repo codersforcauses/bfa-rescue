@@ -16,11 +16,17 @@ describe('User Model', () => {
   beforeAll(async () => {
     connection = await mongoose.connect(global.__MONGO_URI__, {
       useNewUrlParser: true,
-      useCreateIndex: true
+      useCreateIndex: true,
+      useUnifiedTopology: true
     })
   })
 
   afterAll(async () => {
+    const users = await User.find({})
+    for (let i = 0; i < users.length; i++) {
+      const user = users[i]
+      await user.delete()
+    }
     await connection.close()
   })
 
