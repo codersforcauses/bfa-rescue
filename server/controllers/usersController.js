@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const validator = require('validator').default
 
 const SECRET_KEY = require('../config').SECRET_KEY
 
@@ -29,7 +30,8 @@ async function register(firstName, lastName, email, mobileNumber, password) {
 }
 
 async function login(email, password) {
-  const user = await User.findOne({ email })
+  const normalizedEmail = validator.normalizeEmail(email)
+  const user = await User.findOne({ email: normalizedEmail })
   if (!user) {
     throw new StatusCodeError(404, NOT_MATCH_ERROR)
   }
