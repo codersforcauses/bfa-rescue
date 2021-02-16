@@ -1,14 +1,8 @@
-/**
- * Model
- * models are constructors compiled from Schema definitions
- * an instance of a model is called a document
- */
-
 const mongoose = require('mongoose')
 
 const dogSchema = new mongoose.Schema(
   {
-    imagelink: {
+    imageLink: {
       type: String,
       required: true
     },
@@ -34,20 +28,20 @@ const dogSchema = new mongoose.Schema(
       enum: ['small', 'medium', 'large'],
       require: true
     },
-    adoption_fee: {
+    adoptionFee: {
       type: Number,
       required: true
     },
     description: {
       type: String
     },
-    adoption_available: {
+    adoptionAvailable: {
       type: Boolean
     },
-    foster_available: {
+    fosterAvailable: {
       type: Boolean
     },
-    sponsor_available: {
+    sponsorAvailable: {
       type: Boolean
     },
     rehomed: {
