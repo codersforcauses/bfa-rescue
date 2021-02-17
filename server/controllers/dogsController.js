@@ -71,38 +71,32 @@ async function create(
       rehomed
     })
 
-    return await Dog.save()
+    return await newDog.save()
   } catch (error) {
     throw new StatusCodeError(500, error.message)
   }
 }
 
-// PUT /api/dogs/:id
-exports.updateDogById = async (req, res) => {}
+async function deleteById(id) {
+  try {
+    const { deletedCount } = await Dog.deleteOne({ id })
 
-/**
- * Request mongodb asynchronously with id of the dog to be deleted as param
- * Delete then send the deleted document back in http response body
- * Execute when http DELETE request hit /api/dogs/:id url route
- * @param {*} req http request
- * @param {*} res http response
- */
-exports.deleteDogById = async (req, res) => {
-  // delete the document from mongodb via mongoose
-  Dog.findByIdAndDelete(req.params.id)
-    .then((deletedDocument) => {
-      return deletedDocument
-        ? res.json(deletedDocument)
-        : res.status(404).json({ message: 'Dog not found' })
-    })
-    .catch((err) => {
-      return res.status(500).json({ message: err.message })
-    })
-  // async-await equivalent
-  // try {
-  //   const deletedDocument = await Dog.findByIdAndDelete(req.params.id)
-  //   return deletedDocument ? res.json(deletedDocument) : res.status(404).json('Dog not found')
-  // } catch (err) {
-  //   return res.status(500).json(err)
-  // }
+    if (deletedCount === 0) {
+      throw new StatusCodeError(404, `A dog with the id ${id} does not exist.`)
+    }
+
+    return deletedCount
+  } catch (error) {
+    throw new StatusCodeError(500, error.message)
+  }
 }
+
+const dogsController = {
+  getAll,
+  get,
+  getById,
+  create,
+  deleteById
+}
+
+module.exports = dogsController
