@@ -33,17 +33,17 @@ describe('Dog Model', () => {
   })
 
   test('should be able to create and save a new dog', async () => {
-    const doggo = new Dog({ ...doggyData })
-    const savedDoggo = await doggo.save()
+    const newDoggo = new Dog({ ...doggyData })
+    const doggo = await newDoggo.save()
 
-    expect(doggo.imageLink).toBe(savedDoggo.imageLink)
-    expect(doggo.name).toBe(savedDoggo.name)
-    expect(doggo.age).toBe(savedDoggo.age)
-    expect(doggo.breed).toBe(savedDoggo.breed)
-    expect(doggo.sex).toBe(savedDoggo.sex)
-    expect(doggo.size).toBe(savedDoggo.size)
-    expect(doggo.adoptionFee).toBe(savedDoggo.adoptionFee)
+    expect(doggo.imageLink).toBe(doggyData.imageLink)
+    expect(doggo.name).toBe(doggyData.name)
+    expect(doggo.age).toBe(doggyData.age)
+    expect(doggo.breed).toBe(doggyData.breed)
+    expect(doggo.sex).toBe(doggyData.sex)
+    expect(doggo.size).toBe(doggyData.size)
+    expect(doggo.adoptionFee).toBe(doggyData.adoptionFee)
 
-    await savedDoggo.delete()
+    await doggo.delete()
   })
 })
