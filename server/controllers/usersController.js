@@ -1,4 +1,3 @@
-const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const validator = require('validator').default
 
@@ -34,9 +33,7 @@ async function login(email, password) {
     throw new StatusCodeError(404, ERR_NO_MATCH)
   }
 
-  const isMatch = await bcrypt.compare(password, user.password)
-
-  if (!isMatch) {
+  if (!user.isValidPassword(password)) {
     throw new Error(400, ERR_NO_MATCH)
   }
   const payload = {

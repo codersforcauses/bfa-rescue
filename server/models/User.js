@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance()
 const PNF = require('google-libphonenumber').PhoneNumberFormat
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -52,7 +52,7 @@ const userSchema = new mongoose.Schema(
 )
 
 // Normalizing inputs middleware
-userSchema.pre('save', async function (next) {
+UserSchema.pre('save', async function (next) {
   try {
     // Hash password (so we don't have to work with hashing during tests and seeding)
     if (this.password && this.isModified('password')) {
@@ -84,6 +84,9 @@ userSchema.pre('save', async function (next) {
   }
 })
 
-const User = mongoose.model('User', userSchema)
+UserSchema.methods.isValidPassword = async (password) =>
+  await bcrypt.compare(password, this.password)
+
+const User = mongoose.model('User', UserSchema)
 
 module.exports = User

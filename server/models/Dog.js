@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const dogSchema = new mongoose.Schema(
+const DogSchema = new mongoose.Schema(
   {
     imageLink: {
       type: String,
@@ -51,6 +51,6 @@ const dogSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-const Dog = mongoose.model('Dog', dogSchema)
+const Dog = mongoose.model('Dog', DogSchema)
 
 module.exports = Dog
