@@ -41,36 +41,9 @@ async function getById(id) {
   }
 }
 
-async function create(
-  imageLink,
-  name,
-  age,
-  breed,
-  sex,
-  size,
-  adoptionFee,
-  description,
-  adoptionAvailable,
-  fosterAvailable,
-  sponsorAvailable,
-  rehomed
-) {
+async function create(dog) {
   try {
-    const newDog = new Dog({
-      imageLink,
-      name,
-      age,
-      breed,
-      sex,
-      size,
-      adoptionFee,
-      description,
-      adoptionAvailable,
-      fosterAvailable,
-      sponsorAvailable,
-      rehomed
-    })
-
+    const newDog = new Dog(dog)
     return await newDog.save()
   } catch (error) {
     throw new StatusCodeError(500, error.message)
