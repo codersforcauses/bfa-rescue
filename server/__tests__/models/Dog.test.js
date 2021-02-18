@@ -33,7 +33,6 @@ describe('Dog Model', () => {
   })
 
   test('should be able to create and save a new dog', async () => {
-    // Alternatively, use User.create().
     const doggo = new Dog({ ...doggyData })
     const savedDoggo = await doggo.save()
 

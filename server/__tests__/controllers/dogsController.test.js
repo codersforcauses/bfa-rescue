@@ -1,25 +1,19 @@
 const mongoose = require('mongoose')
 
-const { User } = require('../../models')
-const { usersController } = require('../../controllers')
+const { Dog } = require('../../models')
+const { dogsController } = require('../../controllers')
 
-const userData = {
-  firstName: 'Aviciena',
-  lastName: 'Santoso',
-  email: 'avi.santoso@gmail.com',
-  mobileNumber: '0412341234',
-  password: 'SuperSecretPassword321'
+const doggyData = {
+  imageLink: 'http://',
+  name: 'Doggo',
+  age: 3.14,
+  breed: 'Siberian Husky',
+  sex: 'male',
+  size: 'large',
+  adoptionFee: 499.95
 }
 
-const cleanUserData = {
-  firstName: 'Aviciena',
-  lastName: 'Santoso',
-  email: 'avisantoso@gmail.com',
-  mobileNumber: '+61 412 341 234',
-  password: 'SuperSecretPassword321'
-}
-
-describe('Users Controller', () => {
+describe('Dogs Controller', () => {
   let connection
 
   beforeAll(async () => {
@@ -31,15 +25,15 @@ describe('Users Controller', () => {
   })
 
   afterAll(async () => {
-    const users = await User.find({})
-    for (let i = 0; i < users.length; i++) {
-      const user = users[i]
-      await user.delete()
+    const dogs = await Dog.find({})
+    for (let i = 0; i < dogs.length; i++) {
+      const dog = dogs[i]
+      await dog.delete()
     }
     await connection.close()
   })
 
-  test('should be able to register a new user', async () => {
+  test('should be able to create a new dog', async () => {
     const newUser = await usersController.register(
       userData.firstName,
       userData.lastName,
