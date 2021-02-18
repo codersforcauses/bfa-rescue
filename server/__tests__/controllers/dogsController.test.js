@@ -34,87 +34,16 @@ describe('Dogs Controller', () => {
   })
 
   test('should be able to create a new dog', async () => {
-    const newUser = await usersController.register(
-      userData.firstName,
-      userData.lastName,
-      userData.email,
-      userData.mobileNumber,
-      userData.password
-    )
+    const doggo = await dogsController.create({ ...doggyData })
 
-    expect(newUser).toBeDefined()
-    expect(newUser.firstName).toBe(cleanUserData.firstName)
-    expect(newUser.lastName).toBe(cleanUserData.lastName)
-    expect(newUser.email).toBe(cleanUserData.email)
-    expect(newUser.mobileNumber).toBe(cleanUserData.mobileNumber)
+    expect(doggo.imageLink).toBe(doggyData.imageLink)
+    expect(doggo.name).toBe(doggyData.name)
+    expect(doggo.age).toBe(doggyData.age)
+    expect(doggo.breed).toBe(doggyData.breed)
+    expect(doggo.sex).toBe(doggyData.sex)
+    expect(doggo.size).toBe(doggyData.size)
+    expect(doggo.adoptionFee).toBe(doggyData.adoptionFee)
 
-    // After hashing passwords should be different.
-    expect(newUser.password).not.toBe(cleanUserData.password)
-
-    await newUser?.delete()
-  })
-
-  test('should be able to login a previously registered user', async () => {
-    const newUser = await usersController.register(
-      userData.firstName,
-      userData.lastName,
-      userData.email,
-      userData.mobileNumber,
-      userData.password
-    )
-
-    const { success, token } = await usersController.login(
-      userData.email,
-      userData.password
-    )
-
-    expect(success).toBe(true)
-    expect(token).toBeDefined()
-
-    await newUser?.delete()
-  })
-
-  test('should not be able to login with a wrong password', async () => {
-    const newUser = await usersController.register(
-      userData.firstName,
-      userData.lastName,
-      userData.email,
-      userData.mobileNumber,
-      userData.password
-    )
-
-    expect(async () => {
-      await usersController.login(userData.email, 'wrongpassword123')
-    }).rejects.toThrow('does not match')
-
-    await newUser?.delete()
-  })
-
-  test('should not be able to register a new user with a non-australian phone number', async () => {
-    let newUser
-    expect(async () => {
-      newUser = await usersController.register(
-        userData.firstName,
-        userData.lastName,
-        userData.email,
-        '2412341234',
-        userData.password
-      )
-    }).rejects.toThrow('not a valid Australian mobile number')
-    await newUser?.delete()
-  })
-
-  test('should not be able to register a new user with a non-valid email address', async () => {
-    let newUser
-    expect(async () => {
-      newUser = await usersController.register(
-        userData.firstName,
-        userData.lastName,
-        'avi.santoso123.com',
-        userData.mobileNumber,
-        userData.password
-      )
-    }).rejects.toThrow('not a valid email address')
-    newUser?.delete()
+    await doggo.delete()
   })
 })
