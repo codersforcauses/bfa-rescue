@@ -9,6 +9,7 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue .",
     "lint:style": "stylelint **/*.{vue,css}",
+    "lint:fix": "yarn lint:js --fix && yarn lint:style --fix",
     "lint": "yarn lint:js && yarn lint:style"
   },
   "dependencies": {
