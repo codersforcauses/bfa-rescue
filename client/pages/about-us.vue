@@ -2,13 +2,6 @@
   <div class="example">
     <h1>About Us</h1>
     <div class="col_1">
-      <h2>
-        <span style="line-height: 40px">
-          Hi, my name is Jeane Howes and I am the founder of Best Friends Animal
-          Rescue. A little bit of background of how this dog rescue group came
-          into being…
-        </span>
-      </h2>
       <div class="image_1">
         <span class="image_1_wrap">
           <img
@@ -24,6 +17,13 @@
       </div>
     </div>
     <div class="para1">
+      <div class="intro">
+        <h2 height="80px">
+          Hi, my name is Jeane Howes and I am the founder of Best Friends Animal
+          Rescue. A little bit of background of how this dog rescue group came
+          into being…
+        </h2>
+      </div>
       <p>
         As a child, I lived in the north of England in the late 1960s. There
         were lots of stray dogs and my mother used to send me out with bags of
@@ -41,7 +41,7 @@
         nursing and animal behaviour.
       </p>
     </div>
-    <div class="lower_part">
+    <div class="lower_part" style="position: relative">
       <h3>
         <span style="line-height: 60px"> Getting Started </span>
       </h3>
@@ -53,30 +53,32 @@
           src="./Jeane-Harley2.JPG"
           alt="Jeane Howes image 2"
           title=""
-          width="auto"
-          height="auto"
+          height="250px"
+          width="280px"
         />
       </div>
-      <p>
-        Finally in 2006 I started Best Friends Animal Rescue Inc. My mother got
-        a year’s visa and came to Perth to help me. I bought a house on 5 acres
-        with a large living area, a bit run down, but we didn’t care as long as
-        we had somewhere that we could look after the homeless dogs. I had 14
-        dogs at the time, but it was a very quiet, peaceful house and the dogs
-        knew that were cared for. My mother just loved it and was so pleased
-        with the changes I could make to an animal’s life. My mother came again
-        for another year, and I couldn’t have done it without her. When she went
-        back to England she was always talking about the dogs. Now Best Friends
-        Animal Rescue has a network of volunteers who foster the dogs, providing
-        a loving and safe place until a suitable permanent home is found. So far
-        Best Friends Animal Rescue have re-homed over 700 dogs, mostly the older
-        dogs that are the most difficult to find a new forever home. As many of
-        our dogs come with specific dietry requirements or allergies, all meals
-        are prepared on premises using only fresh meat and vegetables. Our
-        future is to set up an elderly dog rescue and retirement in the hills,
-        to give a lasting, happy final home for the really old or sick to enjoy
-        their final years.
-      </p>
+      <div class="para2" style="position: relative">
+        <p>
+          Finally in 2006 I started Best Friends Animal Rescue Inc. My mother
+          got a year’s visa and came to Perth to help me. I bought a house on 5
+          acres with a large living area, a bit run down, but we didn’t care as
+          long as we had somewhere that we could look after the homeless dogs. I
+          had 14 dogs at the time, but it was a very quiet, peaceful house and
+          the dogs knew that were cared for. My mother just loved it and was so
+          pleased with the changes I could make to an animal’s life. My mother
+          came again for another year, and I couldn’t have done it without her.
+          When she went back to England she was always talking about the dogs.
+          Now Best Friends Animal Rescue has a network of volunteers who foster
+          the dogs, providing a loving and safe place until a suitable permanent
+          home is found. So far Best Friends Animal Rescue have re-homed over
+          700 dogs, mostly the older dogs that are the most difficult to find a
+          new forever home. As many of our dogs come with specific dietry
+          requirements or allergies, all meals are prepared on premises using
+          only fresh meat and vegetables. Our future is to set up an elderly dog
+          rescue and retirement in the hills, to give a lasting, happy final
+          home for the really old or sick to enjoy their final years.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -91,6 +93,7 @@ h1 {
   padding: 10px;
   text-align: center;
 }
+
 h2 {
   text-align: left;
   margin-right: 5ch;
@@ -99,17 +102,8 @@ h2 {
   font-weight: 300;
 }
 h3 {
-  text-align: left;
-  margin-right: 5ch;
-  font-style: normal;
-  font-family: 'OpenSans', Helvetica, sans-serif;
-  font-weight: 300;
-}
-div.p:hover {
-  transition: 1s linear;
-  animation: upto-down 1s ease-out forwards;
-  font-family: 'OpenSans', Helvetica, sans-serif;
-  font-size: 16px;
+  margin-left: 6ch;
+  font-size: 22px;
 }
 div.col1 {
   margin-top: 10ch;
@@ -117,31 +111,33 @@ div.col1 {
 div.para1 {
   width: 30%;
   margin-left: 8ch;
-  text-justify: auto;
+  text-align: justify;
+  position: relative;
 }
 div.image_1 {
   margin-top: 10ch;
   width: 90px;
   height: 20px;
   margin-left: 55ch;
+  position: relative;
 }
-div.lower_part {
-  width: 86%;
-  margin-left: 50ch;
-  text-justify: auto;
-  margin-top: 10ch;
-}
+
 div.image2 {
-  height: 50px;
-  width: 50px;
-  margin-left: 5ch;
+  margin-top: 1ch;
+  width: 10ch;
+  height: 10ch;
+  margin-left: 8ch;
+  position: relative;
 }
-@keyframes upto-down {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateX(-150px);
-  }
+div.para2 {
+  margin-left: 55ch;
+  text-align: justify;
+  margin-top: 1ch;
+  position: absolute;
+  top: -100px;
+}
+div.intro {
+  font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 30;
 }
 </style>
