@@ -7,7 +7,7 @@
   "workspaces": ["client", "server"],
   "scripts": {
     "client": "yarn workspace client dev",
-    "client:start": "yarn workspace client start",
+    "client:start": "yarn workspace client build && yarn workspace client start",
     "server": "yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
     "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\"",
