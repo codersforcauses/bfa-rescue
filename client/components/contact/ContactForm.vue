@@ -44,6 +44,15 @@
           validate-on-blur
           label="Message"
         />
+        <v-alert
+          dense
+          dismissible
+          :value="submitError"
+          type="error"
+          transition="fade-transition"
+        >
+          {{ errorMessage }}
+        </v-alert>
         <!--     
         <v-alert
           dense
@@ -68,6 +77,16 @@
           </v-btn>
         </template>
       </v-snackbar>
+      <!--   
+      <v-snackbar v-model="submitSuccess" :timeout="timeout" color="error">
+        {{ errorMessage }}
+        <template v-slot:action="{ attrs }">
+          <v-btn text v-bind="attrs" @click="errorMessage = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
+      -->
     </v-container>
   </v-sheet>
 </template>
@@ -82,6 +101,7 @@ export default {
     timeout: 5000,
     successMessage:
       'Thank you for reaching out to us. We will get back to you as soon as possible.',
+    errorMessage: 'Message not delivered : Please check your connection.',
     form: {
       name: '',
       email: '',
@@ -127,6 +147,7 @@ export default {
             setTimeout(() => (this.submitSuccess = false), this.timeout)
           } else {
             this.submitError = true
+            // setTimeout(() => (this.submitError = false), this.timeout
           }
         }
         xhr.send(data)
