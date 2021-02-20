@@ -2,7 +2,7 @@
   <div class="hero px-12">
     <v-row>
       <v-col class="mt-12" md="8">
-        <div class="">
+        <div>
           <h1>{{ title }}</h1>
           <p>{{ text }}</p>
           <div class="mt-5">
