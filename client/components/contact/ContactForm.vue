@@ -2,45 +2,63 @@
   <v-sheet tile elevation="0" color="white">
     <v-container class="py-16">
       <h2>Send a Message</h2>
-      <v-form ref="form" v-model="valid" class="mt-8" lazy-validation>
+      <v-form
+        ref="contactForm"
+        v-model="valid"
+        class="mt-8"
+        @submit.prevent.stop="submitForm()"
+      >
         <v-text-field
-          v-model="name"
+          v-model="form.name"
+          name="name"
           outlined
           :rules="[rules.required]"
-          required
+          validate-on-blur
           label="Name"
         />
         <v-text-field
-          v-model="email"
+          v-model="form.email"
+          name="email"
+          type="email"
           outlined
           :rules="[rules.required, rules.email]"
-          required
+          validate-on-blur
           label="Email"
         />
         <v-text-field
-          v-model="mobileNumber"
+          v-model="form.mobileNumber"
+          name="mobileNumber"
+          type="tel"
           outlined
           :rules="[rules.required, ...rules.mobile]"
-          required
+          validate-on-blur
           label="Mobile Number"
         />
         <v-textarea
-          v-model="message"
+          v-model="form.message"
+          name="message"
           outlined
           :rules="[rules.required]"
           :counter="500"
           maxlength="500"
+          validate-on-blur
           label="Message"
         />
-        <v-btn
-          :disabled="!valid"
-          color="primary"
-          class="mr-4"
-          @click="validate"
-        >
+        <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4">
           Send
         </v-btn>
       </v-form>
+      <br />
+      <v-alert
+        dense
+        dismissible
+        :value="submitSuccess"
+        type="success"
+        transition="fade-transition"
+      >
+        Thank you for reaching out to us. We will get back to you as soon as
+        possible.
+      </v-alert>
     </v-container>
   </v-sheet>
 </template>
@@ -50,28 +68,57 @@ export default {
   name: 'ContactForm',
   data: () => ({
     valid: true,
-    name: '',
+    submitError: false,
+    submitSuccess: false,
+    form: {
+      name: '',
+      email: '',
+      mobileNumber: '',
+      message: '',
+    },
     rules: {
       required: (v) => !!v || 'Name is required',
       email: (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       mobile: [
-        (v) => /[+-0-9]+/.test(v) || 'Must only include numbers',
-        (v) => (v && v.length > 3) || 'Mobile number must be valid',
+        (v) => /[+-0123456789]+/.test(v) || 'Must only include numbers',
+        (v) => (v && v.length > 7) || 'Mobile number must be valid',
       ],
     },
-    email: '',
-    mobileNumber: '',
-    message: '',
   }),
   methods: {
     validate() {
-      this.$refs.form.validate()
+      this.$refs.contactForm.validate()
     },
     reset() {
-      this.$refs.form.reset()
+      this.$refs.contactForm.reset()
     },
     resetValidation() {
-      this.$refs.form.resetValidation()
+      this.$refs.contactForm.resetValidation()
+    },
+    submitForm() {
+      this.validate()
+      if (this.valid) {
+        const data = new FormData()
+        data.append('Name', this.form.name)
+        data.append('Email', this.form.email)
+        data.append('Mobile Number', this.form.mobileNumber)
+        data.append('Message', this.form.message)
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', 'https://formspree.io/f/myybvpnq')
+        xhr.setRequestHeader('Accept', 'application/json')
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return
+          if (xhr.status === 200) {
+            this.submitError = false
+            this.$refs.contactForm.reset()
+            this.submitSuccess = true
+            setTimeout(() => (this.submitSuccess = false), 5000)
+          } else {
+            this.submitError = true
+          }
+        }
+        xhr.send(data)
+      }
     },
   },
 }
