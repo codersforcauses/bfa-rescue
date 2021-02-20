@@ -2,12 +2,14 @@
   <div class="hero px-12">
     <v-row>
       <v-col class="mt-12" md="8">
-        <h1>{{ title }}</h1>
-        <p>{{ text }}</p>
-        <div class="mt-5">
-          <v-btn class="btn" outlined color="primary" to="contact-us">
-            {{ button }}
-          </v-btn>
+        <div class="">
+          <h1>{{ title }}</h1>
+          <p>{{ text }}</p>
+          <div class="mt-5">
+            <v-btn class="btn" outlined color="primary" to="contact-us">
+              {{ button }}
+            </v-btn>
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -42,6 +44,9 @@ export default {
   text-align: center;
   min-height: 400px;
   width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 p {
   font-size: 20px;
