@@ -56,7 +56,7 @@ for file in files:
                     result['content_base64'] = b64_content.decode('UTF-8')
                     results.append(result)
                 else:
-                    print(f'Empty File skipped: {file_path}')
+                    print(f"Empty File skipped: {file_path}")
         finally:
             f.close()
     else:
