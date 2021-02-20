@@ -11,7 +11,6 @@
           sm="4"
         >
           <DogCard
-            v-if="dog.id <= displayDogs"
             :id="dog.id"
             :dogimage="dog.dogimage"
             :dogname="dog.dogname"
@@ -23,9 +22,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-btn block class="btn" color="primary" large @click="displayDogs += 9">
-      See more dogs
-    </v-btn>
   </div>
 </template>
 
@@ -40,7 +36,6 @@ export default {
   },
   data() {
     return {
-      displayDogs: 9,
       dogs: [
         {
           id: '1',
