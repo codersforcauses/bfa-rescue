@@ -7,6 +7,7 @@
   "workspaces": ["client", "server"],
   "scripts": {
     "client": "yarn workspace client dev",
+    "client:start": "yarn workspace client start",
     "server": "yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
     "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\"",
@@ -14,7 +15,7 @@
     "cypress:run": "cypress run --env allure=true",
     "cypress:update": "cypress run --env updateSnapshots=true",
     "allure:send": "export $(cat .env | xargs) && python3 send_and_generate.py cfc-bfa-rescue $ALLURE_USER $ALLURE_PASSWORD $ALLURE_API_SERVER /test_results github github",
-    "ci:test": "NODE_ENV=testing start-server-and-test client http://localhost:8080 cypress:run"
+    "ci:test": "NODE_ENV=testing start-server-and-test client:start http://localhost:8080 cypress:run"
   },
   "dependencies": {
     "concurrently": "5.3.0"
