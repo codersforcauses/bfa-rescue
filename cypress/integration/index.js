@@ -32,7 +32,7 @@ describe('Image Difference', () => {
         for (let index = 0; index < numberOfScreenshot; index++) {
           // Scroll down a viewport Height
           cy.scrollTo(0, viewportHeight * index)
-          cy.wait(500) // Wait for a little on scrolling
+          cy.wait(250 * numberOfScreenshot ) // Wait for a little on scrolling depending on number of pages
           cy.matchImageSnapshot(
             `${endpoint || "Homepage"}/720p/${index + 1}-${numberOfScreenshot}`,
             { capture: "viewport" }
