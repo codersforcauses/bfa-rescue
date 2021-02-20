@@ -2,14 +2,12 @@
   <div class="hero px-12">
     <v-row>
       <v-col class="mt-12" md="8">
-        <div>
-          <h1>{{ title }}</h1>
-          <p>{{ text }}</p>
-          <div class="mt-5">
-            <v-btn class="btn" outlined color="primary" to="contact-us">
-              {{ button }}
-            </v-btn>
-          </div>
+        <h1>{{ title }}</h1>
+        <p>{{ text }}</p>
+        <div class="mt-5">
+          <v-btn class="btn" outlined color="primary" to="contact-us">
+            {{ button }}
+          </v-btn>
         </div>
       </v-col>
     </v-row>
