@@ -21,8 +21,6 @@ describe('Image Difference', () => {
       .parameter('Endpoint', endpoint)
       cy.visit(currentPageUrl)
 
-      cy.wait(8000) // Give atleast 8 seconds of page picture loading
-
       cy.viewport(1280, 720)
 
       const viewportHeight = Cypress.config("viewportHeight")
@@ -32,7 +30,7 @@ describe('Image Difference', () => {
         for (let index = 0; index < numberOfScreenshot; index++) {
           // Scroll down a viewport Height
           cy.scrollTo(0, viewportHeight * index)
-          cy.wait(250 * numberOfScreenshot ) // Wait for a little on scrolling depending on number of pages
+          cy.wait(Math.max(750 * numberOfScreenshot, 10000)) // Wait for a little on scrolling depending on number of pages
           cy.matchImageSnapshot(
             `${endpoint || "Homepage"}/720p/${index + 1}-${numberOfScreenshot}`,
             { capture: "viewport" }
