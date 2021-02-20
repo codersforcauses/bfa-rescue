@@ -6,7 +6,7 @@
     "env": {
         "allureResultsPath": "test_results",
         "flattenVideoFolder": true,
-        "FRONTEND_URL": "http://localhost:8080"
+        "FRONTEND_URL": "http://localhost:3000"
     },
     "ignoreTestFiles": [
         "**/__snapshots__/*",
