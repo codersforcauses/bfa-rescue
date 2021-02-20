@@ -55,12 +55,8 @@ for file in files:
                     result['file_name'] = file
                     result['content_base64'] = b64_content.decode('UTF-8')
                     results.append(result)
-                else:
-                    print(f"Empty File skipped: {file_path}")
         finally:
             f.close()
-    else:
-        print(f'Directory skipped: {file_path}')
 
 headers = {'Content-type': 'application/json'}
 request_body = {

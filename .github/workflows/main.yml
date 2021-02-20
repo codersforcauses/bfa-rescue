@@ -43,10 +43,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.8'
-          
+
       - name: Upload Results
         if: ${{ always() }}
-        run: npm run allure:send
+        run: |
+          ls
+          ls ./test_results
+          npm run allure:send
         env:
           ALLURE_USER: ${{secrets.ALLURE_USER}}
           ALLURE_PASSWORD: ${{secrets.ALLURE_PASSWORD}}
