@@ -44,21 +44,30 @@
           validate-on-blur
           label="Message"
         />
+        <!--     
+        <v-alert
+          dense
+          dismissible
+          :value="submitSuccess"
+          type="success"
+          transition="fade-transition"
+        >
+          {{ successMessage }}
+        </v-alert>
+        -->
         <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4">
           Send
         </v-btn>
       </v-form>
       <br />
-      <v-alert
-        dense
-        dismissible
-        :value="submitSuccess"
-        type="success"
-        transition="fade-transition"
-      >
-        Thank you for reaching out to us. We will get back to you as soon as
-        possible.
-      </v-alert>
+      <v-snackbar v-model="submitSuccess" :timeout="timeout" color="success">
+        {{ successMessage }}
+        <template v-slot:action="{ attrs }">
+          <v-btn text v-bind="attrs" @click="submitSuccess = false">
+            Close
+          </v-btn>
+        </template>
+      </v-snackbar>
     </v-container>
   </v-sheet>
 </template>
@@ -70,6 +79,9 @@ export default {
     valid: true,
     submitError: false,
     submitSuccess: false,
+    timeout: 5000,
+    successMessage:
+      'Thank you for reaching out to us. We will get back to you as soon as possible.',
     form: {
       name: '',
       email: '',
@@ -112,7 +124,7 @@ export default {
             this.submitError = false
             this.$refs.contactForm.reset()
             this.submitSuccess = true
-            setTimeout(() => (this.submitSuccess = false), 5000)
+            setTimeout(() => (this.submitSuccess = false), this.timeout)
           } else {
             this.submitError = true
           }
