@@ -13,7 +13,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --env allure=true",
     "cypress:update": "cypress run --env updateSnapshots=true",
-    "allure:send": "export $(cat .env | xargs) && python send_and_generate.py cfc-bfa-rescue $ALLURE_USER $ALLURE_PASSWORD $ALLURE_API_SERVER /test_results github github",
+    "allure:send": "export $(cat .env | xargs) && python3 send_and_generate.py cfc-bfa-rescue $ALLURE_USER $ALLURE_PASSWORD $ALLURE_API_SERVER /test_results github github",
     "ci:test": "NODE_ENV=testing start-server-and-test client http://localhost:8080 cypress:run"
   },
   "dependencies": {
