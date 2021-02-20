@@ -1,3 +1,9 @@
+# Testing Data
+__diff_output__
+/test_results
+/cypress/screenshots
+/cypress/videos
+
 # Logs
 logs
 *.log

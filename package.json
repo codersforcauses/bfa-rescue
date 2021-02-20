@@ -9,18 +9,29 @@
     "client": "yarn workspace client dev",
     "server": "yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
-    "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\""
+    "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\"",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --env allure=true",
+    "cypress:update": "cypress run --env updateSnapshots=true",
+    "allure:send": "export $(cat .env | xargs) || python send_and_generate.py cfc-bfa-rescue $ALLURE_USER $ALLURE_PASSWORD $ALLURE_API_SERVER /test_results github github",
+    "ci:test": "NODE_ENV=testing start-server-and-test client http://localhost:8080 cypress:run"
   },
   "dependencies": {
     "concurrently": "5.3.0"
   },
   "devDependencies": {
     "husky": "4.3.7",
-    "lint-staged": "10.5.3"
+    "lint-staged": "10.5.3",
+    "@frinzekt/cypress-allure-plugin": "^0.0.1-development",
+    "cypress": "^6.3.0",
+    "cypress-image-snapshot": "^4.0.1",
+    "del": "^6.0.0",
+    "move-file": "^2.0.0",
+    "start-server-and-test": "^1.11.7"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "client/*.{js,vue}": "eslint",
+    "client/*.{css,vue}": "stylelint"
   },
   "husky": {
     "hooks": {

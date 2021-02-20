@@ -1,0 +1,15 @@
+{
+    "videosFolder": "test_results",
+    "experimentalRunEvents": true,
+    "videoUploadOnPasses": false,
+    "failOnSnapshotDiff=false": false,
+    "env": {
+        "allureResultsPath": "test_results",
+        "flattenVideoFolder": true,
+        "FRONTEND_URL": "http://localhost:8080"
+    },
+    "ignoreTestFiles": [
+        "**/__snapshots__/*",
+        "**/__image_snapshots__/*"
+    ]
+}
