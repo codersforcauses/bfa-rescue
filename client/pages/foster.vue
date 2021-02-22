@@ -11,8 +11,8 @@
                 <v-icon color="primary"> mdi-plus-circle </v-icon>
               </template>
             </v-expansion-panel-header>
-            <v-expansion-panel-content style="padding-top: 25px">
-              {{ question.text }}
+            <v-expansion-panel-content>
+              <br />{{ question.text }}
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
