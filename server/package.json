@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "eslint": "7.17.0",
-    "eslint-config-prettier": "6.15.0",
+    "eslint-config-prettier": "8.1.0",
     "eslint-config-standard": "16.0.2",
     "nodemon": "2.0.6"
   }
