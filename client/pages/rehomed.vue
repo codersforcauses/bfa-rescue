@@ -12,8 +12,9 @@
         >
           <DogCard
             :id="dog.id"
-            :dogimage="dog.dogimage"
+            :dogImage="dog.dogImage"
             :dogname="dog.dogname"
+            :date="dog.date"
             :dogbreed="dog.dogbreed"
             :doggender="dog.doggender"
             :dogdescription="dog.dogdescription"
@@ -39,9 +40,10 @@ export default {
       dogs: [
         {
           id: '1',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
           dogname: 'Harley',
+          date: 'Sep 29, 2020',
           dogbreed: 'Border Collie',
           doggender: 'Male',
           dogdescription:
@@ -50,9 +52,10 @@ export default {
         },
         {
           id: '2',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
           dogname: 'Mischief',
+          date: 'Sep 29, 2020',
           dogbreed: 'German Shepherd',
           doggender: 'Female',
           dogdescription:
@@ -61,9 +64,10 @@ export default {
         },
         {
           id: '3',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
           dogname: 'Ruby',
+          date: 'Oct 9, 2020',
           dogbreed: 'Kelpie x Terrier',
           doggender: 'Female',
           dogdescription:
@@ -72,9 +76,10 @@ export default {
         },
         {
           id: '4',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/07/facebook-piccie-e1594129424999-650x390-77867_400x250.jpg',
           dogname: 'Bella',
+          date: 'Mar 1, 2020',
           dogbreed: 'Rhodesian Ridgeback X Staffordshire Terrier',
           doggender: 'Female',
           dogdescription:
@@ -83,9 +88,10 @@ export default {
         },
         {
           id: '5',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/06/Standing-coat-cropped-400x250.jpg',
           dogname: 'Richie',
+          date: 'Mar 1, 2020',
           dogbreed: 'Pomeranian',
           doggender: 'Male',
           dogdescription:
@@ -94,9 +100,10 @@ export default {
         },
         {
           id: '6',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/02/Chevy-lying-down-1-400x250.jpg',
           dogname: 'Fudge',
+          date: 'Mar 1, 2020',
           dogbreed: 'Beagle X Labrador',
           doggender: 'Female',
           dogdescription:
@@ -105,9 +112,10 @@ export default {
         },
         {
           id: '7',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
           dogname: 'Harley',
+          date: 'Mar 1, 2020',
           dogbreed: 'Border Collie',
           doggender: 'Male',
           dogdescription:
@@ -116,9 +124,10 @@ export default {
         },
         {
           id: '8',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
           dogname: 'Mischief',
+          date: 'Mar 1, 2020',
           dogbreed: 'German Shepherd',
           doggender: 'Female',
           dogdescription:
@@ -127,9 +136,10 @@ export default {
         },
         {
           id: '9',
-          dogimage:
+          dogImage:
             'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
           dogname: 'Ruby',
+          date: 'Mar 1, 2020',
           dogbreed: 'Kelpie x Terrier',
           doggender: 'Female',
           dogdescription:
