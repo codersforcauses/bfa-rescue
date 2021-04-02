@@ -4,9 +4,7 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    'standard'
-  ],
+  extends: ['standard'],
   plugins: ['prettier'],
   // add your custom rules here
   rules: {}

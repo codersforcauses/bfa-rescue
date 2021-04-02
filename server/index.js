@@ -21,8 +21,7 @@ app.use(async (err, req, res, next) => {
     status: err.status,
     message: err.message
   })
-}
-)
+})
 
 process.on('unhandledRejection', (reason, p) =>
   console.error('Unhandled Rejection at: Promise ', p, reason)

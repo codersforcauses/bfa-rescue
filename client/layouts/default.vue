@@ -8,12 +8,8 @@
   </v-app>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style>
-::selection {
-  background: #4ab1c55b;
+.font-sans {
+  font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
 }
 </style>
