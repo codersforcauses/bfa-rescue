@@ -1,22 +1,20 @@
 <template>
-  <div class="text-center">
-    <h2>Frequently asked questions</h2>
+  <div>
     <v-container class="padded">
-      <v-row justify="center">
-        <v-expansion-panels accordion focusable>
-          <v-expansion-panel v-for="question in questions" :key="question.id">
-            <v-expansion-panel-header>
-              {{ question.title }}
-              <template v-slot:actions>
-                <v-icon color="primary"> mdi-plus-circle </v-icon>
-              </template>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              <br />{{ question.text }}
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-row>
+      <h2 class="pb-5">Frequently asked questions</h2>
+      <v-expansion-panels accordion focusable>
+        <v-expansion-panel v-for="question in questions" :key="question.id">
+          <v-expansion-panel-header class="font-weight-medium">
+            {{ question.title }}
+            <template v-slot:actions>
+              <v-icon color="primary"> mdi-plus-circle </v-icon>
+            </template>
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <br />{{ question.text }}
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
   </div>
 </template>
