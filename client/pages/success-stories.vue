@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Header></Header>
+    <Header
+      title="Success Stories"
+      subtitle="Thanks to your support, these are some of the dogs we have be able to help"
+    >
+    </Header>
     <v-carousel v-if="$vuetify.breakpoint.smAndDown" hide-delimiters>
       <v-carousel-item
         src="https://bfarescue.com.au/wp-content/uploads/2016/08/IMG_0015.jpg"
@@ -81,19 +85,17 @@
       </div>
     </v-row>
     <div class="banner2">
-      <h2 class="text-center">Other dogs we have saved</h2>
+      <h2 class="text-center">More of the dogs we have been able to help</h2>
     </div>
     <Slideshow></Slideshow>
   </div>
 </template>
 
 <script>
-import Header from '~/components/success-stories/Header.vue'
 import Slideshow from '~/components/success-stories/Slideshow.vue'
 
 export default {
   components: {
-    Header,
     Slideshow,
   },
 }
@@ -124,8 +126,8 @@ export default {
 }
 
 .banner2 {
-  background-color: #3295b2;
-  color: #fff;
+  background-color: #a2d0dd;
+  color: rgb(0, 0, 0);
   padding: 60px 20px;
   width: 100vw;
   margin-bottom: 20px;
