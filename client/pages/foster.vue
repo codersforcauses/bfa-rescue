@@ -1,5 +1,38 @@
 <template>
   <div>
+    <hero
+      title="Foster a dog"
+      text="Foster carers take dogs into their own homes temporarily and provide a loving home environment until a permanent home can be found."
+      button="Online Application"
+    />
+    <Header
+      title="Become a Foster Carer!"
+      subtitle="Fostering is an invaluable service to rescue groups as foster homes are a necessary spoke in the animal rescue wheel. Without them, we can’t continue the adoption cycle to save more animals. The service of providing temporary refuge is an immensely rewarding experience."
+    >
+    </Header>
+    <h1 class="text-center mb-2">URGENT FOSTER CARE NEEDED FOR THESE DOGS</h1>
+    <div id="availabledogs">
+      <v-row>
+        <v-col
+          v-for="dog in dogs"
+          :key="dog.dogname"
+          class="d-flex flex-column"
+          cols="12"
+          md="4"
+          sm="6"
+        >
+          <DogCard
+            :id="dog.id"
+            :dogimage="dog.dogimage"
+            :dogname="dog.dogname"
+            :dogbreed="dog.dogbreed"
+            :doggender="dog.doggender"
+            :dogdescription="dog.dogdescription"
+            :status="dog.status"
+          />
+        </v-col>
+      </v-row>
+    </div>
     <v-container class="padded">
       <h2 class="pb-5">Frequently asked questions</h2>
       <v-expansion-panels accordion focusable>
@@ -20,8 +53,14 @@
 </template>
 
 <script>
+import Hero from '~/components/foster/Hero.vue'
+import DogCard from '~/components/home/DogCard.vue'
+
 export default {
-  components: {},
+  components: {
+    Hero,
+    DogCard,
+  },
   data() {
     return {
       questions: [
@@ -71,6 +110,38 @@ export default {
           title: 'Can I become a foster carer if I work fulltime?',
           text:
             'It depends on the dog that needs fostering. Animals that require special care are typically sent to experienced foster carers who have the time to give them the extra attention. Most of the dogs we rescue also need the company of another dog if their foster carer has to leave them alone for extended periods of time.',
+        },
+      ],
+      dogs: [
+        {
+          id: '1',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
+          dogname: 'Harley',
+          dogbreed: 'Border Collie',
+          doggender: 'Male',
+          dogdescription:
+            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
+          status: 'adopted',
+        },
+        {
+          id: '2',
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
+          dogname: 'Mischief',
+          dogbreed: 'German Shepherd',
+          doggender: 'Female',
+          dogdescription:
+            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
+        },
+        {
+          dogimage:
+            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
+          dogname: 'Ruby',
+          dogbreed: 'Kelpie x Terrier',
+          doggender: 'Female',
+          dogdescription:
+            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
         },
       ],
     }
