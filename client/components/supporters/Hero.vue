@@ -42,6 +42,9 @@ export default {
   text-align: center;
   min-height: 400px;
   width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 p {
   font-size: 20px;
