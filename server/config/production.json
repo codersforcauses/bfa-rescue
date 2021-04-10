@@ -1,4 +1,6 @@
 {
-  "host": "server-app.feathersjs.com",
-  "port": "PORT"
+  "adminAccount": {
+    "email": "ADMIN_EMAIL",
+    "password": "ADMIN_PASSWORD"
+  }
 }

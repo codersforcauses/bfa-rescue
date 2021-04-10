@@ -57,3 +57,13 @@ app.use(express.errorHandler({ logger }));
 app.hooks(appHooks);
 
 module.exports = app;
+
+// Create admin account if does not exist
+try{
+  const adminAccount = app.get('adminAccount');
+  app.service('users').create(adminAccount);
+  console.info(`Admin account created: ${adminAccount.email}`);
+}
+catch(error){
+  console.info('Admin account exist');
+}

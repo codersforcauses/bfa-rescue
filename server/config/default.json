@@ -40,5 +40,9 @@
       }
     }
   },
-  "mongodb": "mongodb://admin:admin@localhost:27017/server?authSource=admin"
+  "mongodb": "mongodb://admin:admin@localhost:27017/server?authSource=admin",
+  "adminAccount": {
+    "email": "admin@admin.com",
+    "password": "admin"
+  }
 }
