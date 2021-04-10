@@ -22,8 +22,9 @@ module.exports = function (app) {
         month: {
           type: Number,
           required: true,
-          min: 0,
-          max: 11,
+          // Depending on the context
+          // min: 0,
+          // max: 11,
           validate: Number.isInteger,
         },
       },
