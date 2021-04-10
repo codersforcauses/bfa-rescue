@@ -23,9 +23,10 @@ export default {
 
 <style scoped>
 .banner {
-  background-color: #3295b2;
-  color: #fff;
+  background-color: #a2d0dd;
+  color: rgb(0, 0, 0);
   padding: 60px 20px;
   width: 100vw;
+  font-size: large;
 }
 </style>
