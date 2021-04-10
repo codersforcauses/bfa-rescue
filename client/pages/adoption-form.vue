@@ -7,3 +7,9 @@
     <AdoptionForm></AdoptionForm>
   </div>
 </template>
+
+<style scoped>
+div {
+  background-color: rgb(233, 233, 233);
+}
+</style>
