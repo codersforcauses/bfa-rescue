@@ -12,6 +12,10 @@ module.exports = function (app) {
   const schema = new Schema(
     {
       name: NameType(),
+      imagelink: {
+        type: String,
+        required: true
+      },
       age: {
         year: {
           type: Number,
