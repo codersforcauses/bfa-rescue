@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import Hero from '~/components/foster/Hero.vue'
+import Hero from '~/components/volunteer/Hero.vue'
 
 export default {
   components: {
