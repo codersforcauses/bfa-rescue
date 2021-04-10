@@ -3,14 +3,17 @@
     "email": "ADMIN_EMAIL",
     "password": "ADMIN_PASSWORD"
   },
-  "mongodb":"MONGO_URI",
+  "mongodb": "MONGO_URI",
   "email": {
     "host": "smtp.gmail.com",
     "port": 465,
     "secure": true,
     "auth": {
       "user": "GMAIL_EMAIL",
-      "accessToken": "GMAIL_ACCESS_TOKEN"
+      "refreshToken": "GMAIL_REFRESH_TOKEN",
+      "accessToken": "GMAIL_ACCESS_TOKEN",
+      "clientId": "GOOGLE_CLIENT_ID",
+      "clientSecret": "GOOGLE_CLIENT_SECRET"
     },
     "from": "no-reply-contact-form@bfarescue.com"
   }

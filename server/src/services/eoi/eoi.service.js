@@ -8,15 +8,20 @@ module.exports = function (app) {
   // https://nodemailer.com/smtp/oauth2/
   const emailConfig = app.get('email');
   const transporter = {
+    service: 'gmail',
     host: emailConfig.host,
     port: emailConfig.port,
     secure: emailConfig.secure,
     auth:{
       type: 'OAuth2',
       user: emailConfig.auth.user,
+      clientId:emailConfig.auth.clientId,
+      clientSecret: emailConfig.auth.clientSecret,
+      refreshToken:emailConfig.auth.refreshToken,
       accessToken: emailConfig.auth.accessToken
     }
   };
+  console.log(transporter);
 
   // Initialize our service with any options it requires
   app.use('/eoi', mailer(transporter, {from: emailConfig.from}));
