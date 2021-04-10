@@ -1,3 +1,7 @@
+// ENV FILE
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+
 /* eslint-disable no-console */
 const logger = require('./logger');
 const app = require('./app');
