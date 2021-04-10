@@ -1,5 +1,7 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "dependencyDashboard": true,
+  "schedule": ["every 3 months on the first day of the month"]
 }
