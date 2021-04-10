@@ -44,9 +44,10 @@ module.exports = function (app) {
         type: Number,
         required: true
       },
-      isAvailable: {
-        type: Boolean,
+      status: {
+        type: String,
         required: true,
+        enum: ['Adoption Available', 'Foster Available', 'Sponsor Available', 'Rehomed']
       },
     },
     {
