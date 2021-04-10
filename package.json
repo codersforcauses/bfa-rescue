@@ -4,10 +4,13 @@
   "repository": "git@github.com:codersforcauses/bfa-rescue.git",
   "license": "MIT",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "client": "yarn workspace client dev",
-    "server": "yarn workspace server dev",
+    "server": "docker-compose up -d && yarn workspace server dev",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server\"",
     "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\""
   },

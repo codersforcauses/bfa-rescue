@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  db:
+    image: mongo
+    container_name: bfa_mongo
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes: 
+      # - ./mongo/bfa-rescue/data:/data/db  - use this for windows
+      - ~/docker/bfa-rescue/mongo/data/db:/data/db # use this for mac and linux
+    ports:
+      - 27017:27017 # Host:Container
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
