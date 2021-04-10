@@ -2,5 +2,15 @@
   "adminAccount": {
     "email": "ADMIN_EMAIL",
     "password": "ADMIN_PASSWORD"
+  },
+  "email": {
+    "host": "smtp.gmail.com",
+    "port": 465,
+    "secure": true,
+    "auth": {
+      "user": "GMAIL_EMAIL",
+      "accessToken": "GMAIL_ACCESS_TOKEN"
+    },
+    "from": "no-reply-contact-form@bfarescue.com"
   }
 }
