@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .banner {
   background-color: #1badbe;
   color: #fff;

@@ -84,7 +84,7 @@ export default {
             },
             {
               title: 'Adoption Form',
-              to: '/adopt-a-dog/expression-of-interest',
+              to: '/adoption-form',
             },
             {
               title: 'Rehomed dogs',
