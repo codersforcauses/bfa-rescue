@@ -40,6 +40,10 @@ module.exports = function (app) {
         enum: ['Small', 'Medium', 'Large'],
       },
       description: DescType(),
+      adoption_fee: {
+        type: Number,
+        required: true
+      },
       isAvailable: {
         type: Boolean,
         required: true,
