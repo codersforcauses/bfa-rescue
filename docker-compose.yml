@@ -17,3 +17,18 @@ services:
       - 27017:27017 # Host:Container
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+
+  # Used for Local development only
+  mailhog:
+    restart: unless-stopped
+    container_name: bfa_mailhog
+    build:
+      context: .
+      dockerfile: docker/mailhog/Dockerfile
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    env_file:
+      - .env
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
