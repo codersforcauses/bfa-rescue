@@ -3,6 +3,7 @@
     "email": "ADMIN_EMAIL",
     "password": "ADMIN_PASSWORD"
   },
+  "mongodb":"MONGO_URI",
   "email": {
     "host": "smtp.gmail.com",
     "port": 465,
