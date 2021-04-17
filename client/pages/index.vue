@@ -32,12 +32,12 @@
       title="About Us"
       subtitle="Best Friends Animal Rescue Inc. is a small group with no funding, completely run by volunteers dedicated to rescuing and re-homing dogs in need in Perth."
     ></Header>
-    <v-container>
+    <v-container container--fluid>
       <div id="availabledogs">
-        <h2 class="text-center mb-2">Our Dogs</h2>
-        <p class="text-center">
-          Adopt a dog to be your best friend today! Here are all our available
-          dogs for adoption
+        <h1 class="text-center mb-2">Our Dogs</h1>
+        <p class="text-center" style="padding-bottom: 20px">
+          Adopt a dog to be your best friend today! Here are some of our
+          available dogs for adoption
         </p>
         <v-row>
           <v-col
@@ -61,8 +61,10 @@
         </v-row>
       </div>
       <div id="adopt" class="text-center">
-        <h2 class="mb-2">Adopt a dog</h2>
-        <p>Here's what the standard adoption fee would cover</p>
+        <h1 class="mb-2">Adopt a dog</h1>
+        <p style="padding-bottom: 20px">
+          Here's what the standard adoption fee would cover
+        </p>
         <v-row>
           <v-col
             v-for="service in services"
@@ -77,7 +79,7 @@
             ></Services>
           </v-col>
         </v-row>
-        <p>
+        <p style="padding-top: 25px">
           If you're interested in adopting any of our rescue dogs, please fill
           in our Expression of Interest Questionnaire.
         </p>
@@ -91,16 +93,6 @@
           href="./expression-of-interest-adoption-questionnaire.pdf"
           target="_blank"
           >Download &AMP; print
-        </v-btn>
-      </div>
-      <div id="volunteer" class="text-center">
-        <h2 class="mb-2">Volunteer</h2>
-        <p>
-          Help us by volunteering your services. Tell us how you would like to
-          help and we'll work something out.
-        </p>
-        <v-btn class="ma-2" outlined color="#1badbe" href="/volunteer"
-          >Learn more
         </v-btn>
       </div>
     </v-container>
@@ -255,19 +247,18 @@ export default {
 
 #availabledogs {
   padding: 50px 50px;
-  margin: 50px 0;
-  background-color: #f7f7f7;
+  background-color: rgb(255, 255, 255);
 }
 
 #adopt {
   padding: 50px 70px;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
 #volunteer {
   padding: 50px 70px;
   margin: 50px 0;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 
 @media only screen and (max-width: 600px) {

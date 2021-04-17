@@ -1,38 +1,36 @@
 <template>
   <div>
     <hero
-      title="Foster a dog"
-      text="Foster carers take dogs into their own homes temporarily and provide a loving home environment until a permanent home can be found."
+      title="Volunteer"
+      text="Help us by volunteering your services. Tell us how you would like to help and we'll work something out."
       button="Online Application"
     />
     <Header
-      title="Become a Foster Carer!"
-      subtitle="Fostering is an invaluable service to rescue groups as foster homes are a necessary spoke in the animal rescue wheel. Without them, we can’t continue the adoption cycle to save more animals. The service of providing temporary refuge is an immensely rewarding experience."
+      title="Help us by becoming a volunteer"
+      subtitle="Best Friends Animal Rescue is run by a group of volunteers. You don’t have to foster a dog or give donations to make a difference. We need all the help we can get. You can lend us your support by volunteering your services for fundraising activities, transportation, grooming, maintenance and more."
     >
     </Header>
-    <h1 class="text-center mb-2">URGENT FOSTER CARE NEEDED FOR THESE DOGS</h1>
-    <div id="availabledogs">
+    <v-container>
       <v-row>
-        <v-col
-          v-for="dog in dogs"
-          :key="dog.dogname"
-          class="d-flex flex-column"
-          cols="12"
-          md="4"
-          sm="6"
-        >
-          <DogCard
-            :id="dog.id"
-            :dogimage="dog.dogimage"
-            :dogname="dog.dogname"
-            :dogbreed="dog.dogbreed"
-            :doggender="dog.doggender"
-            :dogdescription="dog.dogdescription"
-            :status="dog.status"
-          />
+        <v-col>
+          <v-card class="pa-12 box" color="#a2d0dd">
+            We also have people volunteering their services as a dog
+            behaviourist, photographer, web designer, digital marketer, hosting
+            provider, general administration and operations, etc. So if you
+            think you’re able to help in any way at all, give us a
+            shout!</v-card
+          >
+        </v-col>
+        <v-col>
+          <v-card class="pa-12 box" color="#a2d0dd">
+            To become a volunteer, fill out an application and we’ll get back to
+            you in 3-7 days. Sorry, it takes awhile because we don’t have a
+            dedicated personnel to respond to emails at the moment. If you’re
+            unsure about the services you can provide, send us a message.
+          </v-card>
         </v-col>
       </v-row>
-    </div>
+    </v-container>
     <v-container class="padded">
       <h2 class="pb-5">Frequently asked questions</h2>
       <v-expansion-panels accordion focusable>
@@ -53,13 +51,11 @@
 </template>
 
 <script>
-import Hero from '~/components/foster/Hero.vue'
-import DogCard from '~/components/home/DogCard.vue'
+import Hero from '~/components/volunteer/Hero.vue'
 
 export default {
   components: {
     Hero,
-    DogCard,
   },
   data() {
     return {
@@ -112,38 +108,6 @@ export default {
             'It depends on the dog that needs fostering. Animals that require special care are typically sent to experienced foster carers who have the time to give them the extra attention. Most of the dogs we rescue also need the company of another dog if their foster carer has to leave them alone for extended periods of time.',
         },
       ],
-      dogs: [
-        {
-          id: '1',
-          dogimage:
-            'https://bfarescue.com.au/wp-content/uploads/2020/11/Harley-standing-400x250.jpg',
-          dogname: 'Harley',
-          dogbreed: 'Border Collie',
-          doggender: 'Male',
-          dogdescription:
-            'Harley is an 8 yr old male Border Collie. Extremely nice dog with good manners!',
-          status: 'adopted',
-        },
-        {
-          id: '2',
-          dogimage:
-            'https://bfarescue.com.au/wp-content/uploads/2020/11/Mischief-head-and-shoulders-3-400x250.jpg',
-          dogname: 'Mischief',
-          dogbreed: 'German Shepherd',
-          doggender: 'Female',
-          dogdescription:
-            'Mischief is a lovely 7 yr old German Shepherd female. She is lively and affectionate, but will require someone willing to do some training.',
-        },
-        {
-          dogimage:
-            'https://bfarescue.com.au/wp-content/uploads/2020/11/Ruby-bat-ears-facing-up-cropped-rotated-1-116128_371x250.jpg',
-          dogname: 'Ruby',
-          dogbreed: 'Kelpie x Terrier',
-          doggender: 'Female',
-          dogdescription:
-            'Ruby is a 6 month old Kelpie x Terrier. She is intelligent, energetic and will need training. Ruby is house-trained and dog-friendly.',
-        },
-      ],
     }
   },
 }
@@ -156,5 +120,8 @@ export default {
 .padded {
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.box {
+  font-size: large;
 }
 </style>

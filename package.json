@@ -15,7 +15,8 @@
     "lint": "concurrently --kill-others-on-fail \"yarn workspace client lint\" \"yarn workspace server lint\""
   },
   "dependencies": {
-    "concurrently": "5.3.0"
+    "concurrently": "5.3.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "husky": "4.3.7",
