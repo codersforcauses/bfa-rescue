@@ -1,11 +1,16 @@
 <template>
   <div class="hero px-12">
     <v-row>
-      <v-col class="mt-12" md="8">
+      <v-col class="mt-6 centered" md="8">
         <h1>{{ title }}</h1>
-        <p>{{ text }}</p>
+        <p class="centered" style="width: 80%">{{ text }}</p>
         <div class="mt-5">
-          <v-btn class="btn" outlined color="primary" to="contact-us">
+          <v-btn
+            class="btn"
+            outlined
+            color="primary"
+            to="adopt-a-dog/expression-of-interest"
+          >
             {{ button }}
           </v-btn>
         </div>
@@ -36,9 +41,9 @@ export default {
 
 <style scoped>
 .hero {
-  background-image: url('https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/10/white-dog-tongue.png');
-  background-position: center bottom;
-  background-size: contain;
+  background-image: url('https://secureservercdn.net/160.153.138.177/wzj.f59.myftpupload.com/wp-content/uploads/2015/07/olddog.jpg');
+  background-position: center;
+  background-size: cover;
   text-align: center;
   min-height: 400px;
   width: auto;
@@ -54,5 +59,10 @@ p {
     background-image: none !important;
     padding-bottom: 50px;
   }
+}
+.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
