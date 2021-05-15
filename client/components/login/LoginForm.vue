@@ -3,7 +3,7 @@
     <v-container class="py-16">
       <v-row>
         <v-col cols="6" class="mx-auto">
-          <h2 style="text-align: center; margin-bottom: 1rem">Login</h2>
+          <h2 class="text-center mb-5">Login</h2>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               v-model="loginID"
@@ -12,7 +12,7 @@
               solo
               :rules="IDRules"
               required
-              label="Login ID"
+              label="Login"
             >
             </v-text-field>
             <v-text-field
