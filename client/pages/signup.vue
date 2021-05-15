@@ -98,7 +98,7 @@ export default {
     mobileRules: [
       (v) => !!v || 'Mobile number is required',
       (v) => (v && v.length === 10) || 'Mobile number must be valid',
-      (v) => /[0-9]+/.test(v) || 'Mobile number be valid',
+      (v) => /[+0-9]+/.test(v) || 'Mobile number be valid',
     ],
     message: '',
     PWRules: [(v) => !!v || 'Password required'],
