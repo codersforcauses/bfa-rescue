@@ -53,17 +53,6 @@
         >
           {{ errorMessage }}
         </v-alert>
-        <!--     
-        <v-alert
-          dense
-          dismissible
-          :value="submitSuccess"
-          type="success"
-          transition="fade-transition"
-        >
-          {{ successMessage }}
-        </v-alert>
-        -->
         <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4">
           Send
         </v-btn>
@@ -77,16 +66,6 @@
           </v-btn>
         </template>
       </v-snackbar>
-      <!--   
-      <v-snackbar v-model="submitSuccess" :timeout="timeout" color="error">
-        {{ errorMessage }}
-        <template v-slot:action="{ attrs }">
-          <v-btn text v-bind="attrs" @click="errorMessage = false">
-            Close
-          </v-btn>
-        </template>
-      </v-snackbar>
-      -->
     </v-container>
   </v-sheet>
 </template>
