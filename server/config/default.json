@@ -44,5 +44,15 @@
   "adminAccount": {
     "email": "admin@admin.com",
     "password": "admin"
+  },
+  "email": {
+    "host": "localhost",
+    "port": 1025,
+    "secure": false,
+    "auth": {
+      "user": "",
+      "accessToken": ""
+    },
+    "from": "no-reply-contact-form@bfarescue.com"
   }
 }
