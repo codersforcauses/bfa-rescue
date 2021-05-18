@@ -52,7 +52,7 @@
     "feathers-hooks-common": "^5.0.5",
     "feathers-mailer": "^3.0.1",
     "feathers-mongoose": "^8.3.1",
-    "helmet": "^4.3.1",
+    "helmet": "4.6.0",
     "mongodb-core": "^3.2.7",
     "mongoose": "^5.11.9",
     "serve-favicon": "^2.5.0",
